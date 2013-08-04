@@ -2,8 +2,5 @@
 markdown: redcarpet
 pygments: true
 
-#markdown: maruku
-markdown_ext: md
-
 # Custom vars
 repo: https://github.com/vsn4ik/bootstrap-checkbox
