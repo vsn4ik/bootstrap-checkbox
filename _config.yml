@@ -1,3 +1,6 @@
-name: Your New Jekyll Site
+# Dependencies
 markdown: redcarpet
 pygments: true
+
+# Custom vars
+repo: https://github.com/vsn4ik/bootstrap-checkbox
