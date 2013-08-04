@@ -1,8 +1,7 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "Test page"
 date:   2013-08-03 03:43:24
-categories: jekyll update
 base_url: "../"
 ---
 
