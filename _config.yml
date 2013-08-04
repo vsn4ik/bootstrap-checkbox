@@ -4,3 +4,5 @@ pygments: true
 
 # Custom vars
 repo: https://github.com/vsn4ik/bootstrap-checkbox
+tarball: https://github.com/vsn4ik/bootstrap-checkbox/tarball/master
+zipball: https://github.com/vsn4ik/bootstrap-checkbox/zipball/master
