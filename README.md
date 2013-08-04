@@ -1,3 +1,0 @@
-bootstrap-checkbox
-==================
-test
