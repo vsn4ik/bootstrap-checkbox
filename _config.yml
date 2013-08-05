@@ -2,5 +2,8 @@
 markdown: redcarpet
 pygments: true
 
+# Permalinks (/<name> --> /<name>.<ext>)
+permalink: pretty
+
 # Custom vars
 repo: https://github.com/vsn4ik/bootstrap-checkbox

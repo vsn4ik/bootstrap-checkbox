@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  "Test page"
+title:  "Test page 2"
+slug: test2
 date:   2013-08-03 03:43:24
 base_url: "../"
 ---
