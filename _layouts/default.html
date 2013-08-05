@@ -2,24 +2,10 @@
 <html>
 	{% include head.html %}
 <body>
-	<div class="container">
-		<div class="site">
-			{{ content }}
+	<div class="container-fluid">
+		{{ content }}
 
-			<div class="footer">
-				<div class="contact">
-					<p>
-						Your Name<br />
-						What You Are<br />
-						your@email.com
-					</p>
-				</div>
-
-				<div class="contact">
-					<a href="{{ site.repo }}">View on GitHub</a>
-				</div>
-			</div>
-		</div>
+		<a href="{{ site.repo }}">View on GitHub</a>
 	</div>
 </body>
 </html>
