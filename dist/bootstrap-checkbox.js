@@ -4,7 +4,6 @@
  *
  * Copyright (c) 2013 vsn4ik
  * Licensed under the MIT License
- * http://opensource.org/licenses/MIT
  */
 (function($) {
 	'use strict';
