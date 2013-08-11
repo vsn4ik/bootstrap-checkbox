@@ -13,7 +13,9 @@
 		this.options = $.extend({}, $.fn.checkboxpicker.defaults, options, $(element).data());
 
 		this.$buttons = $('<button><button>')
-			.addClass('btn').attr('type', 'button').prop('disabled', element.disabled)
+			.addClass('btn')
+			.attr({ type: 'button', tabindex: -1 })
+			.prop('disabled', element.disabled)
 			.click(this.clicked.bind(this));
 
 		this.$on = this.$buttons.eq(0).text(this.options.on);
@@ -22,16 +24,32 @@
 		this.render();
 
 		$(element).hide().change(this.render.bind(this));
-		$('<div class="btn-group">').append(this.$buttons).insertAfter(element);
+
+		$('<div class="btn-group" tabindex="0">')
+			.append(this.$buttons)
+			.insertAfter(element)
+			.keydown(this.keydown.bind(this));
 	};
 
 	Checkboxpicker.prototype = {
+		change: function() {
+			$(this.element).prop('checked', !this.element.checked).change();
+		},
+		keydown: function(event) {
+			// Buttons: Space, Enter
+			if (/(13|32)/.test(event.keyCode)) {
+				// Off scroll on press space button
+				event.preventDefault();
+
+				this.change();
+			}
+		},
 		clicked: function(event) {
 			if ($(event.target).hasClass('active')) {
 				return;
 			}
 
-			$(this.element).prop('checked', !this.element.checked).change();
+			this.change();
 		},
 		render: function() {
 			this.$buttons.removeClass('active ' + this.options.onClass + ' ' + this.options.offClass);
