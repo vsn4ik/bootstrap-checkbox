@@ -45,11 +45,9 @@
 			}
 		},
 		clicked: function(event) {
-			if ($(event.target).hasClass('active')) {
-				return;
+			if (!$(event.target).hasClass('active')) {
+				this.change();
 			}
-
-			this.change();
 		},
 		render: function() {
 			this.$buttons.removeClass('active ' + this.options.onClass + ' ' + this.options.offClass);
