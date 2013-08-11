@@ -32,8 +32,25 @@
 	};
 
 	Checkboxpicker.prototype = {
+		render: function() {
+			this.$buttons.removeClass('active btn-default ' + this.options.onClass + ' ' + this.options.offClass);
+
+			if (this.element.checked) {
+				this.$on.addClass('active ' + this.options.onClass);
+			}
+			else {
+				this.$off.addClass('active ' + this.options.offClass);
+			}
+
+			this.$buttons.not('.active').addClass('btn-default');
+		},
 		change: function() {
 			$(this.element).prop('checked', !this.element.checked).change();
+		},
+		clicked: function(event) {
+			if (!$(event.target).hasClass('active')) {
+				this.change();
+			}
 		},
 		keydown: function(event) {
 			// Buttons: Space, Enter
@@ -42,21 +59,6 @@
 				event.preventDefault();
 
 				this.change();
-			}
-		},
-		clicked: function(event) {
-			if (!$(event.target).hasClass('active')) {
-				this.change();
-			}
-		},
-		render: function() {
-			this.$buttons.removeClass('active ' + this.options.onClass + ' ' + this.options.offClass);
-
-			if (this.element.checked) {
-				this.$on.addClass('active ' + this.options.onClass);
-			}
-			else {
-				this.$off.addClass('active ' + this.options.offClass);
 			}
 		}
 	};
