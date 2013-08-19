@@ -25,10 +25,14 @@
 
 		$(element).hide().change(this.render.bind(this));
 
-		$('<div class="btn-group" tabindex="0">')
+		var $group = $('<div class="btn-group">')
 			.append(this.$buttons)
 			.insertAfter(element)
 			.keydown(this.keydown.bind(this));
+
+		if (!element.disabled) {
+			$group.attr('tabindex', 0);
+		}
 	};
 
 	Checkboxpicker.prototype = {
