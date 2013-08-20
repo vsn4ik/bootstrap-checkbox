@@ -57,9 +57,9 @@
 			}
 		},
 		keydown: function(event) {
-			// Buttons: Space, Enter
+			// 13: Spacebar, 32: Enter
 			if (/(13|32)/.test(event.keyCode)) {
-				// Off scroll on press space button
+				// Off scroll on press "Spacebar"
 				event.preventDefault();
 
 				this.change();
