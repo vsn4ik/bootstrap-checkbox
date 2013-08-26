@@ -2,18 +2,18 @@
 <html>
 	{% include head.html %}
 <body>
-	<div class="container-fluid">
-		<div class="hero-unit">
+	<div class="container">
+		<div class="jumbotron">
 			<h1>Bootstrap-checkbox</h1>
-			<p>{{ site.description }}</p>
+			<p class="lead">{{ site.description }}</p>
 		</div>
 
 		{{ content }}
 
-		<footer>
-			<p>Copyright © 2013 vsn4ik
-			<a href="{{ site.repo }}">View on GitHub</a>
-		</footer>
+		<div class="footer">
+			<p>Copyright © 2013 vsn4ik</p>
+			<!--<a href="{{ site.repo }}">View on GitHub</a>-->
+		</div>
 	</div>
 </body>
 </html>
