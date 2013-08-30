@@ -2,20 +2,27 @@
 	"name": "bootstrap-checkbox",
 	"title": "Bootstrap checkbox",
 	"description": "A checkbox component based on bootstrap framework",
-	"keywords": [ "bootstrap", "checkbox", "switch" ],
+	"keywords": [
+		"bootstrap",
+		"checkbox",
+		"switch"
+	],
 	"version": "1.0.0",
-	"author": { "name": "vsn4ik" },
+	"author": {
+		"name": "vsn4ik",
+		"url": "https://github.com/vsn4ik"
+	},
 	"licenses": [
-	{
-		"type": "MIT",
-		"url": "http://opensource.org/licenses/MIT"
-	}
-],
+		{
+			"type": "MIT",
+			"url": "http://opensource.org/licenses/MIT"
+		}
+	],
 	"bugs": "https://github.com/vsn4ik/bootstrap-checkbox/issues",
 	"homepage": "http://github.com/vsn4ik/bootstrap-checkbox",
 	"docs": "http://github.io/vsn4ik/bootstrap-checkbox",
 	"download": "https://github.com/vsn4ik/bootstrap-checkbox",
 	"dependencies": {
-		"jquery": ">= 1.10.0"
+		"jquery": ">=1.10.0"
 	}
 }
