@@ -20,7 +20,7 @@
 	],
 	"bugs": "https://github.com/vsn4ik/bootstrap-checkbox/issues",
 	"homepage": "http://github.com/vsn4ik/bootstrap-checkbox",
-	"docs": "http://github.io/vsn4ik/bootstrap-checkbox",
+	"docs": "http://vsn4ik.github.io/bootstrap-checkbox",
 	"download": "https://github.com/vsn4ik/bootstrap-checkbox",
 	"dependencies": {
 		"jquery": ">=1.10.0"
