@@ -21,24 +21,22 @@
 		this.$on = this.$buttons.eq(0).text(this.options.on);
 		this.$off = this.$buttons.eq(1).text(this.options.off);
 
-		this.render();
+		this.init();
 
 		$(element).hide().change(this.render.bind(this));
 
-		var $group = $('<div class="btn-group">')
+		this.$group = $('<div class="btn-group">')
 			.append(this.$buttons)
 			.insertAfter(element)
 			.keydown(this.keydown.bind(this));
 
 		if (!element.disabled) {
-			$group.attr('tabindex', 0);
+			this.$group.attr('tabindex', 0);
 		}
 	};
 
 	Checkboxpicker.prototype = {
-		render: function() {
-			this.$buttons.removeClass('active btn-default ' + this.options.onClass + ' ' + this.options.offClass);
-
+		init: function() {
 			if (this.element.checked) {
 				this.$on.addClass('active ' + this.options.onClass);
 			}
@@ -47,6 +45,12 @@
 			}
 
 			this.$buttons.not('.active').addClass('btn-default');
+		},
+		render: function() {
+			this.$group.not(':focus').focus();
+			this.$buttons.toggleClass('active btn-default');
+			this.$on.toggleClass(this.options.onClass);
+			this.$off.toggleClass(this.options.offClass);
 		},
 		change: function() {
 			$(this.element).prop('checked', !this.element.checked).change();
