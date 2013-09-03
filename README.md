@@ -16,4 +16,4 @@ Three quick start options are available:
 
 ## Copyright and license
 
-Copyright 2013 vsn4ik under [the MIT license](LICENSE).
+Copyright (c) 2013 vsn4ik under [The MIT License](LICENSE).
