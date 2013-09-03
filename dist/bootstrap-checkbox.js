@@ -38,10 +38,10 @@
 	Checkboxpicker.prototype = {
 		init: function() {
 			if (this.element.checked) {
-				this.$on.addClass('active ' + this.options.onClass);
+				this.$on.addClass('active ' + this.options.on_class);
 			}
 			else {
-				this.$off.addClass('active ' + this.options.offClass);
+				this.$off.addClass('active ' + this.options.off_class);
 			}
 
 			this.$buttons.not('.active').addClass('btn-default');
@@ -49,8 +49,8 @@
 		render: function() {
 			this.$group.not(':focus').focus();
 			this.$buttons.toggleClass('active btn-default');
-			this.$on.toggleClass(this.options.onClass);
-			this.$off.toggleClass(this.options.offClass);
+			this.$on.toggleClass(this.options.on_class);
+			this.$off.toggleClass(this.options.off_class);
 		},
 		change: function() {
 			$(this.element).prop('checked', !this.element.checked).change();
@@ -80,7 +80,7 @@
 	$.fn.checkboxpicker.defaults = {
 		on: 'Yes',
 		off: 'No',
-		onClass: 'btn-success',
-		offClass: 'btn-danger'
+		on_class: 'btn-success',
+		off_class: 'btn-danger'
 	};
 })(window.jQuery);
