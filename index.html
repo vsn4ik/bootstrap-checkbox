@@ -4,16 +4,33 @@ title: Bootstrap-checkbox
 ---
 
 <div class="row">
-	<div class="col-lg-6">
-		<h4>Example 1</h4>
+	<div class="col-sm-6">
+{% highlight html %}
+<head>
+	<script src="//code.jquery.com/jquery.js"></script>
+	<script src="dist/bootstrap-checkbox.js"></script>
+</head>
+{% endhighlight %}
+	</div>
+
+	<div class="col-sm-6">
 		<p>Enable Bootstrap-checkbox via JavaScript:</p>
 {% highlight js %}
 $(':checkbox').checkboxpicker();
 {% endhighlight %}
+		<p>Or just</p>
+{% highlight js %}
+$('input[type="checkbox"]').checkboxpicker();
+{% endhighlight %}
 	</div>
 
-	<div class="col-lg-6">
-		<h4>Example 2</h4>
+	<div class="col-sm-6">
+		<h4>Example 1</h4>
 		<input type="checkbox">
+	</div>
+
+	<div class="col-sm-6">
+		<h4>Example 2</h4>
+		<input type="checkbox" data-onClass="btn-primary" data-offClass="btn-success">
 	</div>
 </div>
