@@ -44,11 +44,11 @@
 				this.$off.addClass('active ' + this.options.off_class);
 			}
 
-			this.$buttons.not('.active').addClass('btn-default');
+			this.$buttons.not('.active').addClass(this.options.default_class);
 		},
 		render: function() {
 			this.$group.not(':focus').focus();
-			this.$buttons.toggleClass('active btn-default');
+			this.$buttons.toggleClass('active ' + this.options.default_class);
 			this.$on.toggleClass(this.options.on_class);
 			this.$off.toggleClass(this.options.off_class);
 		},
@@ -81,6 +81,7 @@
 		on: 'Yes',
 		off: 'No',
 		on_class: 'btn-success',
-		off_class: 'btn-danger'
+		off_class: 'btn-danger',
+		default_class: 'btn-default'
 	};
 })(window.jQuery);
