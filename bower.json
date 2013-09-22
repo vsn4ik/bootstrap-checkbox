@@ -7,6 +7,9 @@
 	"homepage": "https://github.com/vsn4ik/bootstrap-checkbox",
 	"description": "A checkbox component based on bootstrap framework",
 	"main": "dist/bootstrap-checkbox.js",
+	"ignore": [
+		"bower.json"
+	],
 	"keywords": [
 		"bootstrap",
 		"checkbox",
