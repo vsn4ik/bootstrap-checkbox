@@ -8,7 +8,9 @@
 	"description": "A checkbox component based on bootstrap framework",
 	"main": "dist/bootstrap-checkbox.js",
 	"ignore": [
-		"bootstrap-checkbox.jquery.json"
+		"bower.json",
+		"bootstrap-checkbox.jquery.json",
+		"README.md"
 	],
 	"keywords": [
 		"bootstrap",
