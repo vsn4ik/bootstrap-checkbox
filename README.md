@@ -5,7 +5,7 @@
 Three quick start options are available:
 
 * [Download the latest release](https://github.com/vsn4ik/bootstrap-checkbox/releases/tag/v1.0.2).
-* Clone the repo: `git clone git://github.com/vsn4ik/bootstrap-checkbox.git`.
+* Clone the repo: `git clone https://github.com/vsn4ik/bootstrap-checkbox.git`.
 * Install with [Bower](http://bower.io): `bower install bootstrap-checkbox`.
 
 ## Authors
@@ -16,4 +16,4 @@ Three quick start options are available:
 
 ## Copyright and license
 
-Copyright (c) 2013 vsn4ik under [The MIT License](LICENSE).
+Copyright (c) 2013 vsn4ik under [the MIT License](LICENSE).
