@@ -12,7 +12,7 @@ Three quick start options are available:
 
 **vsn4ik**
 
-+ [https://github.com/vsn4ik](https://github.com/vsn4ik)
++ <https://github.com/vsn4ik>
 
 ## Copyright and license
 
