@@ -18,8 +18,8 @@
 			.prop('disabled', element.disabled)
 			.click(this.clicked.bind(this));
 
-		this.$on = this.$buttons.eq(0);
-		this.$off = this.$buttons.eq(1);
+		this.$on = this.$buttons.eq(0).html(this.options.onLabel);
+		this.$off = this.$buttons.eq(1).html(this.options.offLabel);
 
 		this.init();
 
@@ -37,9 +37,6 @@
 
 	Checkboxpicker.prototype = {
 		init: function() {
-			this.$on.html(this.options.onLabel);
-			this.$off.html(this.options.offLabel);
-
 			if (this.element.checked) {
 				this.$on.addClass('active ' + this.options.onClass);
 			}
@@ -47,11 +44,11 @@
 				this.$off.addClass('active ' + this.options.offClass);
 			}
 
-			this.$buttons.not('.active').addClass('btn-default');
+			this.$buttons.not('.active').addClass(this.options.defaultClass);
 		},
 		render: function() {
 			this.$group.not(':focus').focus();
-			this.$buttons.toggleClass('active btn-default');
+			this.$buttons.toggleClass('active ' + this.options.defaultClass);
 			this.$on.toggleClass(this.options.onClass);
 			this.$off.toggleClass(this.options.offClass);
 		},
@@ -86,6 +83,7 @@
 		onLabel: 'Yes',
 		offLabel: 'No',
 		onClass: 'btn-success',
-		offClass: 'btn-danger'
+		offClass: 'btn-danger',
+		defaultClass: 'btn-default'
 	};
 })(window.jQuery);
