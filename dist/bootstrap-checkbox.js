@@ -18,8 +18,8 @@
 			.prop('disabled', element.disabled)
 			.click(this.clicked.bind(this));
 
-		this.$on = this.$buttons.eq(0).text(this.options.on);
-		this.$off = this.$buttons.eq(1).text(this.options.off);
+		this.$on = this.$buttons.eq(0);
+		this.$off = this.$buttons.eq(1);
 
 		this.init();
 
@@ -37,11 +37,14 @@
 
 	Checkboxpicker.prototype = {
 		init: function() {
+			this.$on.html(this.options.onLabel);
+			this.$off.html(this.options.offLabel);
+
 			if (this.element.checked) {
-				this.$on.addClass('active ' + this.options.on_class);
+				this.$on.addClass('active ' + this.options.onClass);
 			}
 			else {
-				this.$off.addClass('active ' + this.options.off_class);
+				this.$off.addClass('active ' + this.options.offClass);
 			}
 
 			this.$buttons.not('.active').addClass('btn-default');
@@ -49,8 +52,8 @@
 		render: function() {
 			this.$group.not(':focus').focus();
 			this.$buttons.toggleClass('active btn-default');
-			this.$on.toggleClass(this.options.on_class);
-			this.$off.toggleClass(this.options.off_class);
+			this.$on.toggleClass(this.options.onClass);
+			this.$off.toggleClass(this.options.offClass);
 		},
 		change: function() {
 			$(this.element).prop('checked', !this.element.checked).change();
@@ -77,10 +80,12 @@
 		});
 	};
 
+	// HTML5 data-*.
+	// <input data-on-label="43"> --> ('...').data('onLabel') === 43.
 	$.fn.checkboxpicker.defaults = {
-		on: 'Yes',
-		off: 'No',
-		on_class: 'btn-success',
-		off_class: 'btn-danger'
+		onLabel: 'Yes',
+		offLabel: 'No',
+		onClass: 'btn-success',
+		offClass: 'btn-danger'
 	};
 })(window.jQuery);
