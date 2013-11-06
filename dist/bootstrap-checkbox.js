@@ -86,4 +86,4 @@
 		offClass: 'btn-danger',
 		defaultClass: 'btn-default'
 	};
-})(window.jQuery);
+})(jQuery);
