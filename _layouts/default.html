@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
-	{% include head.html %}
+<head>
+	<!-- Meta, title, CSS, favicons, etc. -->
+	{% include header.html %}
+</head>
 <body>
 	<div class="container">
 		<div class="jumbotron">
@@ -16,8 +19,7 @@
 		</div>
 	</div>
 
-	<script src="https://code.jquery.com/jquery.min.js"></script>
-	<script src="./dist/bootstrap-checkbox.js"></script>
-	<script src="./assets/js/index.js"></script>
+	<!-- JS only. -->
+	{% include footer.html %}
 </body>
 </html>
