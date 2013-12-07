@@ -6,16 +6,23 @@ title: Bootstrap-checkbox
 <div class="row">
 	<div class="col-sm-12">
 {% highlight html %}
+<!DOCTYPE html>
+<html>
 <head>
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+	<!-- Latest compiled and minified Bootstrap CSS -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
 
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap-theme.min.css">
-
-	<script src="//code.jquery.com/jquery.min.js"></script>
-	<script src="bootstrap-checkbox.js"></script>
+	<!-- Optional Bootstrap theme -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
 </head>
+<body>
+	...
+
+	<!-- jQuery (necessary for Bootstrap's and Bootstrap-checkbox JavaScript plugins) -->
+	<script src="https//code.jquery.com/jquery.min.js"></script>
+	<script src="dist/bootstrap-checkbox.min.js"></script>
+</body>
+</html>
 {% endhighlight %}
 	</div>
 
@@ -50,36 +57,36 @@ $('input[type="checkbox"]').checkboxpicker();
 		<thead>
 			<tr>
 				<th>Property</th>
+				<th>Type</th>
 				<th>Default</th>
-				<th>Description</th>
 			</tr>
 		</thead>
 
 		<tbody>
 			<tr>
 				<td>onLabel</td>
-				<td>Yes</td>
-				<td>...</td>
+				<td>string</td>
+				<td><code>Yes</code></td>
 			</tr>
 			<tr>
 				<td>offLabel</td>
-				<td>No</td>
-				<td>...</td>
+				<td>string</td>
+				<td><code>No</code></td>
 			</tr>
 			<tr>
 				<td>onClass</td>
-				<td>btn-success</td>
-				<td>...</td>
+				<td>string</td>
+				<td><code>btn-success</code></td>
 			</tr>
 			<tr>
 				<td>offClass</td>
-				<td>btn-danger</td>
-				<td>...</td>
+				<td>string</td>
+				<td><code>btn-danger</code></td>
 			</tr>
 			<tr>
 				<td>defaultClass</td>
-				<td>btn-default</td>
-				<td>...</td>
+				<td>string</td>
+				<td><code>btn-default</code></td>
 			</tr>
 		</tbody>
 	</table>

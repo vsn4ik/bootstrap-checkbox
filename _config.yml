@@ -3,4 +3,4 @@ pygments: true
 
 # Custom vars
 repo: https://github.com/vsn4ik/bootstrap-checkbox
-description: A checkbox component based on bootstrap framework
+description: A checkbox component based on bootstrap framework.
