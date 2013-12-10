@@ -62,7 +62,7 @@
 		},
 		keydown: function(event) {
 			// 13: Enter, 32: Spacebar
-			if (/(13|32)/.test(event.keyCode)) {
+			if (/^(13|32)$/.test(event.keyCode)) {
 				// Off scroll on press "Spacebar"
 				event.preventDefault();
 
