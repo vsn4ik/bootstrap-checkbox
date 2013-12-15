@@ -5,6 +5,11 @@
  * Copyright (c) 2013 vsn4ik
  * Licensed under the MIT License
  */
+
+if (typeof jQuery === 'undefined') {
+	throw new Error('Bootstrap-checkbox requires jQuery');
+}
+
 (function($) {
 	'use strict';
 
