@@ -28,4 +28,5 @@ For some working examples of bootstrap-checkbox, visit our [examples page](http:
 
 ## License
 Copyright 2013 vsn4ik.
+
 Licensed under [the MIT License](LICENSE).
