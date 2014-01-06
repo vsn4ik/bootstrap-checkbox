@@ -2,9 +2,14 @@
  * Bootstrap-checkbox
  * http://vsn4ik.github.io/bootstrap-checkbox
  *
- * Copyright (c) 2013 vsn4ik
+ * Copyright (c) 2014 vsn4ik
  * Licensed under the MIT License
  */
+
+if (typeof jQuery === 'undefined') {
+	throw new Error('Bootstrap-checkbox requires jQuery');
+}
+
 (function($) {
 	'use strict';
 
@@ -29,6 +34,19 @@
 			.append(this.$buttons)
 			.insertAfter(element)
 			.keydown(this.keydown.bind(this));
+
+		if (element.title) {
+			this.$group.attr('title', element.title);
+		}
+		else {
+			if (this.options.onTitle) {
+				this.$on.attr('title', this.options.onTitle);
+			}
+
+			if (this.options.offTitle) {
+				this.$off.attr('title', this.options.offTitle);
+			}
+		}
 
 		if (!element.disabled) {
 			this.$group.attr('tabindex', 0);
@@ -61,8 +79,8 @@
 			}
 		},
 		keydown: function(event) {
-			// 13: Spacebar, 32: Enter
-			if (/(13|32)/.test(event.keyCode)) {
+			// 13: Return, 32: Spacebar
+			if (/^(13|32)$/.test(event.keyCode)) {
 				// Off scroll on press "Spacebar"
 				event.preventDefault();
 
@@ -78,12 +96,14 @@
 	};
 
 	// HTML5 data-*.
-	// <input data-on-label="43"> --> ('...').data('onLabel') === 43.
+	// <input data-on-label="43"> --> $('input').data('onLabel') == '43'.
 	$.fn.checkboxpicker.defaults = {
-		onLabel: 'Yes',
-		offLabel: 'No',
+		defaultClass: 'btn-default',
 		onClass: 'btn-success',
 		offClass: 'btn-danger',
-		defaultClass: 'btn-default'
+		onLabel: 'Yes',
+		offLabel: 'No',
+		onTitle: false,
+		offTitle: false
 	};
-})(window.jQuery);
+})(jQuery);
