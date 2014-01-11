@@ -2,7 +2,7 @@
  * Bootstrap-checkbox
  * http://vsn4ik.github.io/bootstrap-checkbox
  *
- * Copyright (c) 2014 vsn4ik
+ * Copyright 2013-2014 vsn4ik
  * Licensed under the MIT License
  */
 
@@ -17,14 +17,11 @@ if (typeof jQuery === 'undefined') {
 		this.element = element;
 		this.options = $.extend({}, $.fn.checkboxpicker.defaults, options, $(element).data());
 
-		this.$buttons = $('<button><button>')
-			.addClass('btn')
-			.attr({ type: 'button', tabindex: -1 })
-			.prop('disabled', element.disabled)
-			.click(this.clicked.bind(this));
+		// .btn-group-justified only works with <a> elements as the <button> doesn't pick up the styles
+		this.$buttons = $('<a><a>').addClass('btn').click(this.clicked.bind(this));
 
-		this.$on = this.$buttons.eq(0).html(this.options.onLabel);
-		this.$off = this.$buttons.eq(1).html(this.options.offLabel);
+		this.$off = this.$buttons.eq(0).html(this.options.offLabel);
+		this.$on = this.$buttons.eq(1).html(this.options.onLabel);
 
 		this.init();
 
@@ -32,23 +29,30 @@ if (typeof jQuery === 'undefined') {
 
 		this.$group = $('<div class="btn-group">')
 			.append(this.$buttons)
-			.insertAfter(element)
-			.keydown(this.keydown.bind(this));
+			.keydown(this.keydown.bind(this))
+			.insertAfter(element);
+
+		if (this.options.style) {
+			this.$group.addClass(this.options.style);
+		}
 
 		if (element.title) {
 			this.$group.attr('title', element.title);
 		}
 		else {
-			if (this.options.onTitle) {
-				this.$on.attr('title', this.options.onTitle);
-			}
-
 			if (this.options.offTitle) {
 				this.$off.attr('title', this.options.offTitle);
 			}
+
+			if (this.options.onTitle) {
+				this.$on.attr('title', this.options.onTitle);
+			}
 		}
 
-		if (!element.disabled) {
+		if (element.disabled) {
+			this.$buttons.addClass('disabled');
+		}
+		else {
 			this.$group.attr('tabindex', 0);
 		}
 	};
@@ -67,8 +71,8 @@ if (typeof jQuery === 'undefined') {
 		render: function() {
 			this.$group.not(':focus').focus();
 			this.$buttons.toggleClass('active ' + this.options.defaultClass);
-			this.$on.toggleClass(this.options.onClass);
 			this.$off.toggleClass(this.options.offClass);
+			this.$on.toggleClass(this.options.onClass);
 		},
 		change: function() {
 			$(this.element).prop('checked', !this.element.checked).change();
@@ -98,12 +102,13 @@ if (typeof jQuery === 'undefined') {
 	// HTML5 data-*.
 	// <input data-on-label="43"> --> $('input').data('onLabel') == '43'.
 	$.fn.checkboxpicker.defaults = {
+		style: false,
 		defaultClass: 'btn-default',
-		onClass: 'btn-success',
 		offClass: 'btn-danger',
-		onLabel: 'Yes',
+		onClass: 'btn-success',
 		offLabel: 'No',
-		onTitle: false,
-		offTitle: false
+		onLabel: 'Yes',
+		offTitle: false,
+		onTitle: false
 	};
 })(jQuery);
