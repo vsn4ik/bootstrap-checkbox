@@ -1,5 +1,14 @@
 body {
+	cursor: default;
 	padding-top: 20px;
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}
+
+a, label[for] {
+	cursor: pointer;
 }
 
 footer {
