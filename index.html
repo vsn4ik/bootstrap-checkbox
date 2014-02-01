@@ -10,10 +10,10 @@ title: Bootstrap-checkbox
 <html>
 <head>
 	<!-- Latest compiled and minified Bootstrap CSS -->
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
 
 	<!-- Optional Bootstrap theme -->
-	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
 </head>
 <body>
 	...
@@ -109,7 +109,7 @@ $('input[type="checkbox"]').checkboxpicker();
 
 	<div class="form-group">
 		<div class="col-sm-2">
-			<input type="checkbox" disabled>
+			<input type="checkbox" disabled checked>
 		</div>
 
 		<div class="col-sm-10">
@@ -121,7 +121,7 @@ $('input[type="checkbox"]').checkboxpicker();
 
 	<div class="form-group">
 		<div class="col-sm-2">
-			<input type="checkbox" title="Example title" checked>
+			<input type="checkbox" title="Example title">
 		</div>
 
 		<div class="col-sm-10">
@@ -133,12 +133,14 @@ $('input[type="checkbox"]').checkboxpicker();
 
 	<div class="form-group">
 		<div class="col-sm-2">
-			<input type="checkbox" data-style="btn-group-justified">
+			<input type="checkbox" checked data-style="btn-group-justified">
 		</div>
 
 		<div class="col-sm-10">
 {% highlight html %}
-<input type="checkbox" data-style="btn-group-justified">
+<div class="col-sm-2">
+	<input type="checkbox" checked data-style="btn-group-justified">
+</div>
 {% endhighlight %}
 		</div>
 	</div>
@@ -157,12 +159,25 @@ $('input[type="checkbox"]').checkboxpicker();
 
 	<div class="form-group">
 		<div class="col-sm-2">
-			<input type="checkbox" data-on-class="btn-primary" data-off-class="btn-success" data-off-label="<span class='glyphicon glyphicon-star'></span>">
+			<input type="checkbox" data-off-label="<span class='glyphicon glyphicon-thumbs-down'></span>" data-on-label="<span class='glyphicon glyphicon-thumbs-up'></span>">
 		</div>
 
 		<div class="col-sm-10">
 {% highlight html %}
-<input type="checkbox" data-on-class="btn-primary" data-off-class="btn-success" data-off-label="<span class='glyphicon glyphicon-star'></span>">
+<input type="checkbox" data-off-label="<span class='glyphicon glyphicon-thumbs-down'></span>" data-on-label="<span class='glyphicon glyphicon-thumbs-up'></span>">
 {% endhighlight %}
+		</div>
+	</div>
+
+	<div class="form-group">
+		<div class="col-sm-2">
+			<input type="checkbox" checked data-on-class="btn-primary" data-off-class="btn-warning">
+		</div>
+
+		<div class="col-sm-10">
+{% highlight html %}
+<input type="checkbox" checked data-on-class="btn-primary" data-off-class="btn-warning">
+{% endhighlight %}
+		</div>
 	</div>
 </div>
