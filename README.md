@@ -1,4 +1,4 @@
-# [Bootstrap-checkbox](http://vsn4ik.github.io/bootstrap-checkbox) ![Bower version](https://badge.fury.io/bo/bootstrap-checkbox.png)
+# [Bootstrap-checkbox](http://vsn4ik.github.io/bootstrap-checkbox) [![Bower version](https://badge.fury.io/bo/bootstrap-checkbox.png)](http://badge.fury.io/bo/bootstrap-checkbox)
 
 ## Getting Started
 Three quick start options are available:
