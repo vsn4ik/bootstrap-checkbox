@@ -1,11 +1,12 @@
 {
 	"name": "bootstrap-checkbox",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"authors": [
 		"vsn4ik"
 	],
 	"homepage": "https://github.com/vsn4ik/bootstrap-checkbox",
 	"description": "A checkbox component based on bootstrap framework",
+	"main": "dist/bootstrap-checkbox.js",
 	"ignore": [
 		"bower.json",
 		"README.md"
