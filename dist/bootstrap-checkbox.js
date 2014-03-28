@@ -19,13 +19,13 @@ if (typeof jQuery === 'undefined') {
 
 		this.options = $.extend({}, $.fn.checkboxpicker.defaults, options, this.$element.data());
 
-		// .btn-group-justified only works with <a> elements as the <button> doesn't pick up the styles
-		this.$buttons = $('<a><a>').addClass('btn').click(this.clicked.bind(this));
+		// .btn-group-justified works with <label> elements as the <button> doesn't pick up the styles
+		this.$buttons = $('<label></label><label></label>').addClass('btn').click(this.clicked.bind(this));
 
 		this.$off = this.$buttons.eq(0).html(this.options.offLabel);
 		this.$on = this.$buttons.eq(1).html(this.options.onLabel);
 
-		this.$group = $('<div class="btn-group">')
+		this.$group = $('<div class="btn-group"></div>')
 			.append(this.$buttons)
 			.keydown(this.keydown.bind(this))
 			.insertAfter(element);
