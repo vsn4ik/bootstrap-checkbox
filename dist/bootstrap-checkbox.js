@@ -6,13 +6,13 @@
  * Licensed under the MIT License
  */
 
+'use strict';
+
 if (typeof jQuery === 'undefined') {
 	throw new Error('Bootstrap-checkbox requires jQuery');
 }
 
 (function($) {
-	'use strict';
-
 	var Checkboxpicker = function(element, options) {
 		this.element = element;
 		this.$element = $(element).hide();

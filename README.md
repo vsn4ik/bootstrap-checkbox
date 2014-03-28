@@ -11,8 +11,8 @@ Three quick start options are available:
 For some working examples of bootstrap-checkbox, visit our [examples page](http://vsn4ik.github.io/bootstrap-checkbox).
 
 ## Min Requirements
-* Bootstrap 2.3.2+
-* jQuery 1.7+
+* Bootstrap 2.3.2
+* jQuery 1.9.0
 
 ## Browser Support
 * Chrome
