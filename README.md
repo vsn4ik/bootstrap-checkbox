@@ -8,7 +8,7 @@ Three quick start options are available:
 * Install with [Bower](http://bower.io): `bower install bootstrap-checkbox`.
 
 ## Examples
-For some working examples of bootstrap-checkbox, visit our [examples page](http://vsn4ik.github.io/bootstrap-checkbox).
+For some working examples of bootstrap-checkbox, visit our [examples page](http://vsn4ik.github.io/bootstrap-checkbox/#examples).
 
 ## Min Requirements
 * Bootstrap 2.3.2
