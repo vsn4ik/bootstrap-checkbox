@@ -101,7 +101,14 @@ if (typeof jQuery === 'undefined') {
 
 	$.fn.checkboxpicker = function(options) {
 		return this.each(function() {
-			new Checkboxpicker(this, options);
+			var $this = $(this);
+			var data = $this.data('checkboxpicker');
+
+			if (!data) {
+				data = new Checkboxpicker(this, options);
+
+				$this.data('checkboxpicker', data);
+			}
 		});
 	};
 
