@@ -105,9 +105,9 @@ if (typeof jQuery === 'undefined') {
 			var data = $this.data('checkboxpicker');
 
 			if (!data) {
-				data = new Checkboxpicker(this, options);
+				new Checkboxpicker(this, options);
 
-				$this.data('checkboxpicker', data);
+				$this.data('checkboxpicker', true);
 			}
 		});
 	};
