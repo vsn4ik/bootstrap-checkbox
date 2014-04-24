@@ -67,7 +67,7 @@ if (typeof jQuery === 'undefined') {
 			else {
 				this.$element.change(this.render.bind(this));
 
-				this.$group.attr('tabindex', 0);
+				this.$group.attr('tabindex', this.element.tabIndex);
 
 				if (this.element.autofocus) {
 					this.$group.focus();
