@@ -65,16 +65,18 @@ if (typeof jQuery === 'undefined') {
 				this.$buttons.addClass('disabled');
 			}
 			else {
-				this.$element.change(this.render.bind(this));
+				this.$element.change(this.toggle.bind(this));
 
 				this.$group.attr('tabindex', this.element.tabIndex);
 
 				if (this.element.autofocus) {
 					this.$group.focus();
 				}
+
+				$(this.element.form).on('reset', this.reset.bind(this));
 			}
 		},
-		render: function() {
+		toggle: function() {
 			this.$group.not(':focus').focus();
 			this.$buttons.toggleClass('active ' + this.options.defaultClass);
 			this.$off.toggleClass(this.options.offClass);
@@ -95,6 +97,11 @@ if (typeof jQuery === 'undefined') {
 				event.preventDefault();
 
 				this.change();
+			}
+		},
+		reset: function() {
+			if ((this.element.defaultChecked && this.$off.hasClass('active')) || (!this.element.defaultChecked && this.$on.hasClass('active'))) {
+				this.toggle();
 			}
 		}
 	};
