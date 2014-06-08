@@ -1,4 +1,5 @@
-# [Bootstrap-checkbox](http://vsn4ik.github.io/bootstrap-checkbox) [![Bower version](https://badge.fury.io/bo/bootstrap-checkbox.svg)](http://badge.fury.io/bo/bootstrap-checkbox)
+# [Bootstrap-checkbox](http://vsn4ik.github.io/bootstrap-checkbox)
+[![Bower version](https://badge.fury.io/bo/bootstrap-checkbox.svg)](http://badge.fury.io/bo/bootstrap-checkbox)
 
 ## Getting Started
 Three quick start options are available:
@@ -22,7 +23,7 @@ For some working examples of bootstrap-checkbox, visit our [examples page](http:
 * Internet Explorer 9+
 * Opera 11+
 
-## Authors
+## Creators
 **vsn4ik**
 + <https://github.com/vsn4ik>
 
