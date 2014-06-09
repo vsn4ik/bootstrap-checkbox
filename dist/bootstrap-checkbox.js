@@ -15,7 +15,9 @@ if (typeof jQuery === 'undefined') {
 (function($) {
 	var Checkboxpicker = function(element, options) {
 		this.element = element;
-		this.$element = $(element).hide();
+
+		// Change .prop('hidden', true) -> .hide() in future
+		this.$element = $(element).prop('hidden', true);
 
 		this.options = $.extend({}, $.fn.checkboxpicker.defaults, options, this.$element.data());
 
@@ -63,20 +65,19 @@ if (typeof jQuery === 'undefined') {
 
 			if (this.element.disabled) {
 				this.$buttons.addClass('disabled');
+				this.$group.css('cursor', 'not-allowed');
 			}
 			else {
-				this.$element.change(this.toggle.bind(this));
+				this.$element.change(this.render.bind(this));
 
-				this.$group.attr('tabindex', this.element.tabIndex);
+				this.$group.attr('tabindex', 0);
 
 				if (this.element.autofocus) {
 					this.$group.focus();
 				}
-
-				$(this.element.form).on('reset', this.reset.bind(this));
 			}
 		},
-		toggle: function() {
+		render: function() {
 			this.$group.not(':focus').focus();
 			this.$buttons.toggleClass('active ' + this.options.defaultClass);
 			this.$off.toggleClass(this.options.offClass);
@@ -98,24 +99,12 @@ if (typeof jQuery === 'undefined') {
 
 				this.change();
 			}
-		},
-		reset: function() {
-			if ((this.element.defaultChecked && this.$off.hasClass('active')) || (!this.element.defaultChecked && this.$on.hasClass('active'))) {
-				this.toggle();
-			}
 		}
 	};
 
 	$.fn.checkboxpicker = function(options) {
 		return this.each(function() {
-			var $this = $(this);
-			var data = $this.data('checkboxpicker');
-
-			if (!data) {
-				new Checkboxpicker(this, options);
-
-				$this.data('checkboxpicker', true);
-			}
+			new Checkboxpicker(this, options);
 		});
 	};
 
