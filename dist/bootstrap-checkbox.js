@@ -15,7 +15,9 @@ if (typeof jQuery === 'undefined') {
 (function($) {
 	var Checkboxpicker = function(element, options) {
 		this.element = element;
-		this.$element = $(element).hide();
+
+		// Change .prop('hidden', true) -> .hide() in future
+		this.$element = $(element).prop('hidden', true);
 
 		this.options = $.extend({}, $.fn.checkboxpicker.defaults, options, this.$element.data());
 
@@ -63,6 +65,7 @@ if (typeof jQuery === 'undefined') {
 
 			if (this.element.disabled) {
 				this.$buttons.addClass('disabled');
+				this.$group.css('cursor', 'not-allowed');
 			}
 			else {
 				this.$element.change(this.toggle.bind(this));
