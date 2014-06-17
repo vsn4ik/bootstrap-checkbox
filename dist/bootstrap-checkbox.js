@@ -13,30 +13,28 @@ if (typeof jQuery === 'undefined') {
 }
 
 (function($) {
-	var Checkboxpicker = function(element, options) {
+	function Checkboxpicker(element, options) {
 		this.element = element;
-
-		// Change .prop('hidden', true) -> .hide() in future
-		this.$element = $(element).prop('hidden', true);
-
+		this.$element = $(element);
 		this.options = $.extend({}, $.fn.checkboxpicker.defaults, options, this.$element.data());
 
-		// .btn-group-justified works with <label> elements as the <button> doesn't pick up the styles
-		this.$buttons = $('<label></label><label></label>').addClass('btn').click(this.clicked.bind(this));
+		this.$group = $('<div class="btn-group">');
 
-		this.$off = this.$buttons.eq(0).html(this.options.offLabel);
-		this.$on = this.$buttons.eq(1).html(this.options.onLabel);
+		// .btn-group-justified works with <a> elements as the <button> doesn't pick up the styles
+		this.$buttons = $('<a><a>').addClass('btn');
 
-		this.$group = $('<div class="btn-group"></div>')
-			.append(this.$buttons)
-			.keydown(this.keydown.bind(this))
-			.insertAfter(element);
+		this.$off = this.$buttons.eq(0);
+		this.$on = this.$buttons.eq(1);
 
 		this.init();
 	};
 
 	Checkboxpicker.prototype = {
 		init: function() {
+			this.$element.prop('hidden', true);
+			this.$off.html(this.options.offLabel);
+			this.$on.html(this.options.onLabel);
+
 			if (this.element.checked) {
 				this.$on.addClass('active ' + this.options.onClass);
 			}
@@ -50,10 +48,11 @@ if (typeof jQuery === 'undefined') {
 				this.$group.addClass(this.options.style);
 			}
 
+			// Attribute title (offTitle, onTitle) on this.$buttons not work (native) if this.element.disabled
 			if (this.element.title) {
 				this.$group.attr('title', this.element.title);
 			}
-			else {
+			else if (!this.element.disabled) {
 				if (this.options.offTitle) {
 					this.$off.attr('title', this.options.offTitle);
 				}
@@ -68,9 +67,9 @@ if (typeof jQuery === 'undefined') {
 				this.$group.css('cursor', 'not-allowed');
 			}
 			else {
+				this.$buttons.click(this.clicked.bind(this));
 				this.$element.change(this.toggle.bind(this));
-
-				this.$group.attr('tabindex', this.element.tabIndex);
+				this.$group.attr('tabindex', this.element.tabIndex).keydown(this.keydown.bind(this));
 
 				if (this.element.autofocus) {
 					this.$group.focus();
@@ -78,6 +77,8 @@ if (typeof jQuery === 'undefined') {
 
 				$(this.element.form).on('reset', this.reset.bind(this));
 			}
+
+			this.$group.append(this.$buttons).insertAfter(this.element);
 		},
 		toggle: function() {
 			this.$group.not(':focus').focus();
