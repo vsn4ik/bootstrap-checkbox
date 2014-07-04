@@ -1,5 +1,7 @@
 'use strict';
 
 $(function() {
-	$(':checkbox').checkboxpicker();
+	$(':checkbox').checkboxpicker({
+		style: 'm-b'
+	});
 });

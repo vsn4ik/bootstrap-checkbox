@@ -5,3 +5,11 @@ body {
 footer {
 	padding-bottom: 10px;
 }
+
+label[for] {
+	cursor: pointer;
+}
+
+.m-b {
+	margin-bottom: 15px;
+}
