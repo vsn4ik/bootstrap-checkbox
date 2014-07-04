@@ -27,7 +27,7 @@ if (typeof jQuery === 'undefined') {
 		this.$on = this.$buttons.eq(1);
 
 		this.init();
-	};
+	}
 
 	Checkboxpicker.prototype = {
 		init: function() {
@@ -37,12 +37,12 @@ if (typeof jQuery === 'undefined') {
 
 			if (this.element.checked) {
 				this.$on.addClass('active ' + this.options.onClass);
+				this.$off.addClass(this.options.defaultClass);
 			}
 			else {
 				this.$off.addClass('active ' + this.options.offClass);
+				this.$on.addClass(this.options.defaultClass);
 			}
-
-			this.$buttons.not('.active').addClass(this.options.defaultClass);
 
 			if (this.options.style) {
 				this.$group.addClass(this.options.style);
@@ -75,16 +75,24 @@ if (typeof jQuery === 'undefined') {
 					this.$group.focus();
 				}
 
+				if (this.element.id) {
+					$('label[for="' + this.element.id + '"]').click(this.focus.bind(this));
+				}
+
 				$(this.element.form).on('reset', this.reset.bind(this));
 			}
 
 			this.$group.append(this.$buttons).insertAfter(this.element);
 		},
 		toggle: function() {
-			this.$group.not(':focus').focus();
+			// this.$group not focus (incorrect on form reset)
 			this.$buttons.toggleClass('active ' + this.options.defaultClass);
 			this.$off.toggleClass(this.options.offClass);
 			this.$on.toggleClass(this.options.onClass);
+		},
+		focus: function() {
+			// Original behavior
+			this.$group.focus();
 		},
 		change: function() {
 			this.$element.prop('checked', !this.element.checked).change();
@@ -104,6 +112,7 @@ if (typeof jQuery === 'undefined') {
 			}
 		},
 		reset: function() {
+			// this.element.checked not used (incorect on large number of form elements)
 			if ((this.element.defaultChecked && this.$off.hasClass('active')) || (!this.element.defaultChecked && this.$on.hasClass('active'))) {
 				this.toggle();
 			}
