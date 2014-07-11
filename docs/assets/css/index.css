@@ -1,0 +1,20 @@
+body {
+	padding-top: 20px;
+}
+
+footer {
+	padding-bottom: 10px;
+}
+
+label[for] {
+	cursor: pointer;
+}
+
+pre {
+	-moz-tab-size: 2;
+	tab-size: 2;
+}
+
+.m-b {
+	margin-bottom: 15px;
+}

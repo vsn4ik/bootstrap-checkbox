@@ -1,14 +1,17 @@
 {
 	"name": "bootstrap-checkbox",
-	"version": "1.0.11",
+	"version": "1.0.12",
 	"authors": [
 		"vsn4ik"
 	],
 	"homepage": "https://github.com/vsn4ik/bootstrap-checkbox",
-	"description": "A checkbox component based on bootstrap framework",
+	"description": "A checkbox component based on Bootstrap framework",
 	"main": "dist/bootstrap-checkbox.js",
 	"ignore": [
+		".test_file",
+		"_config.yml",
 		"bower.json",
+		"docs",
 		"README.md"
 	],
 	"keywords": [
@@ -18,7 +21,7 @@
 	],
 	"license": "MIT",
 	"dependencies": {
-		"bootstrap": ">=2.3.2",
-		"jquery": ">=1.9.0"
+		"bootstrap": ">= 2.3.2",
+		"jquery": ">= 1.9.0"
 	}
 }
