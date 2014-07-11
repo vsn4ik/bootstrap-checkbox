@@ -16,6 +16,12 @@ if (typeof jQuery === 'undefined') {
 	function Checkboxpicker(element, options) {
 		this.element = element;
 		this.$element = $(element);
+
+		if (this.$element.closest('label').length) {
+			console.warn('Please do not use bootstrap-checkbox element in label element.');
+			return;
+		};
+
 		this.options = $.extend({}, $.fn.checkboxpicker.defaults, options, this.$element.data());
 
 		this.$group = $('<div class="btn-group">');
