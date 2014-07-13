@@ -20,7 +20,7 @@ if (typeof jQuery === 'undefined') {
 		if (this.$element.closest('label').length) {
 			console.warn('Please do not use bootstrap-checkbox element in label element.');
 			return;
-		};
+		}
 
 		this.options = $.extend({}, $.fn.checkboxpicker.defaults, options, this.$element.data());
 
@@ -29,8 +29,11 @@ if (typeof jQuery === 'undefined') {
 		// .btn-group-justified works with <a> elements as the <button> doesn't pick up the styles
 		this.$buttons = $('<a><a>').addClass('btn');
 
-		this.$off = this.$buttons.eq(0);
-		this.$on = this.$buttons.eq(1);
+		// === '': <... data-reverse>
+		var reverse = this.options.reverse || this.options.reverse === '';
+
+		this.$off = this.$buttons.eq(reverse ? 1 : 0);
+		this.$on = this.$buttons.eq(reverse ? 0 : 1);
 
 		this.init();
 	}
