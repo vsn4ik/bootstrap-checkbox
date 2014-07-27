@@ -5,7 +5,7 @@
 ## Getting Started
 Three quick start options are available:
 
-* [Download](https://github.com/vsn4ik/bootstrap-checkbox/archive/master.zip).
+* [Download the latest release](https://github.com/vsn4ik/bootstrap-checkbox/archive/master.zip "Download Bootstrap-checkbox").
 * Clone the repo: `git clone https://github.com/vsn4ik/bootstrap-checkbox.git`.
 * Install with [Bower](http://bower.io): `bower install bootstrap-checkbox`.
 
