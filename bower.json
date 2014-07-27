@@ -4,7 +4,7 @@
 	"authors": [
 		"vsn4ik"
 	],
-	"homepage": "https://github.com/vsn4ik/bootstrap-checkbox",
+	"homepage": "http://vsn4ik.github.io/bootstrap-checkbox",
 	"description": "A checkbox component based on Bootstrap framework",
 	"main": "dist/bootstrap-checkbox.js",
 	"ignore": [
