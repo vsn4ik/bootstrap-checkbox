@@ -17,12 +17,12 @@ For some working examples of bootstrap-checkbox, visit our [examples page](http:
 * jQuery 1.9.0
 
 ## Browser Support
-* Chrome
-* Firefox 14+
-* Safari 4+
+* Google Chrome
+* Mozilla Firefox 14+
+* Opera 11+
+* Apple Safari 4+
 * Internet Explorer 7/8 (used with jQuery 1.x)
 * Internet Explorer 9+
-* Opera 11+
 
 ## Creators
 **vsn4ik**
