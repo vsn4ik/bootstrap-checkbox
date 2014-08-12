@@ -1,5 +1,5 @@
 /**
- * Bootstrap-checkbox v1.0.15 (http://vsn4ik.github.io/bootstrap-checkbox)
+ * Bootstrap-checkbox v1.0.14 (http://vsn4ik.github.io/bootstrap-checkbox)
  * Copyright 2013-2014 vsn4ik
  * Licensed under MIT (https://github.com/vsn4ik/bootstrap-checkbox/blob/master/LICENSE)
  */
