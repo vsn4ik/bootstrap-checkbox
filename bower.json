@@ -1,6 +1,6 @@
 {
 	"name": "bootstrap-checkbox",
-	"version": "1.0.14",
+	"version": "1.0.15",
 	"authors": [
 		"vsn4ik"
 	],
@@ -8,11 +8,10 @@
 	"description": "A checkbox component based on Bootstrap framework",
 	"main": "dist/bootstrap-checkbox.js",
 	"ignore": [
-		".gitignore",
-		"_config.yml",
-		"bower.json",
 		"docs",
+		".gitignore",
 		"README.md"
+		"_config.yml",
 	],
 	"keywords": [
 		"bootstrap",
