@@ -10,8 +10,8 @@
 	"ignore": [
 		"docs",
 		".gitignore",
-		"README.md"
-		"_config.yml",
+		"README.md",
+		"_config.yml"
 	],
 	"keywords": [
 		"bootstrap",
