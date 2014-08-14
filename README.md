@@ -1,6 +1,8 @@
 # [Bootstrap-checkbox](http://vsn4ik.github.io/bootstrap-checkbox)
 
 [![Bower version](https://badge.fury.io/bo/bootstrap-checkbox.svg)](http://badge.fury.io/bo/bootstrap-checkbox)
+[![Build Status](https://travis-ci.org/vsn4ik/bootstrap-checkbox.svg)](https://travis-ci.org/vsn4ik/bootstrap-checkbox)
+[![devDependency Status](https://david-dm.org/vsn4ik/bootstrap-submenu/dev-status.svg)](https://david-dm.org/vsn4ik/bootstrap-checkbox#info=devDependencies)
 
 ## Getting Started
 Three quick start options are available:
