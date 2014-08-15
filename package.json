@@ -14,7 +14,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/vsn4ik/bootstrap-checkbox.git"
+		"url": "https://github.com/vsn4ik/bootstrap-checkbox"
 	},
 	"bugs": {
 		"url": "https://github.com/vsn4ik/bootstrap-checkbox/issues"
