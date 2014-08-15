@@ -1,6 +1,6 @@
 {
 	"name": "bootstrap-checkbox",
-	"version": "1.0.16",
+	"version": "1.0.17",
 	"authors": [
 		"vsn4ik"
 	],
@@ -10,6 +10,7 @@
 	"ignore": [
 		"docs",
 		".gitignore",
+		".npmignore",
 		".travis.yml",
 		"Gruntfile.js",
 		"README.md",

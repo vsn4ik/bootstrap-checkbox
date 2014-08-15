@@ -1,0 +1,10 @@
+# Ignore docs files
+_gh_pages
+
+# Folders to ignore
+docs
+
+.travis.yml
+bower.json
+Gruntfile.js
+_config.yml
