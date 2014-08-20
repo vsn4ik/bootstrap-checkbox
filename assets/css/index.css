@@ -18,3 +18,7 @@ label[for] {
 .m-b {
 	margin-bottom: 15px;
 }
+
+.glyphicon + span {
+	margin-left: 4px;
+}

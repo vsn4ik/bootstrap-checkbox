@@ -1,5 +1,5 @@
 /*!
- * Bootstrap-checkbox v1.0.16 (http://vsn4ik.github.io/bootstrap-checkbox)
+ * Bootstrap-checkbox v1.0.17 (http://vsn4ik.github.io/bootstrap-checkbox)
  * Copyright 2013-2014 vsn4ik
  * Licensed under MIT (https://github.com/vsn4ik/bootstrap-checkbox/blob/master/LICENSE)
  */
@@ -104,12 +104,12 @@ if (typeof jQuery === 'undefined') {
 		change: function() {
 			this.$element.prop('checked', !this.element.checked).change();
 		},
-		clicked: function(event) {
+		clicked: function() {
 			if (!$(event.target).hasClass('active')) {
 				this.change();
 			}
 		},
-		keydown: function(event) {
+		keydown: function() {
 			// 13: Return, 32: Spacebar
 			if (/^(13|32)$/.test(event.keyCode)) {
 				// Off scroll on press "Spacebar"
