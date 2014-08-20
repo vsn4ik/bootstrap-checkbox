@@ -104,12 +104,12 @@ if (typeof jQuery === 'undefined') {
 		change: function() {
 			this.$element.prop('checked', !this.element.checked).change();
 		},
-		clicked: function(event) {
+		clicked: function() {
 			if (!$(event.target).hasClass('active')) {
 				this.change();
 			}
 		},
-		keydown: function(event) {
+		keydown: function() {
 			// 13: Return, 32: Spacebar
 			if (/^(13|32)$/.test(event.keyCode)) {
 				// Off scroll on press "Spacebar"
