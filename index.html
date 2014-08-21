@@ -69,27 +69,37 @@
 			<tr>
 				<td>defaultClass</td>
 				<td>string</td>
-				<td>btn-default</td>
+				<td>'btn-default'</td>
 			</tr>
 			<tr>
 				<td>offClass</td>
 				<td>string</td>
-				<td>btn-danger</td>
+				<td>'btn-danger'</td>
 			</tr>
 			<tr>
 				<td>onClass</td>
 				<td>string</td>
-				<td>btn-success</td>
+				<td>'btn-success'</td>
 			</tr>
 			<tr>
 				<td>offLabel</td>
-				<td>string</td>
-				<td>No</td>
+				<td>false | string</td>
+				<td>'No'</td>
 			</tr>
 			<tr>
 				<td>onLabel</td>
-				<td>string</td>
-				<td>Yes</td>
+				<td>false | string</td>
+				<td>'Yes'</td>
+			</tr>
+			<tr>
+				<td>offIconClass</td>
+				<td>false | string</td>
+				<td>false</td>
+			</tr>
+			<tr>
+				<td>onIconClass</td>
+				<td>false | string</td>
+				<td>false</td>
 			</tr>
 			<tr>
 				<td>offTitle</td>
@@ -184,11 +194,22 @@
 
 	<div class="form-group">
 		<div class="col-sm-3">
-			<input type="checkbox" data-off-label="<span class='glyphicon glyphicon-thumbs-down'></span>" data-on-label="<span class='glyphicon glyphicon-thumbs-up'></span>">
+			<input type="checkbox" data-off-label="<span>No</span>" data-on-label="<span>Yes</span>" data-off-icon-class="glyphicon glyphicon-thumbs-down" data-on-icon-class="glyphicon glyphicon-thumbs-up">
 		</div>
 
 		<div class="col-sm-9">
-<div class="highlight"><pre><code class="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">data-off-label=</span><span class="s">&quot;&lt;span class=&#39;glyphicon glyphicon-thumbs-down&#39;&gt;&lt;/span&gt;&quot;</span> <span class="na">data-on-label=</span><span class="s">&quot;&lt;span class=&#39;glyphicon glyphicon-thumbs-up&#39;&gt;&lt;/span&gt;&quot;</span><span class="nt">&gt;</span>
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">data-off-icon-class=</span><span class="s">&quot;glyphicon glyphicon-thumbs-down&quot;</span> <span class="na">data-on-icon-class=</span><span class="s">&quot;glyphicon glyphicon-thumbs-up&quot;</span><span class="nt">&gt;</span>
+</code></pre></div>
+		</div>
+	</div>
+
+	<div class="form-group">
+		<div class="col-sm-3">
+			<input type="checkbox" data-off-label="false" data-on-label="false" data-off-icon-class="glyphicon glyphicon-thumbs-down" data-on-icon-class="glyphicon glyphicon-thumbs-up">
+		</div>
+
+		<div class="col-sm-9">
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">data-off-label=</span><span class="s">&quot;false&quot;</span> <span class="na">data-on-label=</span><span class="s">&quot;false&quot;</span> <span class="na">data-off-icon-class=</span><span class="s">&quot;glyphicon glyphicon-thumbs-down&quot;</span> <span class="na">data-on-icon-class=</span><span class="s">&quot;glyphicon glyphicon-thumbs-up&quot;</span><span class="nt">&gt;</span>
 </code></pre></div>
 		</div>
 	</div>
@@ -238,7 +259,7 @@
 		<div class="clearfix">
 			<button id="scroll_top" class="btn btn-primary pull-right" type="button" title="Return to top">
 				<span class="glyphicon glyphicon-circle-arrow-up"></span>
-				<span>Top<span>
+				<span>Top</span>
 			</button>
 		</div>
 

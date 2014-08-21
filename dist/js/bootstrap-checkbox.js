@@ -1,5 +1,5 @@
 /*!
- * Bootstrap-checkbox v1.0.17 (http://vsn4ik.github.io/bootstrap-checkbox)
+ * Bootstrap-checkbox v1.0.18 (http://vsn4ik.github.io/bootstrap-checkbox)
  * Copyright 2013-2014 vsn4ik
  * Licensed under MIT (https://github.com/vsn4ik/bootstrap-checkbox/blob/master/LICENSE)
  */
@@ -39,8 +39,22 @@ if (typeof jQuery === 'undefined') {
 	Checkboxpicker.prototype = {
 		init: function() {
 			this.$element.prop('hidden', true);
-			this.$off.html(this.options.offLabel);
-			this.$on.html(this.options.onLabel);
+
+			if (this.options.offLabel) {
+				this.$off.html(this.options.offLabel);
+			}
+
+			if (this.options.onLabel) {
+				this.$on.html(this.options.onLabel);
+			}
+
+			if (this.options.offIconClass) {
+				this.$off.prepend('<span class="' + this.options.offIconClass + '"></span>');
+			}
+
+			if (this.options.onIconClass) {
+				this.$on.prepend('<span class="' + this.options.onIconClass + '"></span>');
+			}
 
 			if (this.element.checked) {
 				this.$on.addClass('active ' + this.options.onClass);
