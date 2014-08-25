@@ -1,5 +1,5 @@
 /*!
- * Bootstrap-checkbox v1.0.19 (http://vsn4ik.github.io/bootstrap-checkbox)
+ * Bootstrap-checkbox v1.0.20 (http://vsn4ik.github.io/bootstrap-checkbox)
  * Copyright 2013-2014 vsn4ik
  * Licensed under MIT (https://github.com/vsn4ik/bootstrap-checkbox/blob/master/LICENSE)
  */
@@ -144,12 +144,12 @@ if (typeof jQuery === 'undefined') {
 	$.fn.checkboxpicker = function(options) {
 		return this.each(function() {
 			var $this = $(this);
-			var data = $this.data('checkboxpicker');
+			var data = $this.data('bs.checkbox');
 
 			if (!data) {
 				new Checkboxpicker(this, options);
 
-				$this.data('checkboxpicker', true);
+				$this.data('bs.checkbox', true);
 			}
 		});
 	};
