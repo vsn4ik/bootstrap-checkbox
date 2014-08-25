@@ -3,6 +3,7 @@
 [![Bower version](https://badge.fury.io/bo/bootstrap-checkbox.svg)](http://badge.fury.io/bo/bootstrap-checkbox)
 [![NPM version](https://badge.fury.io/js/bootstrap-checkbox.svg)](http://badge.fury.io/js/bootstrap-checkbox)
 [![Build Status](https://travis-ci.org/vsn4ik/bootstrap-checkbox.svg)](https://travis-ci.org/vsn4ik/bootstrap-checkbox)
+[![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE)
 [![devDependency Status](https://david-dm.org/vsn4ik/bootstrap-checkbox/dev-status.svg)](https://david-dm.org/vsn4ik/bootstrap-checkbox#info=devDependencies)
 
 ## Getting Started

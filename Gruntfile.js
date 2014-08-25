@@ -21,7 +21,7 @@ module.exports = function(grunt) {
 		},
 		uglify: {
 			minify: {
-				src: 'js/<%= pkg.name %>.js',
+				src: 'dist/js/<%= pkg.name %>.js',
 				dest: 'dist/js/<%= pkg.name %>.min.js'
 			}
 		},
