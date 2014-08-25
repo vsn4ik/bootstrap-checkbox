@@ -9,12 +9,13 @@ if (typeof jQuery === 'undefined') {
 		this.element = element;
 		this.$element = $(element);
 
+		this.options = $.extend({}, $.fn.checkboxpicker.defaults, options, this.$element.data());
+
 		if (this.$element.closest('label').length) {
-			console.warn('Please do not use bootstrap-checkbox element in label element.');
+			console.warn(this.options.warningMessage);
+
 			return;
 		}
-
-		this.options = $.extend({}, $.fn.checkboxpicker.defaults, options, this.$element.data());
 
 		this.$group = $('<div class="btn-group">');
 
@@ -157,6 +158,7 @@ if (typeof jQuery === 'undefined') {
 		offLabel: 'No',
 		onLabel: 'Yes',
 		offTitle: false,
-		onTitle: false
+		onTitle: false,
+		warningMessage: 'Please do not use bootstrap-checkbox element in label element.'
 	};
 })(jQuery);
