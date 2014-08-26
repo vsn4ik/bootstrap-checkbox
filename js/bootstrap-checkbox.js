@@ -113,12 +113,12 @@ if (typeof jQuery === 'undefined') {
 		change: function() {
 			this.$element.prop('checked', !this.element.checked).change();
 		},
-		clicked: function() {
+		clicked: function(event) {
 			if (!$(event.target).hasClass('active')) {
 				this.change();
 			}
 		},
-		keydown: function() {
+		keydown: function(event) {
 			// 13: Return, 32: Spacebar
 
 			// Off vertical scrolling
