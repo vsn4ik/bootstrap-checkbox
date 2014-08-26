@@ -126,10 +126,13 @@ if (typeof jQuery === 'undefined') {
 		},
 		keydown: function() {
 			// 13: Return, 32: Spacebar
-			if (/^(13|32)$/.test(event.keyCode)) {
-				// Off scroll on press "Spacebar"
-				event.preventDefault();
 
+			// Off vertical scrolling
+			if (event.keyCode == 32) {
+				event.preventDefault();
+			}
+
+			if (/^(13|32)$/.test(event.keyCode)) {
 				this.change();
 			}
 		},
