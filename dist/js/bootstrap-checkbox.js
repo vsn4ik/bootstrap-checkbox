@@ -89,7 +89,7 @@ if (typeof jQuery === 'undefined') {
 				this.$group.css('cursor', 'not-allowed');
 			}
 			else {
-				this.$buttons.click(this.clicked.bind(this));
+				this.$buttons.click(this.click.bind(this));
 				this.$element.change(this.toggle.bind(this));
 				this.$group.attr('tabindex', this.element.tabIndex).keydown(this.keydown.bind(this));
 
@@ -119,7 +119,7 @@ if (typeof jQuery === 'undefined') {
 		change: function() {
 			this.$element.prop('checked', !this.element.checked).change();
 		},
-		clicked: function(event) {
+		click: function(event) {
 			if (!$(event.target).hasClass('active')) {
 				this.change();
 			}
@@ -146,13 +146,12 @@ if (typeof jQuery === 'undefined') {
 
 	$.fn.checkboxpicker = function(options) {
 		return this.each(function() {
-			var $this = $(this);
-			var data = $this.data('bs.checkbox');
+			var data = $.data(this, 'bs.checkbox');
 
 			if (!data) {
 				new Checkboxpicker(this, options);
 
-				$this.data('bs.checkbox', true);
+				$.data(this, 'bs.checkbox', true);
 			}
 		});
 	};
