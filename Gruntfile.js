@@ -42,7 +42,7 @@ module.exports = function(grunt) {
 			options: {
 				banner: '/*!\n' +
 					' * Bootstrap-checkbox v<%= pkg.version %> (<%= pkg.homepage %>)\n' +
-					' * Copyright 2013-<%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' +
+					' * Copyright 2013-<%= grunt.template.today("yyyy") %> <%= pkg.author.name %> (<%= pkg.author.url %>)\n' +
 					' * Licensed under <%= pkg.license.type %> (<%= pkg.license.url %>)\n' +
 					' */\n'
 			},
