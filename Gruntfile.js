@@ -30,8 +30,9 @@ module.exports = function(grunt) {
 		},
 		uglify: {
 			core: {
-				src: 'dist/js/<%= pkg.name %>.js',
-				dest: 'dist/js/<%= pkg.name %>.min.js'
+				expand: true,
+				src: 'dist/js/**/*.js',
+				ext: '.min.js'
 			},
 			docs: {
 				src: 'docs/assets/js/src/docs.js',
@@ -46,7 +47,7 @@ module.exports = function(grunt) {
 					' * Licensed under <%= pkg.license.type %> (<%= pkg.license.url %>)\n' +
 					' */\n'
 			},
-			dist: 'dist/*/*'
+			dist: 'dist/**/*'
 		}
 	});
 
