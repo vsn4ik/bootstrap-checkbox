@@ -19,10 +19,23 @@ module.exports = function(grunt) {
 				dest: 'docs/'
 			}
 		},
+		cssmin: {
+			docs: {
+				src: [
+					'docs/assets/css/src/docs.css',
+					'docs/assets/css/src/pygments-manni.css'
+				],
+				dest: 'docs/assets/css/docs.min.css'
+			}
+		},
 		uglify: {
-			minify: {
+			core: {
 				src: 'dist/js/<%= pkg.name %>.js',
 				dest: 'dist/js/<%= pkg.name %>.min.js'
+			},
+			docs: {
+				src: 'docs/assets/js/src/docs.js',
+				dest: 'docs/assets/js/docs.min.js'
 			}
 		},
 		usebanner: {
@@ -42,5 +55,5 @@ module.exports = function(grunt) {
 		scope: 'devDependencies'
 	});
 
-	grunt.registerTask('default', ['clean', 'copy:js', 'uglify', 'usebanner', 'copy:docs']);
+	grunt.registerTask('default', ['clean', 'copy:js', 'cssmin', 'uglify', 'usebanner', 'copy:docs']);
 };
