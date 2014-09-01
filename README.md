@@ -14,7 +14,7 @@ Four quick start options are available:
 - [Download](https://github.com/vsn4ik/bootstrap-checkbox/zipball/master "Download Bootstrap-checkbox").
 - Clone the repo: `git clone https://github.com/vsn4ik/bootstrap-checkbox.git`.
 - Install with [Bower](http://bower.io): `bower install bootstrap-checkbox`.
-- Install with [NPM](https://www.npmjs.org): `npm install bootstrap-checkbox`.
+- Install with [npm](https://www.npmjs.org): `npm install bootstrap-checkbox`.
 
 
 ## Examples
