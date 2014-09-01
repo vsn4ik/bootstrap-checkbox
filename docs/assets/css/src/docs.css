@@ -14,6 +14,14 @@ label[for] {
 	margin-bottom: 15px;
 }
 
-.glyphicon + span {
+.glyphicon + *,
+.octicon + *,
+* + .glyphicon,
+* + .octicon {
 	margin-left: 4px;
+}
+
+.input-group-addon,
+.input-group-btn {
+	width: auto;
 }

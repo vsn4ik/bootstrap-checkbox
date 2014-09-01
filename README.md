@@ -9,11 +9,12 @@
 
 ## Quick start
 
-Three quick start options are available:
+Four quick start options are available:
 
-- [Download the latest release](https://github.com/vsn4ik/bootstrap-checkbox/zipball/master "Download Bootstrap-checkbox").
+- [Download](https://github.com/vsn4ik/bootstrap-checkbox/zipball/master "Download Bootstrap-checkbox").
 - Clone the repo: `git clone https://github.com/vsn4ik/bootstrap-checkbox.git`.
 - Install with [Bower](http://bower.io): `bower install bootstrap-checkbox`.
+- Install with [NPM](https://www.npmjs.org): `npm install bootstrap-checkbox`.
 
 
 ## Examples
@@ -25,16 +26,6 @@ For some working examples, visit our [examples](http://vsn4ik.github.io/bootstra
 
 - Bootstrap 2.3.2
 - jQuery 1.9.0
-
-
-## Browser Support
-
-- Google Chrome
-- Mozilla Firefox 14+
-- Opera 11+
-- Apple Safari 4+
-- Internet Explorer 7/8 (used with jQuery 1.x)
-- Internet Explorer 9+
 
 
 ## Creators
