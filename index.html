@@ -8,15 +8,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="A checkbox component based on Bootstrap framework.">
 <meta name="keywords" content="bootstrap checkbox switch">
-<meta name="author" content="vsn4ik">
+<meta name="author" content="Vasily A.">
 
 <title>Bootstrap-checkbox</title>
 
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="./assets/css/octicons/octicons.css">
 <link rel="stylesheet" href="./assets/css/docs.min.css">
 
-<script src="//code.jquery.com/jquery-2.1.1.min.js" defer></script>
+<script src="http://code.jquery.com/jquery-2.1.1.min.js" defer></script>
 <script src="./dist/js/bootstrap-checkbox.min.js" defer></script>
 <script src="./assets/js/docs.min.js" defer></script>
 
@@ -26,8 +27,26 @@
 		<div class="jumbotron">
 			<h1>Bootstrap-checkbox</h1>
 			<p class="lead">A checkbox component based on Bootstrap framework.</p>
-			<a class="btn btn-primary btn-lg m-b" href="https://github.com/vsn4ik/bootstrap-checkbox/zipball/master">Download</a>
-			<a class="btn btn-default btn-lg m-b" href="https://github.com/vsn4ik/bootstrap-checkbox">View Project on GitHub</a>
+
+			<div class="input-group m-b">
+				<span class="input-group-addon">
+					<span class="octicon octicon-cloud-download"></span>
+					<span>Download</span>
+				</span>
+
+				<span class="input-group-btn">
+					<a class="btn btn-primary" href="https://github.com/vsn4ik/bootstrap-checkbox/zipball/master" title="Download as a zip file">
+						<span>zip</span>
+					</a>
+
+					<a class="btn btn-primary" href="https://github.com/vsn4ik/bootstrap-checkbox/tarball/master" title="Download as a tar.gz file">tar.gz</a>
+				</span>
+			</div>
+
+			<a id="gh-view-link" class="btn btn-default" href="https://github.com/vsn4ik/bootstrap-checkbox">
+				<span class="octicon octicon-mark-github"></span>
+				<span>View on GitHub</span>
+			</a>
 		</div>
 
 		<h2>Installation</h2>
@@ -36,10 +55,10 @@
 <div class="highlight"><pre><code class="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
-  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css&quot;</span><span class="nt">&gt;</span>
 
-  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//code.jquery.com/jquery-2.1.1.min.js&quot;</span> <span class="na">defer</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://code.jquery.com/jquery-2.1.1.min.js&quot;</span> <span class="na">defer</span><span class="nt">&gt;&lt;/script&gt;</span>
   <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;dist/js/bootstrap-checkbox.min.js&quot;</span> <span class="na">defer</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;/head&gt;</span>
 <span class="nt">&lt;body&gt;</span>
