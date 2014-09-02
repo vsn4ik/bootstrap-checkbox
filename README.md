@@ -37,6 +37,6 @@ For some working examples, visit our [examples](http://vsn4ik.github.io/bootstra
 
 ## Copyright and license
 
-Copyright 2013-2014 vsn4ik.
+Copyright Vasily A., 2013&ndash;2014.
 
 Licensed under [the MIT License](LICENSE).
