@@ -28,6 +28,27 @@ module.exports = function(grunt) {
 				dest: 'docs/assets/css/docs.min.css'
 			}
 		},
+		jshint: {
+			options: {
+				strict: true,
+				globalstrict: true
+			},
+			core: {
+				options: {
+					jquery: true,
+					globals: {
+						console: true
+					}
+				},
+				src: 'js/**/*'
+			},
+			grunt: {
+				options: {
+					node: true
+				},
+				src: 'Gruntfile.js'
+			}
+		},
 		uglify: {
 			core: {
 				expand: true,
@@ -56,5 +77,5 @@ module.exports = function(grunt) {
 		scope: 'devDependencies'
 	});
 
-	grunt.registerTask('default', ['clean', 'copy:js', 'cssmin', 'uglify', 'usebanner', 'copy:docs']);
+	grunt.registerTask('default', ['clean', 'copy:js', 'cssmin', 'jshint', 'uglify', 'usebanner', 'copy:docs']);
 };
