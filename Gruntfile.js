@@ -58,11 +58,13 @@ module.exports = function(grunt) {
 		},
 		usebanner: {
 			options: {
-				banner: '/*!\n' +
-					' * Bootstrap-checkbox v<%= pkg.version %> (<%= pkg.homepage %>)\n' +
-					' * Copyright 2013-<%= grunt.template.today("yyyy") %> <%= pkg.author.name %> (<%= pkg.author.url %>)\n' +
-					' * Licensed under <%= pkg.license.type %> (<%= pkg.license.url %>)\n' +
-					' */\n'
+				banner: [
+					'/*!',
+					' * Bootstrap-checkbox v<%= pkg.version %> (<%= pkg.homepage %>)',
+					' * Copyright 2013-<%= grunt.template.today("yyyy") %> <%= pkg.author.name %> (<%= pkg.author.url %>)',
+					' * Licensed under <%= pkg.license.type %> (<%= pkg.license.url %>)',
+					' */'
+				].join('\n').concat('\n')
 			},
 			dist: 'dist/**/*'
 		},
@@ -82,5 +84,13 @@ module.exports = function(grunt) {
 		scope: 'devDependencies'
 	});
 
-	grunt.registerTask('default', ['clean', 'copy', 'cssmin', 'jshint', 'uglify', 'usebanner', 'symlink']);
+	grunt.registerTask('default', [
+		'clean',
+		'copy',
+		'cssmin',
+		'jshint',
+		'uglify',
+		'usebanner',
+		'symlink'
+	]);
 };
