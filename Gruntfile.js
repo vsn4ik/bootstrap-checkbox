@@ -7,16 +7,12 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		clean: {
-			dist: ['dist', 'docs/dist']
+			dist: 'dist'
 		},
 		copy: {
 			js: {
 				src: 'js/**/*',
 				dest: 'dist/'
-			},
-			docs: {
-				src: 'dist/**/*',
-				dest: 'docs/'
 			}
 		},
 		cssmin: {
@@ -69,6 +65,15 @@ module.exports = function(grunt) {
 					' */\n'
 			},
 			dist: 'dist/**/*'
+		},
+		symlink: {
+			docs: {
+				options: {
+					overwrite: true
+				},
+				src: 'dist',
+				dest: 'docs/dist'
+			}
 		}
 	});
 
@@ -77,5 +82,5 @@ module.exports = function(grunt) {
 		scope: 'devDependencies'
 	});
 
-	grunt.registerTask('default', ['clean', 'copy:js', 'cssmin', 'jshint', 'uglify', 'usebanner', 'copy:docs']);
+	grunt.registerTask('default', ['clean', 'copy', 'cssmin', 'jshint', 'uglify', 'usebanner', 'symlink']);
 };
