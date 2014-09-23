@@ -70,7 +70,7 @@ module.exports = function(grunt) {
 					' * Copyright 2013-<%= grunt.template.today("yyyy") %> <%= pkg.author.name %> (<%= pkg.author.url %>)',
 					' * Licensed under <%= pkg.license.type %> (<%= pkg.license.url %>)',
 					' */'
-				].join('\n').concat('\n')
+				].join('\n') + '\n'
 			},
 			dist: 'dist/**'
 		},
