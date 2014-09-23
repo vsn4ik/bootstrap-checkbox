@@ -11,7 +11,7 @@ module.exports = function(grunt) {
 		},
 		copy: {
 			js: {
-				src: 'js/**/*',
+				src: 'js/**',
 				dest: 'dist/'
 			}
 		},
@@ -36,13 +36,19 @@ module.exports = function(grunt) {
 						console: true
 					}
 				},
-				src: 'js/**/*'
+				src: 'js/'
 			},
 			grunt: {
 				options: {
 					node: true
 				},
 				src: 'Gruntfile.js'
+			},
+			docs: {
+				options: {
+					jquery: true
+				},
+				src: 'docs/assets/js/src/'
 			}
 		},
 		uglify: {
@@ -66,7 +72,7 @@ module.exports = function(grunt) {
 					' */'
 				].join('\n').concat('\n')
 			},
-			dist: 'dist/**/*'
+			dist: 'dist/**'
 		},
 		symlink: {
 			docs: {
