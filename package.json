@@ -23,6 +23,11 @@
 		"type": "MIT",
 		"url": "https://github.com/vsn4ik/bootstrap-checkbox/blob/master/LICENSE"
 	},
+	"files": [
+		"dist",
+		"js",
+		"LICENSE"
+	],
 	"scripts": {
 		"test": "grunt"
 	},
