@@ -1,16 +1,21 @@
 /*!
- * Bootstrap-checkbox v1.1.5 (http://vsn4ik.github.io/bootstrap-checkbox)
+ * Bootstrap-checkbox v1.1.6 (http://vsn4ik.github.io/bootstrap-checkbox)
  * Copyright 2013-2014 Vasily A. (https://github.com/vsn4ik)
  * Licensed under MIT (https://github.com/vsn4ik/bootstrap-checkbox/blob/master/LICENSE)
  */
 
 'use strict';
 
-if (typeof jQuery === 'undefined') {
-	throw new Error('Bootstrap-checkbox requires jQuery');
-}
-
-(function($) {
+(function(factory) {
+	if (typeof define == 'function' && define.amd) {
+		// AMD. Register as an anonymous module depending on jQuery
+		define(['jquery'], factory);
+	}
+	else {
+		// No AMD. Register plugin with global jQuery object
+		factory(jQuery);
+	}
+})(function($) {
 	function Checkboxpicker(element, options) {
 		this.element = element;
 		this.$element = $(element);
@@ -169,4 +174,4 @@ if (typeof jQuery === 'undefined') {
 		onTitle: false,
 		warningMessage: 'Please do not use bootstrap-checkbox element in label element.'
 	};
-})(jQuery);
+});
