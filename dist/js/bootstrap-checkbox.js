@@ -1,16 +1,25 @@
 /*!
- * Bootstrap-checkbox v1.1.4 (http://vsn4ik.github.io/bootstrap-checkbox)
+ * Bootstrap-checkbox v1.1.7 (http://vsn4ik.github.io/bootstrap-checkbox)
  * Copyright 2013-2014 Vasily A. (https://github.com/vsn4ik)
  * Licensed under MIT (https://github.com/vsn4ik/bootstrap-checkbox/blob/master/LICENSE)
  */
 
 'use strict';
 
-if (typeof jQuery === 'undefined') {
-	throw new Error('Bootstrap-checkbox requires jQuery');
-}
-
-(function($) {
+(function(factory) {
+	if (typeof define == 'function' && define.amd) {
+		// AMD. Register as an anonymous module
+		define(['jquery'], factory);
+	}
+	else if (typeof exports == 'object') {
+		// Node/CommonJS
+		module.exports = factory(require('jquery'));
+	}
+	else {
+		// Browser globals
+		factory(jQuery);
+	}
+})(function($) {
 	function Checkboxpicker(element, options) {
 		this.element = element;
 		this.$element = $(element);
@@ -144,14 +153,28 @@ if (typeof jQuery === 'undefined') {
 		}
 	};
 
-	$.fn.checkboxpicker = function(options) {
-		return this.each(function() {
+	// For AMD/Node/CommonJS used elements (optional)
+	// http://learn.jquery.com/jquery-ui/environments/amd/
+	$.fn.checkboxpicker = function(options, elements) {
+		var $elements;
+
+		if (this instanceof $) {
+			$elements = this;
+		}
+		else if (typeof options == 'string') {
+			$elements = $(options);
+		}
+		else {
+			$elements = $(elements);
+		}
+
+		return $elements.each(function() {
 			var data = $.data(this, 'bs.checkbox');
 
 			if (!data) {
-				new Checkboxpicker(this, options);
+				data = new Checkboxpicker(this, options);
 
-				$.data(this, 'bs.checkbox', true);
+				$.data(this, 'bs.checkbox', data);
 			}
 		});
 	};
@@ -167,6 +190,8 @@ if (typeof jQuery === 'undefined') {
 		onLabel: 'Yes',
 		offTitle: false,
 		onTitle: false,
-		warningMessage: 'Please do not use bootstrap-checkbox element in label element.'
+		warningMessage: 'Please do not use Bootstrap-checkbox element in label element.'
 	};
-})(jQuery);
+
+	return $.fn.checkboxpicker;
+});

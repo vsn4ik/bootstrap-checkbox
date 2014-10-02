@@ -8,8 +8,8 @@
 
 (function($) {
 	$.extend($.fn.checkboxpicker.defaults, {
-		offLabel: 'Нет',
-		onLabel: 'Да',
-		warningMessage: 'Bootstrap-checkbox не поддерживает использование внутри label элемента.'
+		offLabel: 'Não',
+		onLabel: 'Sim',
+		warningMessage: 'Elementos do tipo label não são suportados dentro do Bootstrap-checkbox.'
 	});
 })(jQuery);
