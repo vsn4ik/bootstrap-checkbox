@@ -28,6 +28,7 @@
 		"js",
 		"LICENSE"
 	],
+	"main": "dist/js/bootstrap-checkbox.js",
 	"scripts": {
 		"test": "grunt"
 	},

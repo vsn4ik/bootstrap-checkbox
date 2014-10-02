@@ -29,6 +29,7 @@ module.exports = function(grunt) {
 				curly: true,
 				globalstrict: true,
 				latedef: true,
+				node: true,
 				noempty: true,
 				strict: true
 			},
@@ -43,9 +44,6 @@ module.exports = function(grunt) {
 				src: 'js/'
 			},
 			grunt: {
-				options: {
-					node: true
-				},
 				src: 'Gruntfile.js'
 			},
 			docs: {
