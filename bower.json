@@ -14,6 +14,11 @@
 			"homepage": "https://github.com/vsn4ik"
 		}
 	],
+	"moduleType": [
+		"amd",
+		"globals",
+		"node"
+	],
 	"main": "dist/js/bootstrap-checkbox.js",
 	"ignore": [
 		"docs",
