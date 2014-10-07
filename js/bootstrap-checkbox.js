@@ -89,7 +89,10 @@
 
 			if (this.element.disabled) {
 				this.$buttons.addClass('disabled');
-				this.$group.css('cursor', 'not-allowed');
+
+				if (this.options.disabledCursor) {
+					this.$group.css('cursor', this.options.disabledCursor);
+				}
 			}
 			else {
 				this.$buttons.click(this.click.bind(this));
@@ -178,6 +181,7 @@
 	$.fn.checkboxpicker.defaults = {
 		style: false,
 		defaultClass: 'btn-default',
+		disabledCursor: 'not-allowed',
 		offClass: 'btn-danger',
 		onClass: 'btn-success',
 		offLabel: 'No',
