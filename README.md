@@ -17,6 +17,17 @@ Five quick start options are available:
 - Install with [npm](https://www.npmjs.org): `npm install bootstrap-checkbox`.
 - Install with [Composer](https://getcomposer.org): `composer require vsn4ik/bootstrap-checkbox "dev-master"`.
 
+### What's included
+
+```
+bootstrap-checkbox/
+└── js/
+    ├── i18n/
+    │   └── ...
+    ├── bootstrap-checkbox.js
+    └── bootstrap-checkbox.min.js
+```
+
 
 ## Examples
 
