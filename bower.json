@@ -1,35 +1,35 @@
 {
-	"name": "bootstrap-checkbox",
-	"version": "1.1.8",
-	"description": "A checkbox component based on Bootstrap framework",
-	"keywords": [
-		"bootstrap",
-		"checkbox",
-		"jquery-plugin",
-		"switch"
-	],
-	"homepage": "http://vsn4ik.github.io/bootstrap-checkbox",
-	"authors": [
-		{
-			"name": "Vasily A.",
-			"homepage": "https://github.com/vsn4ik"
-		}
-	],
-	"moduleType": [
-		"amd",
-		"globals",
-		"node"
-	],
-	"main": "dist/js/bootstrap-checkbox.js",
-	"ignore": [
-		"docs",
-		".gitignore",
-		".travis.yml",
-		"Gruntfile.js",
-		"README.md",
-		"_config.yml",
-		"composer.json",
-		"package.json"
-	],
-	"license": "MIT"
+  "name": "bootstrap-checkbox",
+  "version": "1.1.8",
+  "description": "A checkbox component based on Bootstrap framework",
+  "keywords": [
+    "bootstrap",
+    "checkbox",
+    "jquery-plugin",
+    "switch"
+  ],
+  "homepage": "http://vsn4ik.github.io/bootstrap-checkbox",
+  "authors": [
+    {
+      "name": "Vasily A.",
+      "homepage": "https://github.com/vsn4ik"
+    }
+  ],
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "main": "dist/js/bootstrap-checkbox.js",
+  "ignore": [
+    "docs",
+    ".gitignore",
+    ".travis.yml",
+    "Gruntfile.js",
+    "README.md",
+    "_config.yml",
+    "composer.json",
+    "package.json"
+  ],
+  "license": "MIT"
 }
