@@ -1,3 +1,10 @@
+/*!
+ * Bootstrap-checkbox's Gruntfile
+ * http://vsn4ik.github.io/bootstrap-checkbox
+ * Copyright 2014 Vasily A. (https://github.com/vsn4ik)
+ * Licensed under MIT (https://github.com/vsn4ik/bootstrap-checkbox/blob/master/LICENSE)
+ */
+
 'use strict';
 
 module.exports = function(grunt) {
