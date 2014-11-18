@@ -42,7 +42,8 @@
 
   Checkboxpicker.prototype = {
     init: function() {
-      this.$element.prop('hidden', true);
+      // For IE 9/10 use $.fn.hide() instead $.fn.prop('hidden', true)
+      this.$element.hide();
 
       if (this.options.offLabel) {
         this.$off.html(this.options.offLabel);
