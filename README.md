@@ -3,7 +3,7 @@
 [![Bower version](https://badge.fury.io/bo/bootstrap-checkbox.svg)](http://badge.fury.io/bo/bootstrap-checkbox)
 [![npm version](https://badge.fury.io/js/bootstrap-checkbox.svg)](http://badge.fury.io/js/bootstrap-checkbox)
 [![Build Status](https://travis-ci.org/vsn4ik/bootstrap-checkbox.svg)](https://travis-ci.org/vsn4ik/bootstrap-checkbox)
-[![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE)
+[![License](https://img.shields.io/badge/license-MIT-brightgreen.svg)][license]
 [![devDependency Status](https://david-dm.org/vsn4ik/bootstrap-checkbox/dev-status.svg)](https://david-dm.org/vsn4ik/bootstrap-checkbox#info=devDependencies)
 
 
@@ -52,4 +52,6 @@ For some working examples, visit our [examples](http://vsn4ik.github.io/bootstra
 
 Copyright Vasily A., 2013&ndash;2014.
 
-Licensed under [the MIT License](LICENSE).
+Licensed under [the MIT License][license].
+
+[license]: https://github.com/vsn4ik/bootstrap-checkbox/blob/master/LICENSE
