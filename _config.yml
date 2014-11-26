@@ -5,3 +5,6 @@ destination: _gh_pages
 # Custom vars
 repo: https://github.com/vsn4ik/bootstrap-checkbox
 description: A checkbox component based on Bootstrap framework.
+
+jquery_path: http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery
+bootstrap_path: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1

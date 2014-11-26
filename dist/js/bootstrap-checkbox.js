@@ -175,10 +175,7 @@
   };
 
   // Be hooks friendly
-  var oldPropHooks = {
-    checked: $.propHooks.checked || {},
-    disabled: $.propHooks.disabled || {}
-  };
+  var oldPropHooks = $.extend({}, $.propHooks);
 
   // Support $.fn.prop setter (checked, disabled)
   $.extend($.propHooks, {
@@ -190,7 +187,7 @@
           data.toggle_checked();
         }
 
-        if (oldPropHooks.checked.set) {
+        if (oldPropHooks.checked && oldPropHooks.checked.set) {
           oldPropHooks.checked.set(elem, value);
         }
       }
@@ -203,7 +200,7 @@
           data.toggle_disabled();
         }
 
-        if (oldPropHooks.disabled.set) {
+        if (oldPropHooks.disabled && oldPropHooks.disabled.set) {
           oldPropHooks.disabled.set(elem, value);
         }
       }
