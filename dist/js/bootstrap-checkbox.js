@@ -1,5 +1,5 @@
 /*!
- * Bootstrap-checkbox v1.2.0 (http://vsn4ik.github.io/bootstrap-checkbox)
+ * Bootstrap-checkbox v1.2.1 (http://vsn4ik.github.io/bootstrap-checkbox)
  * Copyright 2013-2014 Vasily A. (https://github.com/vsn4ik)
  * Licensed under MIT (https://github.com/vsn4ik/bootstrap-checkbox/blob/master/LICENSE)
  */
@@ -98,7 +98,7 @@
       this.$group.keydown(this.keydown.bind(this));
 
       // Don't trigger if <a> element has .disabled class, fine!
-      this.$group.on('click', 'a:not(.active)', this.change.bind(this));
+      this.$group.on('click', 'a:not(.active)', this.click.bind(this));
 
       this.$element.change(this.toggle_checked.bind(this));
 
@@ -151,7 +151,7 @@
       // Original behavior
       this.$group.focus();
     },
-    change: function() {
+    click: function() {
       this.$element.prop('checked', !this.element.checked);
     },
     keydown: function(event) {
@@ -163,13 +163,13 @@
       }
 
       if (/^(13|32)$/.test(event.keyCode)) {
-        this.change();
+        this.click();
       }
     },
     reset: function() {
       // this.element.checked not used (incorect on large number of form elements)
       if ((this.element.defaultChecked && this.$off.hasClass('active')) || (!this.element.defaultChecked && this.$on.hasClass('active'))) {
-        this.toggle_checked();
+        this.$element.change();
       }
     }
   };
@@ -184,7 +184,7 @@
         var data = $.data(elem, 'bs.checkbox');
 
         if (data && elem.checked != value) {
-          data.toggle_checked();
+          data.$element.change();
         }
 
         if (oldPropHooks.checked && oldPropHooks.checked.set) {
