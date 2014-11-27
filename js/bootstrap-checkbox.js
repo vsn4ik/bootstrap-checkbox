@@ -148,6 +148,12 @@
     click: function() {
       this.$element.prop('checked', !this.element.checked);
     },
+    change: function(value) {
+      // Fix #12
+      this.element.checked = value;
+
+      this.$element.change();
+    },
     keydown: function(event) {
       // 13: Return, 32: Spacebar
 
@@ -163,7 +169,7 @@
     reset: function() {
       // this.element.checked not used (incorect on large number of form elements)
       if ((this.element.defaultChecked && this.$off.hasClass('active')) || (!this.element.defaultChecked && this.$on.hasClass('active'))) {
-        this.$element.change();
+        this.change(this.element.defaultChecked);
       }
     }
   };
@@ -178,7 +184,7 @@
         var data = $.data(elem, 'bs.checkbox');
 
         if (data && elem.checked != value) {
-          data.$element.change();
+          data.change(value);
         }
 
         if (oldPropHooks.checked && oldPropHooks.checked.set) {
