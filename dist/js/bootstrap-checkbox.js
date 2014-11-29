@@ -152,7 +152,7 @@
       this.$group.focus();
     },
     click: function() {
-      this.$element.prop('checked', !this.element.checked);
+      this.change(!this.element.checked);
     },
     change: function(value) {
       // Fix #12
