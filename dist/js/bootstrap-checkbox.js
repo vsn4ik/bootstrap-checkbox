@@ -1,5 +1,5 @@
 /*!
- * Bootstrap-checkbox v1.1.9 (http://vsn4ik.github.io/bootstrap-checkbox)
+ * Bootstrap-checkbox v1.2.2 (http://vsn4ik.github.io/bootstrap-checkbox)
  * Copyright 2013-2014 Vasily A. (https://github.com/vsn4ik)
  * Licensed under MIT (https://github.com/vsn4ik/bootstrap-checkbox/blob/master/LICENSE)
  */
@@ -60,11 +60,11 @@
       }
 
       if (this.options.offIconClass) {
-        this.$off.prepend('<span class="' + this.options.offIconClass + '"></span>');
+        this.$off.prepend('<span class="' + this.options.offIconClass + '">');
       }
 
       if (this.options.onIconClass) {
-        this.$on.prepend('<span class="' + this.options.onIconClass + '"></span>');
+        this.$on.prepend('<span class="' + this.options.onIconClass + '">');
       }
 
       if (this.element.checked) {
@@ -80,11 +80,11 @@
         this.$group.addClass(this.options.style);
       }
 
-      // Attribute title (offTitle, onTitle) on this.$buttons not work (native) if this.element.disabled
       if (this.element.title) {
         this.$group.attr('title', this.element.title);
       }
-      else if (!this.element.disabled) {
+      else {
+        // Attribute title (offTitle, onTitle) on this.$buttons not work (native) if this.element.disabled, fine!
         if (this.options.offTitle) {
           this.$off.attr('title', this.options.offTitle);
         }
@@ -94,6 +94,23 @@
         }
       }
 
+      // Keydown event only trigger if set tabindex, fine!
+      this.$group.keydown(this.keydown.bind(this));
+
+      // Don't trigger if <a> element has .disabled class, fine!
+      this.$group.on('click', 'a:not(.active)', this.click.bind(this));
+
+      this.$element.change(this.toggle_checked.bind(this));
+
+      if (this.element.id) {
+        $('label[for="' + this.element.id + '"]').click(this.focus.bind(this));
+      }
+
+      $(this.element.form).on('reset', this.reset.bind(this));
+
+      this.$group.append(this.$buttons).insertAfter(this.element);
+
+      // Necessarily after this.$group.append() (autofocus)
       if (this.element.disabled) {
         this.$buttons.addClass('disabled');
 
@@ -102,40 +119,46 @@
         }
       }
       else {
-        this.$buttons.click(this.click.bind(this));
-        this.$element.change(this.toggle.bind(this));
-        this.$group.attr('tabindex', this.element.tabIndex).keydown(this.keydown.bind(this));
+        this.$group.attr('tabindex', this.element.tabIndex);
 
         if (this.element.autofocus) {
-          this.$group.focus();
+          this.focus();
         }
-
-        if (this.element.id) {
-          $('label[for="' + this.element.id + '"]').click(this.focus.bind(this));
-        }
-
-        $(this.element.form).on('reset', this.reset.bind(this));
       }
-
-      this.$group.append(this.$buttons).insertAfter(this.element);
     },
-    toggle: function() {
+    toggle_checked: function() {
       // this.$group not focus (incorrect on form reset)
       this.$buttons.toggleClass('active ' + this.options.defaultClass);
       this.$off.toggleClass(this.options.offClass);
       this.$on.toggleClass(this.options.onClass);
     },
+    toggle_disabled: function() {
+      this.$buttons.toggleClass('disabled');
+
+      if (this.element.disabled) {
+        this.$group.attr('tabindex', this.element.tabIndex);
+        this.$group.css('cursor', '');
+      }
+      else {
+        this.$group.removeAttr('tabindex');
+
+        if (this.options.disabledCursor) {
+          this.$group.css('cursor', this.options.disabledCursor);
+        }
+      }
+    },
     focus: function() {
       // Original behavior
       this.$group.focus();
     },
-    change: function() {
-      this.$element.prop('checked', !this.element.checked).change();
+    click: function() {
+      this.change(!this.element.checked);
     },
-    click: function(event) {
-      if (!$(event.target).hasClass('active')) {
-        this.change();
-      }
+    change: function(value) {
+      // Fix #12
+      this.element.checked = value;
+
+      this.$element.change();
     },
     keydown: function(event) {
       // 13: Return, 32: Spacebar
@@ -146,16 +169,49 @@
       }
 
       if (/^(13|32)$/.test(event.keyCode)) {
-        this.change();
+        this.click();
       }
     },
     reset: function() {
       // this.element.checked not used (incorect on large number of form elements)
       if ((this.element.defaultChecked && this.$off.hasClass('active')) || (!this.element.defaultChecked && this.$on.hasClass('active'))) {
-        this.toggle();
+        this.change(this.element.defaultChecked);
       }
     }
   };
+
+  // Be hooks friendly
+  var oldPropHooks = $.extend({}, $.propHooks);
+
+  // Support $.fn.prop setter (checked, disabled)
+  $.extend($.propHooks, {
+    checked: {
+      set: function(elem, value) {
+        var data = $.data(elem, 'bs.checkbox');
+
+        if (data && elem.checked != value) {
+          data.change(value);
+        }
+
+        if (oldPropHooks.checked && oldPropHooks.checked.set) {
+          oldPropHooks.checked.set(elem, value);
+        }
+      }
+    },
+    disabled: {
+      set: function(elem, value) {
+        var data = $.data(elem, 'bs.checkbox');
+
+        if (data && elem.disabled != value) {
+          data.toggle_disabled();
+        }
+
+        if (oldPropHooks.disabled && oldPropHooks.disabled.set) {
+          oldPropHooks.disabled.set(elem, value);
+        }
+      }
+    }
+  });
 
   // For AMD/Node/CommonJS used elements (optional)
   // http://learn.jquery.com/jquery-ui/environments/amd/
