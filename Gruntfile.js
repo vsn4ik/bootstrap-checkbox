@@ -42,6 +42,16 @@ module.exports = function(grunt) {
         dest: 'docs/assets/css/docs.min.css'
       }
     },
+    htmlmin: {
+      docs: {
+        options: {
+          collapseWhitespace: true,
+          removeComments: true
+        },
+        expand: true,
+        src: '_gh_pages/*.html'
+      }
+    },
     jshint: {
       options: {
         curly: true,
@@ -103,6 +113,14 @@ module.exports = function(grunt) {
         dest: 'docs/dist'
       }
     },
+    jekyll: {
+      github: {
+        options: {
+          config: '_config.yml',
+          raw: 'github: true'
+        }
+      }
+    },
     compress: {
       dist: {
         options: {
@@ -129,6 +147,8 @@ module.exports = function(grunt) {
     'uglify',
     'usebanner',
     'symlink',
+    'jekyll',
+    'htmlmin',
     'compress'
   ]);
 };
