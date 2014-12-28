@@ -1,5 +1,5 @@
 /*!
- * Bootstrap-checkbox v1.2.2 (http://vsn4ik.github.io/bootstrap-checkbox)
+ * Bootstrap-checkbox v1.2.3 (http://vsn4ik.github.io/bootstrap-checkbox)
  * Copyright 2013-2014 Vasily A. (https://github.com/vsn4ik)
  * Licensed under MIT (https://github.com/vsn4ik/bootstrap-checkbox/blob/master/LICENSE)
  */
@@ -161,15 +161,14 @@
       this.$element.change();
     },
     keydown: function(event) {
-      // 13: Return, 32: Spacebar
-
-      // Off vertical scrolling
-      if (event.keyCode == 32) {
+      if (this.options.toggleKeyCodes.indexOf(event.keyCode) != -1) {
+        // Off vertical scrolling on Spacebar
         event.preventDefault();
-      }
 
-      if (/^(13|32)$/.test(event.keyCode)) {
         this.click();
+      }
+      else if (event.keyCode == 13) {
+        this.element.form.submit();
       }
     },
     reset: function() {
@@ -251,6 +250,12 @@
     onLabel: 'Yes',
     offTitle: false,
     onTitle: false,
+
+    // Event key codes:
+    // 13: Return
+    // 32: Spacebar
+    toggleKeyCodes: [13, 32],
+
     warningMessage: 'Please do not use Bootstrap-checkbox element in label element.'
   };
 
