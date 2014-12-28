@@ -2,8 +2,8 @@
 
 [![Bower version](https://img.shields.io/bower/v/bootstrap-checkbox.svg?style=flat)](https://github.com/vsn4ik/bootstrap-checkbox)
 [![npm version](https://img.shields.io/npm/v/bootstrap-checkbox.svg?style=flat)](https://www.npmjs.com/package/bootstrap-checkbox)
-[![Build Status](https://travis-ci.org/vsn4ik/bootstrap-checkbox.svg)](https://travis-ci.org/vsn4ik/bootstrap-checkbox)
 [![License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)][license]
+[![Build Status](https://travis-ci.org/vsn4ik/bootstrap-checkbox.svg)](https://travis-ci.org/vsn4ik/bootstrap-checkbox)
 [![devDependency Status](https://david-dm.org/vsn4ik/bootstrap-checkbox/dev-status.svg)](https://david-dm.org/vsn4ik/bootstrap-checkbox#info=devDependencies)
 
 

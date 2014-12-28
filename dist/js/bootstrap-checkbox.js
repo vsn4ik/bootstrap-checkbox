@@ -161,15 +161,14 @@
       this.$element.change();
     },
     keydown: function(event) {
-      // 13: Return, 32: Spacebar
-
-      // Off vertical scrolling
-      if (event.keyCode == 32) {
+      if (this.options.toggleKeyCodes.indexOf(event.keyCode) != -1) {
+        // Off vertical scrolling on Spacebar
         event.preventDefault();
-      }
 
-      if (/^(13|32)$/.test(event.keyCode)) {
         this.click();
+      }
+      else if (event.keyCode == 13) {
+        this.element.form.submit();
       }
     },
     reset: function() {
@@ -251,6 +250,12 @@
     onLabel: 'Yes',
     offTitle: false,
     onTitle: false,
+
+    // Event key codes:
+    // 13: Return
+    // 32: Spacebar
+    toggleKeyCodes: [13, 32],
+
     warningMessage: 'Please do not use Bootstrap-checkbox element in label element.'
   };
 
