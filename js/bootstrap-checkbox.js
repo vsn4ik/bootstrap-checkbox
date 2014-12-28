@@ -162,7 +162,7 @@
         this.click();
       }
       else if (event.keyCode == 13) {
-        this.element.form.submit();
+        $(this.element.form).submit();
       }
     },
     reset: function() {

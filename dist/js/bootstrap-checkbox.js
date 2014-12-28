@@ -1,5 +1,5 @@
 /*!
- * Bootstrap-checkbox v1.2.3 (http://vsn4ik.github.io/bootstrap-checkbox)
+ * Bootstrap-checkbox v1.2.4 (http://vsn4ik.github.io/bootstrap-checkbox)
  * Copyright 2013-2014 Vasily A. (https://github.com/vsn4ik)
  * Licensed under MIT (https://github.com/vsn4ik/bootstrap-checkbox/blob/master/LICENSE)
  */
@@ -168,7 +168,7 @@
         this.click();
       }
       else if (event.keyCode == 13) {
-        this.element.form.submit();
+        $(this.element.form).submit();
       }
     },
     reset: function() {
