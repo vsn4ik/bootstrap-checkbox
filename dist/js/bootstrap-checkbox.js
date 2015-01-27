@@ -1,6 +1,6 @@
 /*!
- * Bootstrap-checkbox v1.2.3 (http://vsn4ik.github.io/bootstrap-checkbox)
- * Copyright 2013-2014 Vasily A. (https://github.com/vsn4ik)
+ * Bootstrap-checkbox v1.2.4 (http://vsn4ik.github.io/bootstrap-checkbox)
+ * Copyright 2013-2015 Vasily A. (https://github.com/vsn4ik)
  * Licensed under MIT (https://github.com/vsn4ik/bootstrap-checkbox/blob/master/LICENSE)
  */
 
@@ -168,7 +168,7 @@
         this.click();
       }
       else if (event.keyCode == 13) {
-        this.element.form.submit();
+        $(this.element.form).submit();
       }
     },
     reset: function() {
@@ -185,28 +185,28 @@
   // Support $.fn.prop setter (checked, disabled)
   $.extend($.propHooks, {
     checked: {
-      set: function(elem, value) {
-        var data = $.data(elem, 'bs.checkbox');
+      set: function(element, value) {
+        var data = $.data(element, 'bs.checkbox');
 
-        if (data && elem.checked != value) {
+        if (data && element.checked != value) {
           data.change(value);
         }
 
         if (oldPropHooks.checked && oldPropHooks.checked.set) {
-          oldPropHooks.checked.set(elem, value);
+          oldPropHooks.checked.set(element, value);
         }
       }
     },
     disabled: {
-      set: function(elem, value) {
-        var data = $.data(elem, 'bs.checkbox');
+      set: function(element, value) {
+        var data = $.data(element, 'bs.checkbox');
 
-        if (data && elem.disabled != value) {
+        if (data && element.disabled != value) {
           data.toggle_disabled();
         }
 
         if (oldPropHooks.disabled && oldPropHooks.disabled.set) {
-          oldPropHooks.disabled.set(elem, value);
+          oldPropHooks.disabled.set(element, value);
         }
       }
     }
