@@ -179,28 +179,28 @@
   // Support $.fn.prop setter (checked, disabled)
   $.extend($.propHooks, {
     checked: {
-      set: function(elem, value) {
-        var data = $.data(elem, 'bs.checkbox');
+      set: function(element, value) {
+        var data = $.data(element, 'bs.checkbox');
 
-        if (data && elem.checked != value) {
+        if (data && element.checked != value) {
           data.change(value);
         }
 
         if (oldPropHooks.checked && oldPropHooks.checked.set) {
-          oldPropHooks.checked.set(elem, value);
+          oldPropHooks.checked.set(element, value);
         }
       }
     },
     disabled: {
-      set: function(elem, value) {
-        var data = $.data(elem, 'bs.checkbox');
+      set: function(element, value) {
+        var data = $.data(element, 'bs.checkbox');
 
-        if (data && elem.disabled != value) {
+        if (data && element.disabled != value) {
           data.toggle_disabled();
         }
 
         if (oldPropHooks.disabled && oldPropHooks.disabled.set) {
-          oldPropHooks.disabled.set(elem, value);
+          oldPropHooks.disabled.set(element, value);
         }
       }
     }
