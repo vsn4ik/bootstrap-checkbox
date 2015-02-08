@@ -101,11 +101,7 @@
       this.$group.on('click', 'a:not(.active)', this.click.bind(this));
 
       this.$element.change(this.toggle_checked.bind(this));
-
-      if (this.element.id) {
-        $('label[for="' + this.element.id + '"]').click(this.focus.bind(this));
-      }
-
+      $(this.element.labels).click(this.focus.bind(this));
       $(this.element.form).on('reset', this.reset.bind(this));
 
       this.$group.append(this.$buttons).insertAfter(this.element);
