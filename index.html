@@ -19,4 +19,47 @@
 <span class="nt">&lt;/form&gt;</span></code></pre></div></div></div><div class="form-group"><form class="col-sm-3"><input type="checkbox" data-toggle-key-codes="[32]"> <input class="btn btn-default m-b" type="submit"></form><div class="col-sm-9"><div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form&gt;</span>
   <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">data-toggle-key-codes=</span><span class="s">&quot;[32]&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;btn btn-default&quot;</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;/form&gt;</span></code></pre></div></div></div></div><div class="clearfix"><button id="scroll_top" class="btn btn-primary pull-right" type="button" title="Return to top"><span class="glyphicon glyphicon-chevron-up"></span> <span>Top</span></button></div><hr><footer class="clearfix"><span>&copy; Vasily A., 2013&ndash;2015</span></footer></div></body></html>
+<span class="nt">&lt;/form&gt;</span></code></pre></div></div></div></div>
+			<h3>Calling from an event</h3>
+			<p>To trigger an action use a change event.</p>
+			<div class="highlight">
+				<pre>
+					<code class="language-js" data-lang="js">
+$(':checkbox').checkboxpicker().change(function() {
+  ...
+});
+					</code>
+				</pre>
+			</div>
+			<p>Or call it, by an specific id member of the DOM.</p>
+			<div class="highlight">
+				<pre>
+					<code class="language-js" data-lang="js">
+$('#MyCheckBox').checkboxpicker();
+$('#MyCheckBox').change(function() {
+  ...
+});
+					</code>
+				</pre>
+			</div>
+			
+			<h3>Changing checkbox value</h3>
+			<p>Change checkbox checked value.</p>
+			<div class="highlight">
+				<pre>
+					<code class="language-js" data-lang="js">
+			$("#MyCheckBox").prop('checked', false);
+					</code>
+				</pre>
+			</div>
+
+			<h3>Disabling checkbox value</h3>
+			<p>Disable checkbox</p>
+			<div class="highlight">
+				<pre>
+					<code class="language-js" data-lang="js">
+			$("#MyCheckBox").prop("disabled", true);
+					</code>
+				</pre>
+			</div>
+<div class="clearfix"><button id="scroll_top" class="btn btn-primary pull-right" type="button" title="Return to top"><span class="glyphicon glyphicon-chevron-up"></span> <span>Top</span></button></div><hr><footer class="clearfix"><span>&copy; Vasily A., 2013&ndash;2015</span></footer></div></body></html>
