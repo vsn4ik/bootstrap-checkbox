@@ -287,3 +287,34 @@ $(':checkbox').checkboxpicker();
     </div>
   </div>
 </div>
+
+<hr>
+<h2 id="code-examples">Code examples</h2>
+
+<h3>Calling from an event</h3>
+<p>To trigger an action use a change event.</p>
+{% highlight js %}
+$(':checkbox').checkboxpicker().change(function() {
+  ...
+});
+{% endhighlight %}
+
+<p>Or call it, by an specific id member of the DOM.</p>
+{% highlight js %}
+$('#MyCheckBox').checkboxpicker();
+$('#MyCheckBox').change(function() {
+  ...
+});
+{% endhighlight %}
+
+<h3>Changing checkbox value</h3>
+<p>Change checkbox checked value.</p>
+{% highlight js %}
+$('#MyCheckBox').prop('checked', false);
+{% endhighlight %}
+
+<h3>Disabling checkbox value</h3>
+<p>Disable checkbox.</p>
+{% highlight js %}
+$('#MyCheckBox').prop('disabled', true);
+{% endhighlight %}
