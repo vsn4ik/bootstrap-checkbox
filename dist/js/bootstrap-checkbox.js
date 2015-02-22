@@ -20,6 +20,21 @@
     factory(jQuery);
   }
 })(function($) {
+  var entityMap = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;',
+    '/': '&#x2F;'
+  };
+
+  function escapeHTML(string) {
+    return string.replace(/[&<>"'\/]/g, function(symbol) {
+      return entityMap[symbol];
+    });
+  }
+
   function Checkboxpicker(element, options) {
     this.element = element;
     this.$element = $(element);
@@ -32,10 +47,10 @@
       return;
     }
 
-    this.$group = $('<div class="btn-group">');
+    this.$group = $('<div class="btn-group"></div>');
 
     // .btn-group-justified works with <a> elements as the <button> doesn't pick up the styles
-    this.$buttons = $('<a><a>').addClass('btn');
+    this.$buttons = $('<a></a><a></a>').addClass('btn');
 
     // === '': <... data-reverse>
     var reverse = this.options.reverse || this.options.reverse === '';
@@ -52,19 +67,29 @@
       this.$element.hide();
 
       if (this.options.offLabel) {
-        this.$off.html(this.options.offLabel);
+        this.$off.html(escapeHTML(this.options.offLabel));
       }
 
       if (this.options.onLabel) {
-        this.$on.html(this.options.onLabel);
+        this.$on.html(escapeHTML(this.options.onLabel));
       }
 
       if (this.options.offIconClass) {
-        this.$off.prepend('<span class="' + this.options.offIconClass + '">');
+        if (this.options.offLabel) {
+          // &nbsp; -- whitespace (or wrap into span)
+          this.$off.prepend('&nbsp;');
+        }
+
+        this.$off.prepend('<span class="' + escapeHTML(this.options.offIconClass) + '"></span>');
       }
 
       if (this.options.onIconClass) {
-        this.$on.prepend('<span class="' + this.options.onIconClass + '">');
+        if (this.options.onLabel) {
+          // &nbsp; -- whitespace (or wrap into span)
+          this.$on.prepend('&nbsp;');
+        }
+
+        this.$on.prepend('<span class="' + escapeHTML(this.options.onIconClass) + '"></span>');
       }
 
       if (this.element.checked) {
