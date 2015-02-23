@@ -20,6 +20,7 @@
     factory(jQuery);
   }
 })(function($) {
+  /**
   var entityMap = {
     '&': '&amp;',
     '<': '&lt;',
@@ -34,6 +35,7 @@
       return entityMap[symbol];
     });
   }
+  */
 
   function Checkboxpicker(element, options) {
     this.element = element;
@@ -67,11 +69,11 @@
       this.$element.hide();
 
       if (this.options.offLabel) {
-        this.$off.html(escapeHTML(this.options.offLabel));
+        this.$off.text(this.options.offLabel);
       }
 
       if (this.options.onLabel) {
-        this.$on.html(escapeHTML(this.options.onLabel));
+        this.$on.text(this.options.onLabel);
       }
 
       if (this.options.offIconClass) {
@@ -80,7 +82,9 @@
           this.$off.prepend('&nbsp;');
         }
 
-        this.$off.prepend('<span class="' + escapeHTML(this.options.offIconClass) + '"></span>');
+        // $.addClass for XSS check
+        $('<span></span>').addClass(this.options.offIconClass).prependTo(this.$off);
+        //this.$off.prepend('<span class="' + escapeHTML(this.options.offIconClass) + '"></span>');
       }
 
       if (this.options.onIconClass) {
@@ -89,7 +93,8 @@
           this.$on.prepend('&nbsp;');
         }
 
-        this.$on.prepend('<span class="' + escapeHTML(this.options.onIconClass) + '"></span>');
+        $('<span></span>').addClass(this.options.onIconClass).prependTo(this.$on);
+        //this.$on.prepend('<span class="' + escapeHTML(this.options.onIconClass) + '"></span>');
       }
 
       if (this.element.checked) {
