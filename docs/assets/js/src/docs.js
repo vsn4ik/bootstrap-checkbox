@@ -31,8 +31,6 @@ $(function() {
   });
 
   $(':checkbox').checkboxpicker({
-    style: 'm-b',
-    offLabel: '"><span onclick="alert()"></span>',
-    offIconClass: '<span ></span>'
+    style: 'm-b'
   });
 });
