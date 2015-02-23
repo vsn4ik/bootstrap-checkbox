@@ -1,5 +1,5 @@
 /*!
- * Bootstrap-checkbox v1.2.4 (http://vsn4ik.github.io/bootstrap-checkbox)
+ * Bootstrap-checkbox v1.2.5 (http://vsn4ik.github.io/bootstrap-checkbox)
  * Copyright 2013-2015 Vasily A. (https://github.com/vsn4ik)
  * Licensed under MIT (https://github.com/vsn4ik/bootstrap-checkbox/blob/master/LICENSE)
  */
@@ -20,23 +20,6 @@
     factory(jQuery);
   }
 })(function($) {
-  /**
-  var entityMap = {
-    '&': '&amp;',
-    '<': '&lt;',
-    '>': '&gt;',
-    '"': '&quot;',
-    "'": '&#39;',
-    '/': '&#x2F;'
-  };
-
-  function escapeHTML(string) {
-    return string.replace(/[&<>"'\/]/g, function(symbol) {
-      return entityMap[symbol];
-    });
-  }
-  */
-
   function Checkboxpicker(element, options) {
     this.element = element;
     this.$element = $(element);
@@ -84,7 +67,6 @@
 
         // $.addClass for XSS check
         $('<span></span>').addClass(this.options.offIconClass).prependTo(this.$off);
-        //this.$off.prepend('<span class="' + escapeHTML(this.options.offIconClass) + '"></span>');
       }
 
       if (this.options.onIconClass) {
@@ -93,8 +75,8 @@
           this.$on.prepend('&nbsp;');
         }
 
+        // $.addClass for XSS check
         $('<span></span>').addClass(this.options.onIconClass).prependTo(this.$on);
-        //this.$on.prepend('<span class="' + escapeHTML(this.options.onIconClass) + '"></span>');
       }
 
       if (this.element.checked) {
