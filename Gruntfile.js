@@ -64,14 +64,16 @@ module.exports = function(grunt) {
         node: true,
         noempty: true,
         strict: true,
-        unused: true
+        unused: true,
+        boss: true
       },
       core: {
         options: {
           devel: true,
           jquery: true,
           globals: {
-            define: true
+            define: true,
+            document: true
           }
         },
         src: 'js/'
