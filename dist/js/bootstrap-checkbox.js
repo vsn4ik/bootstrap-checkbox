@@ -20,6 +20,12 @@
     factory(jQuery);
   }
 })(function($) {
+  $.create = function() {
+    return $($.map(arguments, function(tagName) {
+      return document.createElement(tagName);
+    }));
+  };
+
   function Checkboxpicker(element, options) {
     this.element = element;
     this.$element = $(element);
@@ -32,10 +38,10 @@
       return;
     }
 
-    this.$group = $('<div class="btn-group"></div>');
+    this.$group = $.create('div').addClass('btn-group');
 
     // .btn-group-justified works with <a> elements as the <button> doesn't pick up the styles
-    this.$buttons = $('<a></a><a></a>').addClass('btn');
+    this.$buttons = $.create('a', 'a').addClass('btn');
 
     // === '': <... data-reverse>
     var reverse = this.options.reverse || this.options.reverse === '';
@@ -66,7 +72,7 @@
         }
 
         // $.addClass for XSS check
-        $('<span></span>').addClass(this.options.offIconClass).prependTo(this.$off);
+        $.create('span').addClass(this.options.offIconClass).prependTo(this.$off);
       }
 
       if (this.options.onIconClass) {
@@ -76,7 +82,7 @@
         }
 
         // $.addClass for XSS check
-        $('<span></span>').addClass(this.options.onIconClass).prependTo(this.$on);
+        $.create('span').addClass(this.options.onIconClass).prependTo(this.$on);
       }
 
       if (this.element.checked) {
@@ -107,13 +113,13 @@
       }
 
       // Keydown event only trigger if set tabindex, fine!
-      this.$group.keydown(this.keydown.bind(this));
+      this.$group.on('keydown', this.keydown.bind(this));
 
       // Don't trigger if <a> element has .disabled class, fine!
       this.$group.on('click', 'a:not(.active)', this.click.bind(this));
 
-      this.$element.change(this.toggle_checked.bind(this));
-      $(this.element.labels).click(this.focus.bind(this));
+      this.$element.on('change', this.toggle_checked.bind(this));
+      $(this.element.labels).on('click', this.focus.bind(this));
       $(this.element.form).on('reset', this.reset.bind(this));
 
       this.$group.append(this.$buttons).insertAfter(this.element);
@@ -157,7 +163,7 @@
     },
     focus: function() {
       // Original behavior
-      this.$group.focus();
+      this.$group.trigger('focus');
     },
     click: function() {
       this.change(!this.element.checked);
@@ -166,7 +172,7 @@
       // Fix #12
       this.element.checked = value;
 
-      this.$element.change();
+      this.$element.trigger('change');
     },
     keydown: function(event) {
       if (this.options.toggleKeyCodes.indexOf(event.keyCode) != -1) {
@@ -176,7 +182,7 @@
         this.click();
       }
       else if (event.keyCode == 13) {
-        $(this.element.form).submit();
+        $(this.element.form).trigger('submit');
       }
     },
     reset: function() {
