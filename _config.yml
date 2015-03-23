@@ -8,7 +8,3 @@ description: A checkbox component based on Bootstrap framework.
 
 download:
   dist: https://github.com/vsn4ik/bootstrap-checkbox/releases/download/v1.2.5/bootstrap-checkbox-1.2.5-dist.zip
-
-path:
-  jquery: http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery
-  bootstrap: http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2
