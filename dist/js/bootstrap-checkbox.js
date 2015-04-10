@@ -4,9 +4,16 @@
  * Licensed under MIT (https://github.com/vsn4ik/bootstrap-checkbox/blob/master/LICENSE)
  */
 
-'use strict';
+/**
+ * 'Strict Mode' strictly in body of function
+ * $.inArray: friends with IE8. Use Array.prototype.indexOf in future.
+ * $.fn.hide: friends with IE8/10. Use $.fn.prop in future.
+ * $.proxy: friends with IE8. Use Function.prototype.bind in future.
+ */
 
 (function(factory) {
+  'use strict';
+
   if (typeof define == 'function' && define.amd) {
     // AMD. Register as an anonymous module
     define(['jquery'], factory);
@@ -20,6 +27,8 @@
     factory(jQuery);
   }
 })(function($) {
+  'use strict';
+
   $.create = function() {
     return $($.map(arguments, function(tagName) {
       return document.createElement(tagName);
@@ -54,7 +63,6 @@
 
   Checkboxpicker.prototype = {
     init: function() {
-      // For IE 9/10 use $.fn.hide() instead $.fn.prop('hidden', true)
       this.$element.hide();
 
       if (this.options.offLabel) {
@@ -113,14 +121,14 @@
       }
 
       // Keydown event only trigger if set tabindex, fine!
-      this.$group.on('keydown', this.keydown.bind(this));
+      this.$group.on('keydown', $.proxy(this.keydown, this));
 
       // Don't trigger if <a> element has .disabled class, fine!
-      this.$group.on('click', 'a:not(.active)', this.click.bind(this));
+      this.$group.on('click', 'a:not(.active)', $.proxy(this.click, this));
 
-      this.$element.on('change', this.toggle_checked.bind(this));
-      $(this.element.labels).on('click', this.focus.bind(this));
-      $(this.element.form).on('reset', this.reset.bind(this));
+      this.$element.on('change', $.proxy(this.toggle_checked, this));
+      $(this.element.labels).on('click', $.proxy(this.focus, this));
+      $(this.element.form).on('reset', $.proxy(this.reset, this));
 
       this.$group.append(this.$buttons).insertAfter(this.element);
 
@@ -175,7 +183,7 @@
       this.$element.trigger('change');
     },
     keydown: function(event) {
-      if (this.options.toggleKeyCodes.indexOf(event.keyCode) != -1) {
+      if ($.inArray(event.keyCode, this.options.toggleKeyCodes) != -1) {
         // Off vertical scrolling on Spacebar
         event.preventDefault();
 
