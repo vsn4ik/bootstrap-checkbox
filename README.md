@@ -9,7 +9,7 @@
 
 ## Quick start
 
-Six quick start options are available:
+Several quick start options are available:
 
 - [Download the latest release](https://github.com/vsn4ik/bootstrap-checkbox/releases/download/v1.2.5/bootstrap-checkbox-1.2.5-dist.zip "Download Bootstrap-checkbox").
 - Clone the repo: `git clone https://github.com/vsn4ik/bootstrap-checkbox.git`.
