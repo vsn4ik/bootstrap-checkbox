@@ -17,7 +17,7 @@ $(function() {
     }
   });
 
-  $('#scroll_top').click(function() {
+  $('#scroll_top').on('click', function() {
     this.disabled = true;
 
     // 'html' for Mozilla Firefox, 'body' for other browsers
