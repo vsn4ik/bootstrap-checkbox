@@ -18,7 +18,7 @@ module.exports = function(grunt) {
         'dist',
         '*-dist.zip'
       ],
-      docs: '_gh_pages'
+      docs: '_gh_pages/*'
     },
     copy: {
       core: {
@@ -29,21 +29,17 @@ module.exports = function(grunt) {
       docs: {
         expand: true,
         cwd: 'docs',
-        src: 'index.html',
+        src: '**',
         dest: '_gh_pages',
         options: {
           process: function(content) {
             return grunt.template.process(content, grunt.config);
-          }
+          },
+          noProcess: '**/*.{css,js}'
         }
       },
       node_modules: {
         files: [{
-          expand: true,
-          cwd: 'docs',
-          src: '*/**',
-          dest: '_gh_pages'
-        }, {
           expand: true,
           cwd: 'node_modules/bootstrap/dist',
           src: '**',
