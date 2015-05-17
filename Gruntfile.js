@@ -38,8 +38,12 @@ module.exports = function(grunt) {
           noProcess: '**/*.{css,js}'
         }
       },
-      node_modules: {
+      assets: {
         files: [{
+          expand: true,
+          src: 'dist/**',
+          dest: '_gh_pages/'
+        }, {
           expand: true,
           cwd: 'node_modules/bootstrap/dist',
           src: '**',
@@ -147,15 +151,16 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', [
     'clean',
-    'copy',
     'jshint',
+    'copy:core',
     'uglify',
-    'usebanner',
-    'symlink'
+    'usebanner'
   ]);
 
   grunt.registerTask('prep-release', [
     'default',
+    'copy:docs',
+    'copy:assets',
     'compress'
   ]);
 };
