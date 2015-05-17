@@ -22,3 +22,7 @@ label[for] {
 .input-group-addon {
   background-color: white;
 }
+
+pre {
+  padding: 0;
+}

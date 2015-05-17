@@ -33,4 +33,6 @@ $(function() {
   $(':checkbox').checkboxpicker({
     style: 'm-b'
   });
+
+  hljs.initHighlighting();
 });

@@ -7,7 +7,7 @@
 /**
  * 'Strict Mode' strictly in body of function
  * $.inArray: friends with IE8. Use Array.prototype.indexOf in future.
- * $.fn.hide: friends with IE8/10. Use $.fn.prop in future.
+ * Use this.element.hidden in future.
  * $.proxy: friends with IE8. Use Function.prototype.bind in future.
  */
 
@@ -63,7 +63,7 @@
 
   Checkboxpicker.prototype = {
     init: function() {
-      this.$element.hide();
+      this.$element.addClass('hidden');
 
       if (this.options.offLabel) {
         this.$off.text(this.options.offLabel);

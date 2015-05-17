@@ -18,30 +18,51 @@ module.exports = function(grunt) {
         'dist',
         '*-dist.zip'
       ],
-      docs: 'docs/vendor'
+      docs: '_gh_pages'
     },
     copy: {
-      js: {
+      core: {
         expand: true,
         src: 'js/**',
         dest: 'dist/'
       },
+      docs: {
+        expand: true,
+        cwd: 'docs',
+        src: 'index.html',
+        dest: '_gh_pages',
+        options: {
+          process: function(content) {
+            return grunt.template.process(content, grunt.config);
+          }
+        }
+      },
       node_modules: {
         files: [{
           expand: true,
+          cwd: 'docs',
+          src: '*/**',
+          dest: '_gh_pages'
+        }, {
+          expand: true,
           cwd: 'node_modules/bootstrap/dist',
           src: '**',
-          dest: 'docs/vendor/bootstrap'
+          dest: '_gh_pages/vendor/bootstrap'
+        }, {
+          expand: true,
+          cwd: 'node_modules/highlight.js/styles',
+          src: '*',
+          dest: '_gh_pages/vendor/highlight.js/css'
         }, {
           expand: true,
           cwd: 'node_modules/jquery/dist',
           src: '*.{js,map}',
-          dest: 'docs/vendor/jquery/js'
+          dest: '_gh_pages/vendor/jquery/js'
         }, {
           expand: true,
           cwd: 'node_modules/octicons/octicons',
           src: '*.{css,eot,svg,ttf,woff}',
-          dest: 'docs/vendor/octicons/css'
+          dest: '_gh_pages/vendor/octicons/css'
         }]
       }
     },
@@ -74,6 +95,9 @@ module.exports = function(grunt) {
       },
       docs: {
         options: {
+          globals: {
+            hljs: true
+          },
           jquery: true
         },
         src: 'docs/assets/js/'
@@ -104,15 +128,7 @@ module.exports = function(grunt) {
           overwrite: true
         },
         src: 'dist',
-        dest: 'docs/dist'
-      }
-    },
-    jekyll: {
-      github: {
-        options: {
-          config: '_config.yml',
-          raw: 'github: true'
-        }
+        dest: '_gh_pages/dist'
       }
     },
     compress: {
@@ -143,7 +159,7 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('prep-release', [
-    'jekyll',
+    'default',
     'compress'
   ]);
 };
