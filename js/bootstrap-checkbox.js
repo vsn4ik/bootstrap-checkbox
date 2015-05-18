@@ -5,9 +5,9 @@
  * $.proxy: friends with IE8. Use Function.prototype.bind in future.
  */
 
-(function(factory) {
-  'use strict';
+'use strict';
 
+(function(factory) {
   if (typeof define == 'function' && define.amd) {
     // AMD. Register as an anonymous module
     define(['jquery'], factory);
@@ -21,8 +21,6 @@
     factory(jQuery);
   }
 })(function($) {
-  'use strict';
-
   $.create = function() {
     return $($.map(arguments, function(tagName) {
       return document.createElement(tagName);

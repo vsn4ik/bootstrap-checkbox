@@ -13,6 +13,7 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    year: grunt.template.today('yyyy'),
     clean: {
       dist: [
         'dist',
@@ -26,23 +27,16 @@ module.exports = function(grunt) {
         src: 'js/**',
         dest: 'dist/'
       },
-      docs: {
-        expand: true,
-        cwd: 'docs',
-        src: '**',
-        dest: '_gh_pages',
-        options: {
-          process: function(content) {
-            return grunt.template.process(content, grunt.config);
-          },
-          noProcess: '**/*.{css,js}'
-        }
-      },
       assets: {
         files: [{
           expand: true,
           src: 'dist/**',
           dest: '_gh_pages/'
+        }, {
+          expand: true,
+          cwd: 'docs',
+          src: 'assets/**',
+          dest: '_gh_pages'
         }, {
           expand: true,
           cwd: 'node_modules/bootstrap/dist',
@@ -69,6 +63,7 @@ module.exports = function(grunt) {
     jshint: {
       options: {
         curly: true,
+        globalstrict: true,
         latedef: true,
         node: true,
         noempty: true,
@@ -87,12 +82,7 @@ module.exports = function(grunt) {
         },
         src: 'js/'
       },
-      grunt: {
-        options: {
-          globalstrict: true
-        },
-        src: 'Gruntfile.js'
-      },
+      grunt: 'Gruntfile.js',
       docs: {
         options: {
           globals: {
@@ -115,21 +105,24 @@ module.exports = function(grunt) {
         banner: [
           '/*!',
           ' * <%= pkg.name.charAt(0).toUpperCase() + pkg.name.slice(1) %> v<%= pkg.version %> (<%= pkg.homepage %>)',
-          ' * Copyright 2013-<%= grunt.template.today("yyyy") %> <%= pkg.author.name %> (<%= pkg.author.url %>)',
+          ' * Copyright 2013-<%= year %> <%= pkg.author.name %> (<%= pkg.author.url %>)',
           ' * Licensed under <%= pkg.license.type %> (<%= pkg.license.url %>)',
           ' */'
         ].join('\n') + '\n'
       },
       dist: 'dist/**'
     },
-    symlink: {
+    ejs: {
       docs: {
         options: {
-          overwrite: true
+          pkg: '<%= pkg %>',
+          year: '<%= year %>'
         },
-        src: 'dist',
-        dest: '_gh_pages/dist'
-      }
+        expand: true,
+        cwd: 'docs',
+        src: 'index.html',
+        dest: '_gh_pages/'
+      },
     },
     compress: {
       dist: {
@@ -159,7 +152,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('prep-release', [
     'default',
-    'copy:docs',
+    'ejs',
     'copy:assets',
     'compress'
   ]);
