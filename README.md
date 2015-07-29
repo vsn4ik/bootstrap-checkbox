@@ -11,12 +11,12 @@
 
 Several quick start options are available:
 
-- [Download the latest release](https://github.com/vsn4ik/bootstrap-checkbox/releases/download/v1.2.8/bootstrap-checkbox-1.2.8-dist.zip "Download Bootstrap-checkbox").
-- Clone the repo: `git clone https://github.com/vsn4ik/bootstrap-checkbox.git`.
-- Install with [Bower](http://bower.io): `bower install bootstrap-checkbox`.
-- Install with [npm](https://www.npmjs.com): `npm install bootstrap-checkbox`.
-- Install with [SPM](http://spmjs.io): `spm install bootstrap-checkbox`.
-- Install with [Composer](https://getcomposer.org): `composer require vsn4ik/bootstrap-checkbox "dev-master"`.
+* [Download the latest release](https://github.com/vsn4ik/bootstrap-checkbox/releases/download/v1.2.8/bootstrap-checkbox-1.2.8-dist.zip "Download Bootstrap-checkbox").
+* Clone the repo: `git clone https://github.com/vsn4ik/bootstrap-checkbox.git`.
+* Install with [Bower](http://bower.io): `bower install bootstrap-checkbox`.
+* Install with [npm](https://www.npmjs.com): `npm install bootstrap-checkbox`.
+* Install with [SPM](http://spmjs.io): `spm install bootstrap-checkbox`.
+* Install with [Composer](https://getcomposer.org): `composer require vsn4ik/bootstrap-checkbox "dev-master"`.
 
 ### What's included
 
@@ -37,15 +37,15 @@ For some working examples, visit our [examples](http://vsn4ik.github.io/bootstra
 
 ## Min Requirements
 
-- Bootstrap 3.0.0
-- jQuery 1.9.1
+* Bootstrap 3.0.0
+* jQuery 1.9.1
 
 
 ## Creators
 
 **Vasily A.**
 
-+ <https://github.com/vsn4ik>
+* <https://github.com/vsn4ik>
 
 
 ## Copyright and license
