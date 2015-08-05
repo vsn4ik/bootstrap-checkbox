@@ -26,3 +26,7 @@ label[for] {
 pre {
   padding: 0;
 }
+
+.btn-group .btn + .btn {
+  z-index: 2;
+}
