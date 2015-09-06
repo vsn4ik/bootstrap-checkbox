@@ -118,14 +118,14 @@
       }
 
       // Keydown event only trigger if set tabindex, fine!
-      this.$group.on('keydown', $.proxy(this.keydown, this));
+      this.$group.on('keydown', $.proxy(this, 'keydown'));
 
       // Don't trigger if <a> element has .disabled class, fine!
-      this.$group.on('click', 'a:not(.active)', $.proxy(this.click, this));
+      this.$group.on('click', 'a:not(.active)', $.proxy(this, 'click'));
 
-      this.$element.on('change', $.proxy(this.toggle_checked, this));
-      $(this.element.labels).on('click', $.proxy(this.focus, this));
-      $(this.element.form).on('reset', $.proxy(this.reset, this));
+      this.$element.on('change', $.proxy(this, 'toggle_checked'));
+      $(this.element.labels).on('click', $.proxy(this, 'focus'));
+      $(this.element.form).on('reset', $.proxy(this, 'reset'));
 
       this.$group.append(this.$buttons).insertAfter(this.element);
 
