@@ -117,7 +117,7 @@
       // Don't trigger if <a> element has .disabled class, fine!
       this.$group.on('click', 'a:not(.active)', $.proxy(this, 'click'));
 
-      this.$element.on('change', $.proxy(this, 'toggle_checked'));
+      this.$element.on('change', $.proxy(this, 'toggleChecked'));
       $(this.element.labels).on('click', $.proxy(this, 'focus'));
       $(this.element.form).on('reset', $.proxy(this, 'reset'));
 
@@ -139,13 +139,13 @@
         }
       }
     },
-    toggle_checked: function() {
+    toggleChecked: function() {
       // this.$group not focus (incorrect on form reset)
       this.$buttons.toggleClass('active ' + this.options.defaultClass);
       this.$off.toggleClass(this.options.offClass);
       this.$on.toggleClass(this.options.onClass);
     },
-    toggle_disabled: function() {
+    toggleDisabled: function() {
       this.$buttons.toggleClass('disabled');
 
       if (this.element.disabled) {
@@ -215,7 +215,7 @@
         var data = $.data(element, 'bs.checkbox');
 
         if (data && element.disabled != value) {
-          data.toggle_disabled();
+          data.toggleDisabled();
         }
 
         if (oldPropHooks.disabled && oldPropHooks.disabled.set) {

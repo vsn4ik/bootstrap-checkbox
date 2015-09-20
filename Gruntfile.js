@@ -93,6 +93,16 @@ module.exports = function(grunt) {
         src: 'docs/assets/js/'
       }
     },
+    jscs: {
+      options: {
+        config: 'js/.jscsrc'
+      },
+      core: 'js/',
+      grunt: 'Gruntfile.js',
+      docs: {
+        src: 'docs/assets/js/'
+      }
+    },
     uglify: {
       core: {
         expand: true,
@@ -122,7 +132,7 @@ module.exports = function(grunt) {
         cwd: 'docs',
         src: 'index.html',
         dest: '_gh_pages/'
-      },
+      }
     },
     compress: {
       dist: {
@@ -145,6 +155,7 @@ module.exports = function(grunt) {
   grunt.registerTask('default', [
     'clean',
     'jshint',
+    'jscs',
     'copy:core',
     'uglify',
     'usebanner'
