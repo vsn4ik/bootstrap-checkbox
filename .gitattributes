@@ -1,7 +1,7 @@
 # Export-ignore files for composer (with --prefer-dist)
+# Dont add bower.json, otherwise it is not loaded in the Bower package
 docs          export-ignore
 .*            export-ignore
 Gruntfile.js  export-ignore
 README.md     export-ignore
-bower.json    export-ignore
 package.json  export-ignore
