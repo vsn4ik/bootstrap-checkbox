@@ -22,9 +22,7 @@
   "main": "dist/js/bootstrap-checkbox.js",
   "ignore": [
     "docs",
-    ".gitattributes",
-    ".gitignore",
-    ".travis.yml",
+    "/.*",
     "Gruntfile.js",
     "README.md",
     "_config.yml",
