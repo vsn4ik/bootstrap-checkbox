@@ -54,14 +54,16 @@
 
   Checkboxpicker.prototype = {
     init: function() {
+      var fn = this.options.html ? 'html' : 'text';
+
       this.$element.addClass('hidden');
 
       if (this.options.offLabel) {
-        this.$off.text(this.options.offLabel);
+        this.$off[fn](this.options.offLabel);
       }
 
       if (this.options.onLabel) {
-        this.$on.text(this.options.onLabel);
+        this.$on[fn](this.options.onLabel);
       }
 
       if (this.options.offIconClass) {
@@ -263,6 +265,7 @@
     onLabel: 'Yes',
     offTitle: false,
     onTitle: false,
+    html: false,
 
     // Event key codes:
     // 13: Return
