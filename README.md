@@ -1,4 +1,4 @@
-# [Bootstrap-checkbox](http://vsn4ik.github.io/bootstrap-checkbox)
+# [Bootstrap-checkbox](https://vsn4ik.github.io/bootstrap-checkbox/)
 
 [![Bower version](https://img.shields.io/bower/v/bootstrap-checkbox.svg)](https://github.com/vsn4ik/bootstrap-checkbox)
 [![npm version](https://img.shields.io/npm/v/bootstrap-checkbox.svg)](https://www.npmjs.com/package/bootstrap-checkbox)
@@ -32,7 +32,7 @@ bootstrap-checkbox/
 
 ## Examples
 
-For some working examples, visit our [examples](http://vsn4ik.github.io/bootstrap-checkbox/#examples) section.
+For some working examples, visit our [examples](https://vsn4ik.github.io/bootstrap-checkbox/#html-examples) section.
 
 
 ## Min Requirements
