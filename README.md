@@ -50,7 +50,7 @@ For some working examples, visit our [examples](https://vsn4ik.github.io/bootstr
 
 ## Copyright and license
 
-Copyright Vasily A., 2013&ndash;2015.
+Copyright Vasily A., 2013&ndash;2016.
 
 Licensed under [the MIT License][license].
 
