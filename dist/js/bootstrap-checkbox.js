@@ -1,5 +1,5 @@
 /*!
- * Bootstrap-checkbox v1.3.0 (https://vsn4ik.github.io/bootstrap-checkbox/)
+ * Bootstrap-checkbox v1.3.1 (https://vsn4ik.github.io/bootstrap-checkbox/)
  * Copyright 2013-2016 Vasily A. (https://github.com/vsn4ik)
  * Licensed under the MIT license
  */
@@ -36,14 +36,19 @@
 
     var data = this.$element.data();
 
-    // === '': <... data-reverse>
+    // <... data-reverse>
     if (data.reverse === '') {
       data.reverse = true;
     }
 
-    // === '': <... data-switch-always>
+    // <... data-switch-always>
     if (data.switchAlways === '') {
       data.switchAlways = true;
+    }
+
+    // <... data-html>
+    if (data.html === '') {
+      data.html = true;
     }
 
     this.options = $.extend({}, $.fn.checkboxpicker.defaults, options, data);
@@ -183,10 +188,13 @@
       var $button = $(event.target);
 
       if (!$button.hasClass('active') || this.options.switchAlways) {
-        this.change(!this.element.checked);
+        this.change();
       }
     },
-    change: function(value) {
+    change: function() {
+      this.set(!this.element.checked);
+    },
+    set: function(value) {
       // Fix #12
       this.element.checked = value;
 
@@ -197,7 +205,7 @@
         // Off vertical scrolling on Spacebar
         event.preventDefault();
 
-        this.click();
+        this.change();
       }
       else if (event.keyCode == 13) {
         $(this.element.form).trigger('submit');
@@ -206,7 +214,7 @@
     reset: function() {
       // this.element.checked not used (incorect on large number of form elements)
       if ((this.element.defaultChecked && this.$off.hasClass('active')) || (!this.element.defaultChecked && this.$on.hasClass('active'))) {
-        this.change(this.element.defaultChecked);
+        this.set(this.element.defaultChecked);
       }
     }
   };
@@ -282,7 +290,6 @@
     onLabel: 'Yes',
     offTitle: false,
     onTitle: false,
-    html: false,
 
     // Event key codes:
     // 13: Return

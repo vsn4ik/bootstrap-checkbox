@@ -32,6 +32,12 @@ $(function() {
     this.blur();
   });
 
+  $('#input-1').data({
+    html: true,
+    offLabel: '<span class="glyphicon glyphicon-remove">',
+    onLabel: '<span class="glyphicon glyphicon-ok">'
+  });
+
   $(':checkbox').checkboxpicker({
     style: 'm-b'
   });

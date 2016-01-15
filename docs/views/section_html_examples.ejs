@@ -53,6 +53,38 @@
 
   <div class="form-group">
     <div class="col-sm-3">
+      <input type="checkbox" data-style="btn-group-lg m-b">
+    </div>
+
+    <div class="col-sm-9">
+      <pre><code class="hljs xml">&lt;input type="checkbox" data-style="btn-group-lg"&gt;</code></pre>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-3">
+      <input type="checkbox" data-style="btn-group-vertical m-b">
+    </div>
+
+    <div class="col-sm-9">
+      <pre><code class="hljs xml">&lt;input type="checkbox" data-style="btn-group-vertical"&gt;</code></pre>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-3">
+      <input type="checkbox" checked data-style="btn-group-justified m-b">
+    </div>
+
+    <div class="col-sm-9">
+      <pre><code class="hljs xml">&lt;div class="col-sm-3"&gt;
+  &lt;input type="checkbox" data-style="btn-group-justified"&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-3">
       <input type="checkbox" title="Example title">
     </div>
 
@@ -68,18 +100,6 @@
 
     <div class="col-sm-9">
       <pre><code class="hljs xml">&lt;input type="checkbox" data-off-title="No" data-on-title="Yes"&gt;</code></pre>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <div class="col-sm-3">
-      <input type="checkbox" checked data-style="btn-group-justified m-b">
-    </div>
-
-    <div class="col-sm-9">
-      <pre><code class="hljs xml">&lt;div class="col-sm-3"&gt;
-  &lt;input type="checkbox" data-style="btn-group-justified"&gt;
-&lt;/div&gt;</code></pre>
     </div>
   </div>
 
@@ -105,6 +125,23 @@
 
   <div class="form-group">
     <div class="col-sm-3">
+      <input id="input-1" type="checkbox">
+    </div>
+
+    <div class="col-sm-9">
+      <pre><code class="hljs xml">&lt;input id="input-1" type="checkbox"&gt;
+&lt;script&gt;
+  $('#input-1').checkboxpicker({
+    html: true,
+    offLabel: '&lt;span class="glyphicon glyphicon-remove"&gt;',
+    onLabel: '&lt;span class="glyphicon glyphicon-ok"&gt;'
+  });
+&lt;/script&gt;</code></pre>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-3">
       <input type="checkbox" checked data-off-class="btn-warning" data-on-class="btn-primary">
     </div>
 
@@ -115,14 +152,14 @@
 
   <div class="form-group">
     <div class="col-sm-3">
-      <label for="input-1">Label</label>
+      <label for="input-2">Label</label>
       <br>
-      <input id="input-1" type="checkbox" checked>
+      <input id="input-2" type="checkbox" checked>
     </div>
 
     <div class="col-sm-9">
-      <pre><code class="hljs xml">&lt;label for="input-1"&gt;&lt;/label&gt;
-&lt;input id="input-1" type="checkbox" checked&gt;</code></pre>
+      <pre><code class="hljs xml">&lt;label for="input-2"&gt;&lt;/label&gt;
+&lt;input id="input-2" type="checkbox" checked&gt;</code></pre>
     </div>
   </div>
 
