@@ -1,5 +1,5 @@
 /*!
- * Bootstrap-checkbox v1.2.15 (https://vsn4ik.github.io/bootstrap-checkbox/)
+ * Bootstrap-checkbox v1.3.0 (https://vsn4ik.github.io/bootstrap-checkbox/)
  * Copyright 2013-2016 Vasily A. (https://github.com/vsn4ik)
  * Licensed under the MIT license
  */
@@ -27,16 +27,26 @@
   }
 })(function($) {
   $.create = function() {
-    return $($.map(arguments, function(tagName) {
-      return document.createElement(tagName);
-    }));
+    return $($.map(arguments, $.proxy(document, 'createElement')));
   };
 
   function Checkboxpicker(element, options) {
     this.element = element;
     this.$element = $(element);
 
-    this.options = $.extend({}, $.fn.checkboxpicker.defaults, options, this.$element.data());
+    var data = this.$element.data();
+
+    // === '': <... data-reverse>
+    if (data.reverse === '') {
+      data.reverse = true;
+    }
+
+    // === '': <... data-switch-always>
+    if (data.switchAlways === '') {
+      data.switchAlways = true;
+    }
+
+    this.options = $.extend({}, $.fn.checkboxpicker.defaults, options, data);
 
     if (this.$element.closest('label').length) {
       console.warn(this.options.warningMessage);
@@ -49,11 +59,8 @@
     // .btn-group-justified works with <a> elements as the <button> doesn't pick up the styles
     this.$buttons = $.create('a', 'a').addClass('btn');
 
-    // === '': <... data-reverse>
-    var reverse = this.options.reverse || this.options.reverse === '';
-
-    this.$off = this.$buttons.eq(reverse ? 1 : 0);
-    this.$on = this.$buttons.eq(reverse ? 0 : 1);
+    this.$off = this.$buttons.eq(this.options.reverse ? 1 : 0);
+    this.$on = this.$buttons.eq(this.options.reverse ? 0 : 1);
 
     this.init();
   }
@@ -123,7 +130,7 @@
       this.$group.on('keydown', $.proxy(this, 'keydown'));
 
       // Don't trigger if <a> element has .disabled class, fine!
-      this.$group.on('click', 'a:not(.active)', $.proxy(this, 'click'));
+      this.$buttons.on('click', $.proxy(this, 'click'));
 
       this.$element.on('change', $.proxy(this, 'toggleChecked'));
       $(this.element.labels).on('click', $.proxy(this, 'focus'));
@@ -172,8 +179,12 @@
       // Original behavior
       this.$group.trigger('focus');
     },
-    click: function() {
-      this.change(!this.element.checked);
+    click: function(event) {
+      var $button = $(event.target);
+
+      if (!$button.hasClass('active') || this.options.switchAlways) {
+        this.change(!this.element.checked);
+      }
     },
     change: function(value) {
       // Fix #12
