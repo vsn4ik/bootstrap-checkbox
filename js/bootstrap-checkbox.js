@@ -179,7 +179,8 @@
       this.$group.trigger('focus');
     },
     click: function(event) {
-      var $button = $(event.target);
+      // Strictly event.currentTarget. Fix #19
+      var $button = $(event.currentTarget);
 
       if (!$button.hasClass('active') || this.options.switchAlways) {
         this.change();
