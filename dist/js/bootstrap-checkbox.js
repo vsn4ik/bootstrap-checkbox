@@ -1,5 +1,5 @@
 /*!
- * Bootstrap-checkbox v1.3.1 (https://vsn4ik.github.io/bootstrap-checkbox/)
+ * Bootstrap-checkbox v1.3.2 (https://vsn4ik.github.io/bootstrap-checkbox/)
  * Copyright 2013-2016 Vasily A. (https://github.com/vsn4ik)
  * Licensed under the MIT license
  */
@@ -185,7 +185,8 @@
       this.$group.trigger('focus');
     },
     click: function(event) {
-      var $button = $(event.target);
+      // Strictly event.currentTarget. Fix #19
+      var $button = $(event.currentTarget);
 
       if (!$button.hasClass('active') || this.options.switchAlways) {
         this.change();
