@@ -247,6 +247,8 @@
     }
   });
 
+  var old = $.fn.checkboxpicker;
+
   // For AMD/Node/CommonJS used elements (optional)
   // http://learn.jquery.com/jquery-ui/environments/amd/
   $.fn.checkboxpicker = function(options, elements) {
@@ -292,6 +294,12 @@
     toggleKeyCodes: [13, 32],
 
     warningMessage: 'Please do not use Bootstrap-checkbox element in label element.'
+  };
+
+  $.fn.checkboxpicker.Constructor = Checkboxpicker;
+  $.fn.checkboxpicker.noConflict = function() {
+    $.fn.checkboxpicker = old;
+    return this;
   };
 
   return $.fn.checkboxpicker;
