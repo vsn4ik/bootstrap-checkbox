@@ -15,7 +15,6 @@ Several quick start options are available:
 * Clone the repo: `git clone https://github.com/vsn4ik/bootstrap-checkbox.git`.
 * Install with [Bower](http://bower.io): `bower install bootstrap-checkbox`.
 * Install with [npm](https://www.npmjs.com): `npm install bootstrap-checkbox`.
-* Install with [SPM](http://spmjs.io): `spm install bootstrap-checkbox`.
 * Install with [Composer](https://getcomposer.org): `composer require vsn4ik/bootstrap-checkbox "dev-master"`.
 
 ### What's included
