@@ -85,10 +85,11 @@ module.exports = function(grunt) {
       grunt: 'Gruntfile.js',
       docs: {
         options: {
+          jquery: true,
+          browser: true,
           globals: {
             hljs: true
-          },
-          jquery: true
+          }
         },
         src: 'docs/assets/js/'
       }
