@@ -1,5 +1,5 @@
 /*!
- * Bootstrap-checkbox v1.3.3 (https://vsn4ik.github.io/bootstrap-checkbox/)
+ * Bootstrap-checkbox v1.4.0 (https://vsn4ik.github.io/bootstrap-checkbox/)
  * Copyright 2013-2016 Vasily A. (https://github.com/vsn4ik)
  * Licensed under the MIT license
  */
@@ -59,10 +59,10 @@
       return;
     }
 
-    this.$group = $.create('div').addClass('btn-group');
+    this.$group = $.create('div');
 
     // .btn-group-justified works with <a> elements as the <button> doesn't pick up the styles
-    this.$buttons = $.create('a', 'a').addClass('btn');
+    this.$buttons = $.create('a', 'a');
 
     this.$off = this.$buttons.eq(this.options.reverse ? 1 : 0);
     this.$on = this.$buttons.eq(this.options.reverse ? 0 : 1);
@@ -75,6 +75,8 @@
       var fn = this.options.html ? 'html' : 'text';
 
       this.$element.addClass('hidden');
+      this.$group.addClass(this.options.baseGroupCls).addClass(this.options.groupCls);
+      this.$buttons.addClass(this.options.baseCls).addClass(this.options.cls);
 
       if (this.options.offLabel) {
         this.$off[fn](this.options.offLabel);
@@ -84,37 +86,35 @@
         this.$on[fn](this.options.onLabel);
       }
 
-      if (this.options.offIconClass) {
+      if (this.options.offIconCls) {
         if (this.options.offLabel) {
           // &nbsp; -- whitespace (or wrap into span)
           this.$off.prepend('&nbsp;');
         }
 
         // $.addClass for XSS check
-        $.create('span').addClass(this.options.offIconClass).prependTo(this.$off);
+        $.create('span').addClass(this.options.iconCls).addClass(this.options.offIconCls).prependTo(this.$off);
       }
 
-      if (this.options.onIconClass) {
+      if (this.options.onIconCls) {
         if (this.options.onLabel) {
           // &nbsp; -- whitespace (or wrap into span)
           this.$on.prepend('&nbsp;');
         }
 
         // $.addClass for XSS check
-        $.create('span').addClass(this.options.onIconClass).prependTo(this.$on);
+        $.create('span').addClass(this.options.iconCls).addClass(this.options.onIconCls).prependTo(this.$on);
       }
 
       if (this.element.checked) {
-        this.$on.addClass('active ' + this.options.onClass);
-        this.$off.addClass(this.options.defaultClass);
+        this.$on.addClass('active');
+        this.$on.addClass(this.options.onActiveCls);
+        this.$off.addClass(this.options.offCls);
       }
       else {
-        this.$off.addClass('active ' + this.options.offClass);
-        this.$on.addClass(this.options.defaultClass);
-      }
-
-      if (this.options.style) {
-        this.$group.addClass(this.options.style);
+        this.$off.addClass('active');
+        this.$off.addClass(this.options.offActiveCls);
+        this.$on.addClass(this.options.onCls);
       }
 
       if (this.element.title) {
@@ -161,9 +161,12 @@
     },
     toggleChecked: function() {
       // this.$group not focus (incorrect on form reset)
-      this.$buttons.toggleClass('active ' + this.options.defaultClass);
-      this.$off.toggleClass(this.options.offClass);
-      this.$on.toggleClass(this.options.onClass);
+      this.$buttons.toggleClass('active');
+
+      this.$off.toggleClass(this.options.offCls);
+      this.$off.toggleClass(this.options.offActiveCls);
+      this.$on.toggleClass(this.options.onCls);
+      this.$on.toggleClass(this.options.onActiveCls);
     },
     toggleDisabled: function() {
       this.$buttons.toggleClass('disabled');
@@ -284,15 +287,21 @@
   // HTML5 data-*.
   // <input data-on-label="43"> --> $('input').data('onLabel') == '43'.
   $.fn.checkboxpicker.defaults = {
-    style: false,
-    defaultClass: 'btn-default',
-    disabledCursor: 'not-allowed',
-    offClass: 'btn-danger',
-    onClass: 'btn-success',
+    baseGroupCls: 'btn-group',
+    baseCls: 'btn',
+    groupCls: null,
+    cls: null,
+    offCls: 'btn-default',
+    onCls: 'btn-default',
+    offActiveCls: 'btn-danger',
+    onActiveCls: 'btn-success',
     offLabel: 'No',
     onLabel: 'Yes',
     offTitle: false,
     onTitle: false,
+    iconCls: 'glyphicon',
+
+    disabledCursor: 'not-allowed',
 
     // Event key codes:
     // 13: Return
