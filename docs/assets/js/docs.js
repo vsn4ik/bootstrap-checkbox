@@ -39,7 +39,7 @@ $(function() {
   });
 
   $(':checkbox').checkboxpicker({
-    style: 'm-b'
+    groupCls: 'm-b'
   });
 
   hljs.initHighlighting();
