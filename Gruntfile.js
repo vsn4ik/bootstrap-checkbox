@@ -21,6 +21,15 @@ module.exports = function(grunt) {
       ],
       docs: '_gh_pages/*'
     },
+    less: {
+      options: {
+        paths: ['node_modules']
+      },
+      docs: {
+        src: 'docs/assets/less/docs.less',
+        dest: 'docs/assets/css/docs.css'
+      }
+    },
     copy: {
       core: {
         expand: true,
@@ -168,6 +177,7 @@ module.exports = function(grunt) {
   grunt.registerTask('prep-release', [
     'default',
     'ejs',
+    'less',
     'copy:assets',
     'compress'
   ]);
