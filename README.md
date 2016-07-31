@@ -4,7 +4,7 @@
 [![npm version](https://img.shields.io/npm/v/bootstrap-checkbox.svg)](https://www.npmjs.com/package/bootstrap-checkbox)
 [![License](https://img.shields.io/npm/l/bootstrap-checkbox.svg)][license]
 [![Build Status](https://travis-ci.org/vsn4ik/bootstrap-checkbox.svg)](https://travis-ci.org/vsn4ik/bootstrap-checkbox)
-[![devDependency Status](https://david-dm.org/vsn4ik/bootstrap-checkbox/dev-status.svg)](https://david-dm.org/vsn4ik/bootstrap-checkbox#info=devDependencies)
+[![devDependency Status](https://david-dm.org/vsn4ik/bootstrap-checkbox/dev-status.svg)](https://david-dm.org/vsn4ik/bootstrap-checkbox?type=dev)
 
 
 ## Quick start
