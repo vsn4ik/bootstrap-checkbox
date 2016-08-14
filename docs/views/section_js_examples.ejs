@@ -2,13 +2,13 @@
 
 <h3>Calling from an event</h3>
 <p>To trigger an action use a change event.</p>
-<pre><code class="hljs javascript">$(':checkbox').checkboxpicker().change(function() {
+<pre><code class="hljs javascript">$(':checkbox').checkboxpicker().on('change', function() {
   ...
 });</code></pre>
 
 <p>Or call it, by an specific id member of the DOM.</p>
 <pre><code class="hljs javascript">$('#input-1').checkboxpicker();
-$('#input-1').change(function() {
+$('#input-1').on('change', function() {
   ...
 });</code></pre>
 
