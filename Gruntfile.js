@@ -64,7 +64,7 @@ module.exports = function(grunt) {
         }, {
           expand: true,
           cwd: 'node_modules/octicons/build/font',
-          src: '*.{css,eot,svg,ttf,woff}',
+          src: ['*', '!*.scss'],
           dest: '_gh_pages/vendor/octicons/css'
         }]
       }
