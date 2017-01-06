@@ -20,7 +20,7 @@
     factory(jQuery);
   }
 })(function($) {
-  $.create = function() {
+  function create() {
     return $($.map(arguments, $.proxy(document, 'createElement')));
   };
 
@@ -53,10 +53,10 @@
       return;
     }
 
-    this.$group = $.create('div');
+    this.$group = create('div');
 
     // .btn-group-justified works with <a> elements as the <button> doesn't pick up the styles
-    this.$buttons = $.create('a', 'a');
+    this.$buttons = create('a', 'a');
 
     this.$off = this.$buttons.eq(this.options.reverse ? 1 : 0);
     this.$on = this.$buttons.eq(this.options.reverse ? 0 : 1);
@@ -87,7 +87,7 @@
         }
 
         // $.addClass for XSS check
-        $.create('span').addClass(this.options.iconCls).addClass(this.options.offIconCls).prependTo(this.$off);
+        create('span').addClass(this.options.iconCls).addClass(this.options.offIconCls).prependTo(this.$off);
       }
 
       if (this.options.onIconCls) {
@@ -97,7 +97,7 @@
         }
 
         // $.addClass for XSS check
-        $.create('span').addClass(this.options.iconCls).addClass(this.options.onIconCls).prependTo(this.$on);
+        create('span').addClass(this.options.iconCls).addClass(this.options.onIconCls).prependTo(this.$on);
       }
 
       if (this.element.checked) {
