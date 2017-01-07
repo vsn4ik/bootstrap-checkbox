@@ -22,7 +22,7 @@
 })(function($) {
   function create() {
     return $($.map(arguments, $.proxy(document, 'createElement')));
-  };
+  }
 
   function Checkboxpicker(element, options) {
     this.element = element;
