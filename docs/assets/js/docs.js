@@ -49,7 +49,6 @@ $(function() {
 
     $(this).addClass('hidden');
 
-    // 'html' for Mozilla Firefox, 'body' for other browsers
     $(containers).animate({
       scrollTop: 0
     }, 500, $.proxy(function() {
