@@ -2,12 +2,12 @@
 
 'use strict';
 
-$(function() {
+document.addEventListener('DOMContentLoaded', function() {
   $.ajax({
     url: 'https://api.github.com/repos/vsn4ik/bootstrap-checkbox',
     success: function(data) {
       // XSS check
-      if (typeof data.stargazers_count != 'number') {
+      if (typeof data.stargazers_count !== 'number') {
         return;
       }
 
