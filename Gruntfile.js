@@ -171,11 +171,13 @@ module.exports = function(grunt) {
     'usebanner'
   ]);
 
-  grunt.registerTask('prep-release', [
-    'default',
+  grunt.registerTask('docs', [
     'ejs',
     'less',
-    'copy:assets',
+    'copy:assets'
+  ]);
+
+  grunt.registerTask('release-zip', [
     'compress'
   ]);
 };
