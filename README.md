@@ -1,3 +1,5 @@
+<p align="center"><img src="logo/vertical.png" alt="bootstrap-checkbox" height="200px"></p>
+
 # [Bootstrap-checkbox](https://vsn4ik.github.io/bootstrap-checkbox/)
 
 [![npm version](https://img.shields.io/npm/v/bootstrap-checkbox.svg)](https://www.npmjs.com/package/bootstrap-checkbox)
