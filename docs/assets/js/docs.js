@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
           '<div class="input-group-addon">' +
             '<span>' + data.stargazers_count + '</span>' +
             '&nbsp;' +
-            '<span class="fa fa-star"></span>' +
+            '<span class="fas fa-star"></span>' +
           '</div>' +
         '</div>';
 
@@ -32,29 +32,32 @@ document.addEventListener('DOMContentLoaded', function() {
     document.documentElement
   ];
 
-  var $scrollBtn = $('#scroll-top');
+  var scrollButtonNode = document.querySelector('#scroll-top');
 
-  function updateScrollBtnCls() {
+  function updateScrollButtonVisibility() {
     var scrollTop = containers.reduce(function(result, element) {
       return result + element.scrollTop;
     }, 0);
 
-    $scrollBtn.toggleClass('hidden', scrollTop < 100);
+    scrollButtonNode.classList.toggle('hidden', scrollTop < 100);
   }
 
-  $scrollBtn.on('click', function() {
+  scrollButtonNode.addEventListener('click', function() {
     window.onscroll = null;
 
-    $(this).addClass('hidden');
+    scrollButtonNode.classList.add('hidden');
 
+    // 'html' for Mozilla Firefox, 'body' for other browsers
     $(containers).animate({
       scrollTop: 0
     }, 500, $.proxy(function() {
-      window.onscroll = updateScrollBtnCls;
+      window.onscroll = updateScrollButtonVisibility;
     }, this));
   });
 
-  window.onscroll = updateScrollBtnCls;
+  window.onscroll = updateScrollButtonVisibility;
+
+  updateScrollButtonVisibility();
 
   $('#input-1').data({
     html: true,
@@ -65,6 +68,4 @@ document.addEventListener('DOMContentLoaded', function() {
   $(':checkbox').checkboxpicker({
     groupCls: 'm-b'
   });
-
-  updateScrollBtnCls();
 });
