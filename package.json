@@ -21,13 +21,13 @@
   ],
   "main": "dist/js/bootstrap-checkbox.js",
   "scripts": {
-    "test": "grunt"
+    "test": "grunt",
+    "release-zip": "cd dist/ && zip -r9 $npm_package_name-$npm_package_version-dist.zip * && mv $npm_package_name-$npm_package_version-dist.zip .."
   },
   "devDependencies": {
     "grunt": "1.0.2",
     "grunt-banner": "0.6.0",
     "grunt-contrib-clean": "1.1.0",
-    "grunt-contrib-compress": "1.4.3",
     "grunt-contrib-copy": "1.0.0",
     "grunt-contrib-jshint": "1.1.0",
     "grunt-contrib-uglify": "3.3.0",

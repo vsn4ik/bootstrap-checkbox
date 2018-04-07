@@ -69,17 +69,6 @@ module.exports = function(grunt) {
         ].join('\n') + '\n'
       },
       dist: 'dist/**'
-    },
-    compress: {
-      dist: {
-        options: {
-          archive: '<%= compress.dist.dest %>.zip'
-        },
-        expand: true,
-        cwd: 'dist',
-        src: '**',
-        dest: '<%= pkg.name %>-<%= pkg.version %>-dist'
-      }
     }
   });
 
@@ -95,9 +84,5 @@ module.exports = function(grunt) {
     'copy:core',
     'uglify',
     'usebanner'
-  ]);
-
-  grunt.registerTask('release-zip', [
-    'compress'
   ]);
 };
