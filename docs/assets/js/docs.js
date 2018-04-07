@@ -1,5 +1,3 @@
-// jscs:disable requireCamelCaseOrUpperCaseIdentifiers
-
 'use strict';
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -69,5 +67,4 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   updateScrollBtnCls();
-  hljs.initHighlighting();
 });

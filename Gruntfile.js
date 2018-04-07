@@ -11,55 +11,13 @@ module.exports = function(grunt) {
       dist: [
         'dist',
         '*-dist.zip'
-      ],
-      docs: '_gh_pages/*'
-    },
-    less: {
-      options: {
-        paths: ['node_modules']
-      },
-      docs: {
-        src: 'docs/assets/less/docs.less',
-        dest: 'docs/assets/css/docs.css'
-      }
+      ]
     },
     copy: {
       core: {
         expand: true,
         src: 'js/**',
         dest: 'dist/'
-      },
-      assets: {
-        files: [{
-          expand: true,
-          src: 'dist/**',
-          dest: '_gh_pages/'
-        }, {
-          expand: true,
-          cwd: 'docs',
-          src: 'assets/**',
-          dest: '_gh_pages'
-        }, {
-          expand: true,
-          cwd: 'node_modules/bootstrap/dist',
-          src: '**',
-          dest: '_gh_pages/vendor/bootstrap'
-        }, {
-          expand: true,
-          cwd: 'node_modules/highlight.js/styles',
-          src: '*',
-          dest: '_gh_pages/vendor/highlight.js/css'
-        }, {
-          expand: true,
-          cwd: 'node_modules/jquery/dist',
-          src: 'jquery.js',
-          dest: '_gh_pages/vendor/jquery/js'
-        }, {
-          expand: true,
-          cwd: 'node_modules/font-awesome',
-          src: '{css,fonts}/*',
-          dest: '_gh_pages/vendor/font-awesome'
-        }]
       }
     },
     jshint: {
@@ -84,27 +42,14 @@ module.exports = function(grunt) {
         },
         src: 'js/'
       },
-      grunt: 'Gruntfile.js',
-      docs: {
-        options: {
-          jquery: true,
-          browser: true,
-          globals: {
-            hljs: true
-          }
-        },
-        src: 'docs/assets/js/'
-      }
+      grunt: 'Gruntfile.js'
     },
     jscs: {
       options: {
         config: 'js/.jscsrc'
       },
       core: 'js/',
-      grunt: 'Gruntfile.js',
-      docs: {
-        src: 'docs/assets/js/'
-      }
+      grunt: 'Gruntfile.js'
     },
     uglify: {
       core: {
@@ -124,18 +69,6 @@ module.exports = function(grunt) {
         ].join('\n') + '\n'
       },
       dist: 'dist/**'
-    },
-    ejs: {
-      docs: {
-        options: {
-          pkg: '<%= pkg %>',
-          year: '<%= year %>'
-        },
-        expand: true,
-        cwd: 'docs',
-        src: 'index.html',
-        dest: '_gh_pages/'
-      }
     },
     compress: {
       dist: {
@@ -162,12 +95,6 @@ module.exports = function(grunt) {
     'copy:core',
     'uglify',
     'usebanner'
-  ]);
-
-  grunt.registerTask('docs', [
-    'ejs',
-    'less',
-    'copy:assets'
   ]);
 
   grunt.registerTask('release-zip', [

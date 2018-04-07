@@ -1,6 +1,6 @@
 /*!
  * Bootstrap-checkbox v1.4.0 (https://vsn4ik.github.io/bootstrap-checkbox/)
- * Copyright 2013-2017 Vasily A. (https://github.com/vsn4ik)
+ * Copyright 2013-2018 Vasilii A. (https://github.com/vsn4ik)
  * Licensed under the MIT license
  */
 
@@ -13,15 +13,13 @@
 'use strict';
 
 (function(factory) {
-  if (typeof define == 'function' && define.amd) {
+  if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module
     define(['jquery'], factory);
-  }
-  else if (typeof exports == 'object') {
+  } else if (typeof exports === 'object') {
     // Node/CommonJS
     module.exports = factory(require('jquery'));
-  }
-  else {
+  } else {
     // Browser globals
     factory(jQuery);
   }
@@ -110,8 +108,7 @@
         this.$on.addClass('active');
         this.$on.addClass(this.options.onActiveCls);
         this.$off.addClass(this.options.offCls);
-      }
-      else {
+      } else {
         this.$off.addClass('active');
         this.$off.addClass(this.options.offActiveCls);
         this.$on.addClass(this.options.onCls);
@@ -119,8 +116,7 @@
 
       if (this.element.title) {
         this.$group.attr('title', this.element.title);
-      }
-      else {
+      } else {
         // Attribute title (offTitle, onTitle) on this.$buttons not work (native) if this.element.disabled, fine!
         if (this.options.offTitle) {
           this.$off.attr('title', this.options.offTitle);
@@ -150,8 +146,7 @@
         if (this.options.disabledCursor) {
           this.$group.css('cursor', this.options.disabledCursor);
         }
-      }
-      else {
+      } else {
         this.$group.attr('tabindex', this.element.tabIndex);
 
         if (this.element.autofocus) {
@@ -174,8 +169,7 @@
       if (this.element.disabled) {
         this.$group.attr('tabindex', this.element.tabIndex);
         this.$group.css('cursor', '');
-      }
-      else {
+      } else {
         this.$group.removeAttr('tabindex');
 
         if (this.options.disabledCursor) {
@@ -205,13 +199,12 @@
       this.$element.trigger('change');
     },
     keydown: function(event) {
-      if ($.inArray(event.keyCode, this.options.toggleKeyCodes) != -1) {
+      if ($.inArray(event.keyCode, this.options.toggleKeyCodes) !== -1) {
         // Off vertical scrolling on Spacebar
         event.preventDefault();
 
         this.change();
-      }
-      else if (event.keyCode == 13) {
+      } else if (event.keyCode === 13) {
         $(this.element.form).trigger('submit');
       }
     },
@@ -232,7 +225,7 @@
       set: function(element, value) {
         var data = $.data(element, 'bs.checkbox');
 
-        if (data && element.checked != value) {
+        if (data && element.checked !== value) {
           data.change(value);
         }
 
@@ -245,7 +238,7 @@
       set: function(element, value) {
         var data = $.data(element, 'bs.checkbox');
 
-        if (data && element.disabled != value) {
+        if (data && element.disabled !== value) {
           data.toggleDisabled();
         }
 
@@ -265,11 +258,9 @@
 
     if (this instanceof $) {
       $elements = this;
-    }
-    else if (typeof options == 'string') {
+    } else if (typeof options === 'string') {
       $elements = $(options);
-    }
-    else {
+    } else {
       $elements = $(elements);
     }
 
@@ -285,7 +276,7 @@
   };
 
   // HTML5 data-*.
-  // <input data-on-label="43"> --> $('input').data('onLabel') == '43'.
+  // <input data-on-label="43"> --> $('input').data('onLabel') === '43'.
   $.fn.checkboxpicker.defaults = {
     baseGroupCls: 'btn-group',
     baseCls: 'btn',

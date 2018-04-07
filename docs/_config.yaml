@@ -1,0 +1,25 @@
+# Dependencies
+# $ gem install rouge
+# $ rougify style base16.solarized > assets/css/highlighter.css
+highlighter: rouge
+
+# Custom variables
+repository: "https://github.com/vsn4ik/bootstrap-checkbox"
+version: 1.4.0
+name: "Bootstrap-checkbox"
+description: "A checkbox component based on Bootstrap framework"
+keywords: "bootstrap checkbox jquery-plugin switch"
+
+author:
+  name: "Vasilii A."
+
+cdn:
+  bootstrap:
+    css: "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css"
+    js:  "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"
+
+  jquery:
+    js: "https://code.jquery.com/jquery-3.3.1.js"
+
+  fa:
+    css: "https://use.fontawesome.com/releases/v5.0.9/css/all.css"

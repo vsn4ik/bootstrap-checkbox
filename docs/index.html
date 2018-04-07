@@ -1,29 +1,34 @@
+---
+---
+
 <!DOCTYPE html>
 <html lang="en">
-<%- include views/head -%>
+<head>
+  {% include head.html %}
+</head>
 
 <body>
   <div class="container">
-    <%- include views/header -%>
+    {% include header.html %}
 
-    <%- include views/section_installation -%>
-
-    <hr>
-    <%- include views/section_options -%>
+    {% include section_installation.html %}
 
     <hr>
-    <%- include views/section_html_examples -%>
+    {% include section_options.html %}
 
     <hr>
-    <%- include views/section_js_examples -%>
+    {% include section_html_examples.html %}
 
     <hr>
-    <%- include views/footer -%>
+    {% include section_js_examples.html %}
+
+    <hr>
+    {% include footer.html %}
   </div>
 
   <div class="scroll-top-wrapper">
     <button id="scroll-top" class="btn btn-primary btn-sm hidden" type="button">
-      <span class="fa fa-caret-up fa-2x"></span>
+      <span class="fas fa-caret-up fa-2x"></span>
     </button>
   </div>
 </body>
