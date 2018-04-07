@@ -23,15 +23,6 @@ label[for] {
   background-color: white;
 }
 
-.highlight {
-  border-radius: 4px;
-  padding: 4px;
-}
-
-.highlight pre {
-  margin-bottom: 0;
-}
-
 .btn-group .btn + .btn {
   z-index: 2;
 }
