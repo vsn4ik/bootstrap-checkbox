@@ -1,6 +1,5 @@
 # Export-ignore files (GitHub download link, composer [--prefer-dist])
 docs          export-ignore
-.travis       export-ignore
-Gruntfile.js  export-ignore
+.*            export-ignore
 README.md     export-ignore
 package.json  export-ignore

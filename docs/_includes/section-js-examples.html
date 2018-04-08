@@ -1,0 +1,37 @@
+<h2 id="js-examples">Code examples</h2>
+
+<h3>Calling from an event</h3>
+<p>To trigger an action use a change event.</p>
+<div class="border border-secondary rounded bg-light p-2 mb-2">
+{% highlight js %}
+$(':checkbox').checkboxpicker().on('change', function() {
+  // …
+});
+{% endhighlight %}
+</div>
+
+<p>Or call it, by an specific id member of the DOM.</p>
+<div class="border border-secondary rounded bg-light p-2 mb-2">
+{% highlight js %}
+$('#input-1').checkboxpicker();
+$('#input-1').on('change', function() {
+  // …
+});
+{% endhighlight %}
+</div>
+
+<h3>Changing checkbox value</h3>
+<p>Change checkbox checked value.</p>
+<div class="border border-secondary rounded bg-light p-2 mb-2">
+{% highlight js %}
+$('#input-1').prop('checked', false);
+{% endhighlight %}
+</div>
+
+<h3>Disabling checkbox value</h3>
+<p>Disable checkbox.</p>
+<div class="border border-secondary rounded bg-light p-2 mb-2">
+{% highlight js %}
+$('#input-1').prop('disabled', true);
+{% endhighlight %}
+</div>

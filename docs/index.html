@@ -8,28 +8,26 @@
 </head>
 
 <body>
-  <div class="container">
+  <div class="container py-3" id="container">
     {% include header.html %}
 
-    {% include section_installation.html %}
+    {% include section-installation.html %}
 
     <hr>
-    {% include section_options.html %}
+    {% include section-options.html %}
 
     <hr>
-    {% include section_html_examples.html %}
+    {% include section-html-examples.html %}
 
     <hr>
-    {% include section_js_examples.html %}
+    {% include section-js-examples.html %}
 
     <hr>
     {% include footer.html %}
   </div>
 
-  <div class="scroll-top-wrapper">
-    <button id="scroll-top" class="btn btn-primary btn-sm hidden" type="button">
-      <span class="fas fa-caret-up fa-2x"></span>
-    </button>
-  </div>
+  <a class="js-scroll-top scroll-top btn btn-primary btn-sm hidden" href="#container" hidden>
+    <span class="fas fa-caret-up fa-2x"></span>
+  </a>
 </body>
 </html>

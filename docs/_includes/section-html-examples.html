@@ -1,0 +1,249 @@
+<h2 id="html-examples">Examples</h2>
+
+<div class="row">
+  <div class="col-sm-3">
+    <input type="checkbox">
+  </div>
+
+  <div class="col-sm-9">
+    <div class="border border-secondary rounded bg-light p-2 mb-2">
+{% highlight html %}
+<input type="checkbox">
+{% endhighlight %}
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-3">
+    <input type="checkbox" data-reverse>
+  </div>
+
+  <div class="col-sm-9">
+    <div class="border border-secondary rounded bg-light p-2 mb-2">
+{% highlight html %}
+<input type="checkbox" data-reverse>
+{% endhighlight %}
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-3">
+    <input type="checkbox" data-switch-always>
+  </div>
+
+  <div class="col-sm-9">
+    <div class="border border-secondary rounded bg-light p-2 mb-2">
+{% highlight html %}
+<input type="checkbox" data-switch-always>
+{% endhighlight %}
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-3">
+    <input type="checkbox" readonly>
+  </div>
+
+  <div class="col-sm-9">
+    <div class="border border-secondary rounded bg-light p-2 mb-2">
+{% highlight html %}
+<input type="checkbox" readonly>
+{% endhighlight %}
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-3">
+    <input type="checkbox" disabled checked>
+  </div>
+
+  <div class="col-sm-9">
+    <div class="border border-secondary rounded bg-light p-2 mb-2">
+{% highlight html %}
+<input type="checkbox" disabled checked>
+{% endhighlight %}
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-3">
+    <input type="checkbox" data-group-cls="btn-group-sm mb-2">
+    <input type="checkbox" data-group-cls="btn-group-lg mb-2">
+  </div>
+
+  <div class="col-sm-9">
+    <div class="border border-secondary rounded bg-light p-2 mb-2">
+{% highlight html %}
+<input type="checkbox" data-group-cls="btn-group-sm">
+<input type="checkbox" data-group-cls="btn-group-lg">
+{% endhighlight %}
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-3">
+    <input type="checkbox" data-base-group-cls="btn-group-vertical mb-2">
+  </div>
+
+  <div class="col-sm-9">
+    <div class="border border-secondary rounded bg-light p-2 mb-2">
+{% highlight html %}
+<input type="checkbox" data-base-group-cls="btn-group-vertical">
+{% endhighlight %}
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-3">
+    <input type="checkbox" title="Example title">
+  </div>
+
+  <div class="col-sm-9">
+    <div class="border border-secondary rounded bg-light p-2 mb-2">
+{% highlight html %}
+<input type="checkbox" title="Example title">
+{% endhighlight %}
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-3">
+    <input type="checkbox" data-off-title="No" data-on-title="Yes">
+  </div>
+
+  <div class="col-sm-9">
+    <div class="border border-secondary rounded bg-light p-2 mb-2">
+{% highlight html %}
+<input type="checkbox" data-off-title="No" data-on-title="Yes">
+{% endhighlight %}
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-3">
+    <input type="checkbox" data-off-icon-cls="fa-thumbs-down" data-on-icon-cls="fa-thumbs-up">
+  </div>
+
+  <div class="col-sm-9">
+    <div class="border border-secondary rounded bg-light p-2 mb-2">
+{% highlight html %}
+<input type="checkbox" data-off-icon-cls="fa-thumbs-down" data-on-icon-cls="fa-thumbs-up">
+{% endhighlight %}
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-3">
+    <input type="checkbox" data-off-label="false" data-on-label="false" data-off-icon-cls="fa-thumbs-down" data-on-icon-cls="fa-thumbs-up">
+  </div>
+
+  <div class="col-sm-9">
+    <div class="border border-secondary rounded bg-light p-2 mb-2">
+{% highlight html %}
+<input type="checkbox" data-off-label="false" data-on-label="false" data-off-icon-cls="fa-thumbs-down" data-on-icon-cls="fa-thumbs-up">
+{% endhighlight %}
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-3">
+    <input id="input-1" type="checkbox">
+  </div>
+
+  <div class="col-sm-9">
+    <div class="border border-secondary rounded bg-light p-2 mb-2">
+{% highlight html %}
+<input id="input-1" type="checkbox">
+<script>
+$('#input-1').checkboxpicker({
+  html: true,
+  offLabel: '<span class="fas fa-minus-square">',
+  onLabel: '<span class="fas fa-plus-square">'
+});
+</script>
+{% endhighlight %}
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-3">
+    <input type="checkbox" checked data-off-active-cls="btn-warning" data-on-active-cls="btn-primary">
+    <input type="checkbox" checked data-off-cls="btn-danger" data-on-cls="btn-success" data-on-active-cls="btn-secondary" data-off-active-cls="btn-secondary">
+    <input type="checkbox" checked data-cls="btn-secondary" data-off-cls="null" data-on-cls="null" data-on-active-cls="null" data-off-active-cls="null">
+  </div>
+
+  <div class="col-sm-9">
+    <div class="border border-secondary rounded bg-light p-2 mb-2">
+{% highlight html %}
+<input type="checkbox" checked data-off-active-cls="btn-warning" data-on-active-cls="btn-primary">
+<input type="checkbox" checked data-off-cls="btn-danger" data-on-cls="btn-success" data-on-active-cls="btn-secondary" data-off-active-cls="btn-secondary">
+<input type="checkbox" checked data-cls="btn-secondary" data-off-cls="null" data-on-cls="null" data-on-active-cls="null" data-off-active-cls="null">
+{% endhighlight %}
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-3">
+    <label for="input-2">Label</label>
+    <br>
+    <input id="input-2" type="checkbox" checked>
+  </div>
+
+  <div class="col-sm-9">
+    <div class="border border-secondary rounded bg-light p-2 mb-2">
+{% highlight html %}
+<label for="input-2">Label</label>
+<input id="input-2" type="checkbox" checked>
+{% endhighlight %}
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <form class="col-sm-3" >
+    <input type="checkbox" checked>
+    <input class="btn btn-secondary mb-2" type="reset">
+  </form>
+
+  <div class="col-sm-9">
+    <div class="border border-secondary rounded bg-light p-2 mb-2">
+{% highlight html %}
+<form>
+  <input type="checkbox" checked>
+  <input class="btn btn-secondary" type="reset">
+</form>
+{% endhighlight %}
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <form class="col-sm-3">
+    <input type="checkbox" data-toggle-key-codes="[32]">
+    <input class="btn btn-secondary mb-2" type="submit">
+  </form>
+
+  <div class="col-sm-9">
+    <div class="border border-secondary rounded bg-light p-2 mb-2">
+{% highlight html %}
+<form>
+  <input type="checkbox" data-toggle-key-codes="[32]">
+  <input class="btn btn-secondary" type="submit">
+</form>
+{% endhighlight %}
+    </div>
+  </div>
+</div>

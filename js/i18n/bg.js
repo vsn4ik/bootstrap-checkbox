@@ -1,7 +1,5 @@
-'use strict';
-
 (function($) {
-  $.extend($.fn.checkboxpicker.defaults, {
+  Object.assign($.fn.checkboxpicker.defaults, {
     offLabel: 'Не',
     onLabel: 'Да',
     warningMessage: 'Bootstrap-checkbox не поддържа checkbox в label елемент.'
