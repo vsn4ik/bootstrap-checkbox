@@ -1,10 +1,10 @@
-<p align="center"><img src="logo/vertical.png" alt="bootstrap-checkbox" height="200px"></p>
+<p align="center"><img src="logo/logo.svg" alt="bootstrap-checkbox" height="200"></p>
 
 # [Bootstrap-checkbox](https://vsn4ik.github.io/bootstrap-checkbox/)
 
 [![npm version](https://img.shields.io/npm/v/bootstrap-checkbox.svg)](https://www.npmjs.com/package/bootstrap-checkbox)
 [![License](https://img.shields.io/npm/l/bootstrap-checkbox.svg)][license]
-[![Build Status](https://travis-ci.org/vsn4ik/bootstrap-checkbox.svg)](https://travis-ci.org/vsn4ik/bootstrap-checkbox)
+![Build Status](https://action-badges.now.sh/vsn4ik/bootstrap-checkbox)
 [![devDependency Status](https://david-dm.org/vsn4ik/bootstrap-checkbox/dev-status.svg)](https://david-dm.org/vsn4ik/bootstrap-checkbox?type=dev)
 
 
@@ -12,11 +12,10 @@
 
 Several quick start options are available:
 
-* [Download the latest release](https://github.com/vsn4ik/bootstrap-checkbox/archive/v1.4.0.zip "Download Bootstrap-checkbox")
+* [Download the latest release](https://github.com/vsn4ik/bootstrap-checkbox/archive/v2.0.0.zip "Download Bootstrap-checkbox")
 * Clone the repo: `git clone https://github.com/vsn4ik/bootstrap-checkbox.git`
 * Install with [npm](https://www.npmjs.com): `npm install bootstrap-checkbox`
 * Install with [yarn](https://yarnpkg.com): `yarn add bootstrap-checkbox`
-* Install with [Composer](https://getcomposer.org): `composer require vsn4ik/bootstrap-checkbox "dev-master"` (deprecated on v.1.4.1)
 
 ### What's included
 

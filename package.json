@@ -1,6 +1,6 @@
 {
   "name": "bootstrap-checkbox",
-  "version": "1.5.0",
+  "version": "2.0.0",
   "description": "A checkbox component based on Bootstrap framework",
   "keywords": [
     "bootstrap",
@@ -21,17 +21,17 @@
   ],
   "main": "dist/js/bootstrap-checkbox.js",
   "scripts": {
-    "test": "grunt",
+    "test": "npm run js; npm run js-compile-i18n",
+    "js": "npm run js-compile; npm run js-minify",
+    "js-compile": "babel --out-dir dist/js/ js/*.js",
+    "js-compile-i18n": "babel --out-dir dist/js/i18n/ js/i18n/*.js",
+    "js-minify": "terser --compress --output dist/js/$npm_package_name.min.js dist/js/$npm_package_name.js",
     "release-zip": "cd dist/ && zip -r9 $npm_package_name-$npm_package_version-dist.zip * && mv $npm_package_name-$npm_package_version-dist.zip .."
   },
   "devDependencies": {
-    "grunt": "1.0.2",
-    "grunt-banner": "0.6.0",
-    "grunt-contrib-clean": "1.1.0",
-    "grunt-contrib-copy": "1.0.0",
-    "grunt-contrib-jshint": "1.1.0",
-    "grunt-contrib-uglify": "3.3.0",
-    "grunt-jscs": "2.5.0",
-    "load-grunt-tasks": "3.5.2"
+    "@babel/cli": "7.6.0",
+    "@babel/core": "7.6.0",
+    "@babel/preset-env": "7.6.0",
+    "terser": "4.3.0"
   }
 }

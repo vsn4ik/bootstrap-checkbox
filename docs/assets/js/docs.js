@@ -1,71 +1,49 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded', function() {
-  $.ajax({
-    url: 'https://api.github.com/repos/vsn4ik/bootstrap-checkbox',
-    success: function(data) {
+  fetch('https://api.github.com/repos/vsn4ik/bootstrap-checkbox')
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(response) {
       // XSS check
-      if (typeof data.stargazers_count !== 'number') {
+      if (typeof response.stargazers_count !== 'number') {
         return;
       }
 
       var html = '' +
         '<div class="input-group">' +
-          '<div class="input-group-btn"></div>' +
-          '<div class="input-group-addon">' +
-            '<span>' + data.stargazers_count + '</span>' +
-            '&nbsp;' +
-            '<span class="fas fa-star"></span>' +
+          '<div class="input-group-prepend"></div>' +
+          '<div class="input-group-append">' +
+            '<span class="input-group-text bg-white">' +
+              response.stargazers_count +
+              '&nbsp;' +
+              '<span class="fas fa-star"></span>' +
+            '</span>' +
           '</div>' +
         '</div>';
 
       $('#gh-view-link').wrap(html);
-    }
-  });
+    });
 
-  /**
-   * document.documentElement: 'html', for Mozilla Firefox
-   * document.body: 'body', for other browsers
-   */
-  var containers = [
-    document.body,
-    document.documentElement
-  ];
-
-  var scrollButtonNode = document.querySelector('#scroll-top');
-
-  function updateScrollButtonVisibility() {
-    var scrollTop = containers.reduce(function(result, element) {
-      return result + element.scrollTop;
-    }, 0);
-
-    scrollButtonNode.classList.toggle('hidden', scrollTop < 100);
+  function handleScroll() {
+    document.querySelector('.js-scroll-top').hidden = window.pageYOffset < 100;
   }
 
-  scrollButtonNode.addEventListener('click', function() {
-    window.onscroll = null;
+  window.onscroll = handleScroll;
 
-    scrollButtonNode.classList.add('hidden');
-
-    // 'html' for Mozilla Firefox, 'body' for other browsers
-    $(containers).animate({
-      scrollTop: 0
-    }, 500, $.proxy(function() {
-      window.onscroll = updateScrollButtonVisibility;
-    }, this));
-  });
-
-  window.onscroll = updateScrollButtonVisibility;
-
-  updateScrollButtonVisibility();
+  handleScroll();
 
   $('#input-1').data({
     html: true,
-    offLabel: '<span class="glyphicon glyphicon-remove">',
-    onLabel: '<span class="glyphicon glyphicon-ok">'
+    offLabel: '<span class="fas fa-minus-square">',
+    onLabel: '<span class="fas fa-plus-square">'
   });
 
   $(':checkbox').checkboxpicker({
-    groupCls: 'm-b'
+    offCls: 'btn-outline-danger',
+    onCls: 'btn-outline-success',
+    iconCls: 'fas',
+    groupCls: 'mb-2'
   });
 });
