@@ -1,12 +1,11 @@
 /*!
- * Bootstrap-checkbox v1.4.0 (https://vsn4ik.github.io/bootstrap-checkbox/)
+ * Bootstrap-checkbox v1.5.0 (https://vsn4ik.github.io/bootstrap-checkbox/)
  * Copyright 2013-2018 Vasilii A. (https://github.com/vsn4ik)
  * Licensed under the MIT license
  */
 
 /**
  * $.inArray: friends with IE8. Use Array.prototype.indexOf in future.
- * Use this.element.hidden in future.
  * $.proxy: friends with IE8. Use Function.prototype.bind in future.
  */
 
@@ -72,7 +71,7 @@
     init: function() {
       var fn = this.options.html ? 'html' : 'text';
 
-      this.$element.addClass('hidden');
+      this.element.hidden = true;
       this.$group.addClass(this.options.baseGroupCls).addClass(this.options.groupCls);
       this.$buttons.addClass(this.options.baseCls).addClass(this.options.cls);
 
@@ -140,7 +139,7 @@
       this.$group.append(this.$buttons).insertAfter(this.element);
 
       // Necessarily after this.$group.append() (autofocus)
-      if (this.element.disabled) {
+      if (this.element.readOnly || this.element.disabled) {
         this.$buttons.addClass('disabled');
 
         if (this.options.disabledCursor) {
