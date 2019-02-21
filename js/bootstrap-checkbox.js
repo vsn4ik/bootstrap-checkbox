@@ -179,24 +179,29 @@
       var $button = $(event.currentTarget);
 
       if (!$button.hasClass('active') || this.options.switchAlways) {
-        this.change();
+        this.change(event);
       }
     },
-    change: function() {
-      this.set(!this.element.checked);
+    change: function(originalEvent) {
+      this.set(!this.element.checked, originalEvent);
     },
-    set: function(value) {
+    set: function(value, originalEvent) {
       // Fix #12
       this.element.checked = value;
 
-      this.$element.trigger('change');
+      if (originalEvent){
+        var e = jQuery.Event("change", {originalEvent: originalEvent});
+        this.$element.trigger(e);
+      } else {
+        this.$element.trigger('change');
+      }
     },
     keydown: function(event) {
       if ($.inArray(event.keyCode, this.options.toggleKeyCodes) !== -1) {
         // Off vertical scrolling on Spacebar
         event.preventDefault();
 
-        this.change();
+        this.change(event);
       } else if (event.keyCode === 13) {
         $(this.element.form).trigger('submit');
       }
