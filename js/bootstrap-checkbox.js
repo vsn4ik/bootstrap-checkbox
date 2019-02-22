@@ -190,7 +190,7 @@
       this.element.checked = value;
 
       if (originalEvent){
-        var e = jQuery.Event("change", {originalEvent: originalEvent});
+        var e = jQuery.Event('change', { originalEvent: originalEvent });
         this.$element.trigger(e);
       } else {
         this.$element.trigger('change');
