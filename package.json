@@ -32,6 +32,6 @@
     "@babel/cli": "7.6.0",
     "@babel/core": "7.6.0",
     "@babel/preset-env": "7.6.0",
-    "terser": "4.3.0"
+    "terser": "4.3.1"
   }
 }
