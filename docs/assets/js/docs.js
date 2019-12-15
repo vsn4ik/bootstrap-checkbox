@@ -1,6 +1,6 @@
 'use strict';
 
-document.addEventListener('DOMContentLoaded', function() {
+var exec = function() {
   fetch('https://api.github.com/repos/vsn4ik/bootstrap-checkbox')
     .then(function(response) {
       return response.json();
@@ -46,4 +46,10 @@ document.addEventListener('DOMContentLoaded', function() {
     iconCls: 'fas',
     groupCls: 'mb-2'
   });
-});
+};
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', exec);
+} else {
+  exec();
+}

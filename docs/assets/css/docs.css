@@ -2,7 +2,7 @@ label[for] {
   cursor: pointer;
 }
 
-body {
+html {
   scroll-behavior: smooth;
 }
 
