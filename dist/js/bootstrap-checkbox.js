@@ -14,9 +14,7 @@
     return $($.map(arguments, $.proxy(document, 'createElement')));
   }
 
-  var Checkboxpicker =
-  /*#__PURE__*/
-  function () {
+  var Checkboxpicker = /*#__PURE__*/function () {
     function Checkboxpicker(element, options) {
       this.element = element;
       this.$element = $(element);
