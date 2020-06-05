@@ -20,6 +20,7 @@
     "js/**/*.js"
   ],
   "main": "dist/js/bootstrap-checkbox.js",
+  "type": "module",
   "scripts": {
     "test": "npm run js; npm run js-compile-i18n",
     "js": "npm run js-compile; npm run js-minify",
@@ -29,9 +30,9 @@
     "release-zip": "cd dist/ && zip -r9 $npm_package_name-$npm_package_version-dist.zip * && mv $npm_package_name-$npm_package_version-dist.zip .."
   },
   "devDependencies": {
-    "@babel/cli": "7.7.5",
-    "@babel/core": "7.7.5",
-    "@babel/preset-env": "7.7.6",
-    "terser": "4.4.2"
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "terser": "^4.7.0"
   }
 }
