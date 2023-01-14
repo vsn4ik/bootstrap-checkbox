@@ -4,7 +4,7 @@
 
 ![npm version](https://img.shields.io/npm/v/bootstrap-checkbox.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Build Status](https://github.com/vsn4ik/bootstrap-checkbox/workflows/test.yml/badge.svg)
+![Build Status](https://github.com/vsn4ik/bootstrap-checkbox/actions/workflows/test.yml/badge.svg)
 
 
 ## Quick start
