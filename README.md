@@ -2,9 +2,9 @@
 
 # [Bootstrap-checkbox](https://vsn4ik.github.io/bootstrap-checkbox/)
 
-[![npm version](https://img.shields.io/npm/v/bootstrap-checkbox.svg)](https://www.npmjs.com/package/bootstrap-checkbox)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[Build Status](https://github.com/vsn4ik/bootstrap-checkbox/workflows/test.yml/badge.svg)
+![npm version](https://img.shields.io/npm/v/bootstrap-checkbox.svg)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Build Status](https://github.com/vsn4ik/bootstrap-checkbox/workflows/test.yml/badge.svg)
 
 
 ## Quick start
