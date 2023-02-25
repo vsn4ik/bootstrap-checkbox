@@ -15,11 +15,11 @@ author:
 
 cdn:
   bootstrap:
-    css: "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.css"
-    js: "https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.js"
+    css: "https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.css"
+    js: "https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.js"
 
   jquery:
-    js: "https://code.jquery.com/jquery-3.5.1.slim.js"
+    js: "https://code.jquery.com/jquery-3.6.3.slim.js"
 
   fa:
-    css: "https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+    css: "https://use.fontawesome.com/releases/v5.15.4/css/all.css"
