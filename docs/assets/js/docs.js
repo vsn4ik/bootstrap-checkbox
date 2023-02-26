@@ -11,19 +11,7 @@ var exec = function() {
         return;
       }
 
-      var html = '' +
-        '<div class="input-group">' +
-          '<div class="input-group-prepend"></div>' +
-          '<div class="input-group-append">' +
-            '<span class="input-group-text bg-white">' +
-              response.stargazers_count +
-              '&nbsp;' +
-              '<span class="fas fa-star"></span>' +
-            '</span>' +
-          '</div>' +
-        '</div>';
-
-      $('#gh-view-link').wrap(html);
+      document.querySelector('.js-stargazers-count').style.setProperty('--stargazers', response.stargazers_count);
     });
 
   function handleScroll() {
