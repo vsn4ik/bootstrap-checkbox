@@ -13,11 +13,11 @@
   function create() {
     return $($.map(arguments, $.proxy(document, 'createElement')));
   }
-  var Checkboxpicker = /*#__PURE__*/function () {
-    function Checkboxpicker(element, options) {
+  class Checkboxpicker {
+    constructor(element, options) {
       this.element = element;
       this.$element = $(element);
-      var data = this.$element.data();
+      const data = this.$element.data();
 
       // <... data-reverse>
       if (data.reverse === '') {
@@ -44,9 +44,8 @@
       this.$on = this.$buttons.eq(this.options.reverse ? 0 : 1);
       this.init();
     }
-    var _proto = Checkboxpicker.prototype;
-    _proto.init = function init() {
-      var fn = this.options.html ? 'html' : 'text';
+    init() {
+      const fn = this.options.html ? 'html' : 'text';
       this.element.hidden = true;
       this.$group.addClass(this.options.baseGroupCls).addClass(this.options.groupCls);
       this.$buttons.addClass(this.options.baseCls).addClass(this.options.cls);
@@ -114,43 +113,43 @@
           this.focus();
         }
       }
-    };
-    _proto.toggleChecked = function toggleChecked() {
+    }
+    toggleChecked() {
       // this.$group not focus (incorrect on form reset)
       this.$buttons.toggleClass('active');
       this.$off.toggleClass(this.options.offCls);
       this.$off.toggleClass(this.options.offActiveCls);
       this.$on.toggleClass(this.options.onCls);
       this.$on.toggleClass(this.options.onActiveCls);
-    };
-    _proto.toggleDisabled = function toggleDisabled() {
+    }
+    toggleDisabled() {
       this.$buttons.toggleClass('disabled');
       if (this.element.disabled) {
         this.$group.attr('tabindex', this.element.tabIndex);
       } else {
         this.$group.removeAttr('tabindex');
       }
-    };
-    _proto.focus = function focus() {
+    }
+    focus() {
       // Original behavior
       this.$group.trigger('focus');
-    };
-    _proto.click = function click(event) {
+    }
+    click(event) {
       // Strictly event.currentTarget. Fix #19
-      var $button = $(event.currentTarget);
+      const $button = $(event.currentTarget);
       if (!$button.hasClass('active') || this.options.switchAlways) {
         this.change();
       }
-    };
-    _proto.change = function change() {
+    }
+    change() {
       this.set(!this.element.checked);
-    };
-    _proto.set = function set(value) {
+    }
+    set(value) {
       // Fix #12
       this.element.checked = value;
       this.$element.trigger('change');
-    };
-    _proto.keydown = function keydown(event) {
+    }
+    keydown(event) {
       if ($.inArray(event.keyCode, this.options.toggleKeyCodes) !== -1) {
         // Off vertical scrolling on Spacebar
         event.preventDefault();
@@ -158,22 +157,23 @@
       } else if (event.keyCode === 13) {
         $(this.element.form).trigger('submit');
       }
-    };
-    _proto.reset = function reset() {
+    }
+    reset() {
       // this.element.checked not used (incorect on large number of form elements)
       if (this.element.defaultChecked && this.$off.hasClass('active') || !this.element.defaultChecked && this.$on.hasClass('active')) {
         this.set(this.element.defaultChecked);
       }
-    };
-    return Checkboxpicker;
-  }(); // Be hooks friendly
-  var oldPropHooks = $.extend({}, $.propHooks);
+    }
+  }
+
+  // Be hooks friendly
+  const oldPropHooks = $.extend({}, $.propHooks);
 
   // Support $.fn.prop setter (checked, disabled)
   $.extend($.propHooks, {
     checked: {
-      set: function set(element, value) {
-        var data = $.data(element, 'bs.checkbox');
+      set: function (element, value) {
+        const data = $.data(element, 'bs.checkbox');
         if (data && element.checked !== value) {
           data.change(value);
         }
@@ -183,8 +183,8 @@
       }
     },
     disabled: {
-      set: function set(element, value) {
-        var data = $.data(element, 'bs.checkbox');
+      set: function (element, value) {
+        const data = $.data(element, 'bs.checkbox');
         if (data && element.disabled !== value) {
           data.toggleDisabled();
         }
@@ -198,7 +198,7 @@
   // For AMD/Node/CommonJS used elements (optional)
   // http://learn.jquery.com/jquery-ui/environments/amd/
   $.fn.checkboxpicker = function (options, elements) {
-    var $elements;
+    let $elements;
     if (this instanceof $) {
       $elements = this;
     } else if (typeof options === 'string') {
@@ -207,7 +207,7 @@
       $elements = $(elements);
     }
     return $elements.each(function () {
-      var data = $.data(this, 'bs.checkbox');
+      let data = $.data(this, 'bs.checkbox');
       if (!data) {
         data = new Checkboxpicker(this, options);
         $.data(this, 'bs.checkbox', data);

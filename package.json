@@ -30,9 +30,9 @@
     "release-zip": "cd dist/ && zip -r9 $npm_package_name-$npm_package_version-dist.zip * && mv $npm_package_name-$npm_package_version-dist.zip .."
   },
   "devDependencies": {
-    "@babel/cli": "7.21.0",
-    "@babel/core": "7.21.0",
-    "@babel/preset-env": "7.20.2",
-    "terser": "5.16.5"
+    "@babel/cli": "8.0.4",
+    "@babel/core": "8.0.1",
+    "@babel/preset-env": "8.0.2",
+    "terser": "5.50.0"
   }
 }
