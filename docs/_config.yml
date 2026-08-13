@@ -19,7 +19,7 @@ cdn:
     js: "https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.js"
 
   jquery:
-    js: "https://code.jquery.com/jquery-3.6.3.slim.js"
+    js: "https://code.jquery.com/jquery-3.7.1.slim.js"
 
   fa:
     css: "https://use.fontawesome.com/releases/v5.15.4/css/all.css"
